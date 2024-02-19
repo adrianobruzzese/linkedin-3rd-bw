@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Col from "react-bootstrap/Col";
-import { useDispatch } from "react-redux";
+import Spinner from "react-bootstrap/Spinner";
+import { useDispatch, useSelector } from "react-redux";
 import { actionGetAllUsers } from "../redux/actions";
 import PeopleViewed from "./PeopleViewed";
 import { Row } from "react-bootstrap";
@@ -8,6 +9,8 @@ import PeopleMayKnow from "./PeopleMayKnow";
 
 const ProfileSideBar = () => {
   const dispatch = useDispatch();
+
+  const isLoading = useSelector((state) => state.usersFetch.isLoading);
 
   useEffect(() => {
     dispatch(actionGetAllUsers());
@@ -35,8 +38,17 @@ const ProfileSideBar = () => {
         </Col>
       </Row>
       {/* PEOPLE ALSO VIEWED SECTION ----------------------------------------------------------------------------------------- */}
-      <PeopleViewed />
-      <PeopleMayKnow />
+      {isLoading && (
+        <div className="w-100 d-flex justify-content-center py-5">
+          <Spinner variant="primary" animation="border"></Spinner>
+        </div>
+      )}
+      {!isLoading && (
+        <>
+          <PeopleViewed />
+          <PeopleMayKnow />
+        </>
+      )}
     </Col>
   );
 };
