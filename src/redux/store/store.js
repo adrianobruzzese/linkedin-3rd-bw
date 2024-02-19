@@ -1,11 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './rootReducer'; 
+// import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
+// const globalReducer = combineReducers({});
 
-const store = configureStore({
-  reducer: rootReducer,
+// const store = configureStore({
+//   reducer: globalReducer,
+// });
 
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(/* altri middleware qui */),
-});
-
-export default store;
+// export default store;
