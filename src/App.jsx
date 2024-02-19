@@ -1,17 +1,13 @@
 import "./style/style.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-//  import NavbarComponent from "./components/CustomNavbar"
-import FooterComponent from "./components/Footer";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-     <>
-
-   <footer>
-    <FooterComponent/>
-   </footer>
-   </>
+    <>
+      <h1 className="text-primary">
+        Ciao <i className="bi bi-0-circle-fill"></i>
+      </h1>
+    </>
   );
 }
 
