@@ -1,8 +1,14 @@
-import './App.css'
+import "./style/style.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
-  // const [count, setCount] = useState(0)
+  return (
+    <>
+      <h1 className="text-primary">
+        Ciao <i className="bi bi-0-circle-fill"></i>
+      </h1>
+    </>
+  );
 }
 
-
-export default App
+export default App;
