@@ -183,7 +183,7 @@ const Body = () => {
        </div>
       </Card.Body>
 
-      <div className="d-flex m-2   ">
+      <div className="d-flex ms-3 mb-3 ">
        <div className="border rounded m-0 p-2 d-flex me-3">
         <div className="d-flex">
          <a className="text-decoration-none" href="">
