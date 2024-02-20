@@ -7,6 +7,7 @@ import Risorse from './components/Risorse';
 import Attivita from './components/Attivita';
 import Esperienza from './components/Esperienza';
 import Innteressi from './components/Interessi';
+import HomePage from './components/HomePage';
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
       <Attivita />
       <Esperienza />
       <Innteressi />
+      {/*<HomePage /> */}
     </>
   );
 }
