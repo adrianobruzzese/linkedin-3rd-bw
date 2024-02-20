@@ -13,7 +13,7 @@ const Innteressi = () => (
       <Card.Body>
         <div>
           <div className="d-flex justify-content-between align-items-start   ">
-            <h5>Innteressi</h5>
+            <h5>Interessi</h5>
           </div>
           <div>
             <button className="border border-top-0 border-start-0  border-end-0 bg-transparent border-success text-success ">

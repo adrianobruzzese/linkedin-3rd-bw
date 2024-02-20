@@ -17,7 +17,7 @@ const PeopleViewed = () => {
 
   return (
     <Row>
-      <Col xs={12} className="border border-secondary rounded shadow p-2 my-3">
+      <Col xs={12} className="border border-secondary rounded shadow p-2 my-3 bg-white">
         <h6 className="fw-bold mb-3">People also viewed</h6>
         {users5.map((user) => (
           <div

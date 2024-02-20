@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 // import Container from "react-bootstrap/Container";
 // import Row from "react-bootstrap/Row";
-import Col from 'react-bootstrap/Col';
+//import Col from 'react-bootstrap/Col';
 import Badge from 'react-bootstrap/Badge';
 const Risorse = () => (
   <>
@@ -28,7 +28,7 @@ const Risorse = () => (
           </p>
         </div>
 
-        <div>
+        <div className="mt-2">
           <i className="bi bi-people-fill me-2"></i>
           <a className="text-decoration-none text-dark fw-bold" href="">
             La mia rete
