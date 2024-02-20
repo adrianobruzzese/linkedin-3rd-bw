@@ -126,21 +126,21 @@ const Body = () => {
             <div className="d-flex">
              <h4>{me.name + " " + me.surname}</h4>
              <Button
-              className="ms-2 ps-3 pe-3 rounded-pill"
+              className="ms-3 rounded-pill"  style={{ fontSize: '1rem', padding: '0 10px 0 10px' }}
               variant="outline-primary"
              >
               <i className="bi bi-patch-check-fill "></i> Verifica ora
              </Button>
             </div>
            </div>
-           <p>{me.title}</p>
+           <p className='mb-1'>{me.title}</p>
           </Col>
           <button className="border border-0 bg-transparent">
            <span>
             <img
              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRb0lOhuAbflByagOfYUg5R8F1zGO1aN4woA&usqp=CAU"
              alt=""
-             style={{ height: "3em" }}
+             style={{ height: "2em" }}
              className="me-2"
             />
             <a className="text-dark text-decoration-none " href="">
@@ -190,7 +190,7 @@ const Body = () => {
           <strong className=" text-body-secondary">
            Fai sapere che stai facendo selezione
           </strong>
-          <p className="text-body-tertiary">e attrai canndidati qualificati</p>
+          <p className="text-body-tertiary">e attrai candidati qualificati</p>
 
           <span className="fw-bold">Inizia</span>
          </a>
