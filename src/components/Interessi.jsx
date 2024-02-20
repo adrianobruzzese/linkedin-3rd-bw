@@ -1,15 +1,15 @@
-import Card from "react-bootstrap/Card";
+import Card from 'react-bootstrap/Card';
 // import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 const Innteressi = () => (
   <>
     {/* <Container className="mb-2">
       <Row> */}
     {/* <Col xs={12} md={8}> */}
-    <Card>
+    <Card className="mb-2">
       <Card.Body>
         <div>
           <div className="d-flex justify-content-between align-items-start   ">
@@ -29,7 +29,7 @@ const Innteressi = () => (
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRb0lOhuAbflByagOfYUg5R8F1zGO1aN4woA&usqp=CAU"
                 alt=""
-                style={{ height: "3em" }}
+                style={{ height: '3em' }}
               />
               <div>
                 <a className="text-decoration-none text-dark fw-bold" href="">
@@ -50,7 +50,7 @@ const Innteressi = () => (
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRb0lOhuAbflByagOfYUg5R8F1zGO1aN4woA&usqp=CAU"
                 alt=""
-                style={{ height: "3em" }}
+                style={{ height: '3em' }}
               />
               <div>
                 <a className="text-decoration-none text-dark fw-bold" href="">

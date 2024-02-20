@@ -1,15 +1,15 @@
-import Card from "react-bootstrap/Card";
+import Card from 'react-bootstrap/Card';
 // import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 const Consigliato = () => (
   <>
     {/* <Container className="mb-2">
       <Row> */}
     {/* <Col xs={12} md={8}> */}
-    <Card>
+    <Card className="mb-2">
       <Card.Body>
         <div>
           <h5>Consigliato per te</h5>
@@ -32,7 +32,7 @@ const Consigliato = () => (
         </div>
         <div className="mb-2">
           <span className="text-secondary-emphasis">
-            Completa 2 passaggi per raggiungere il livello{" "}
+            Completa 2 passaggi per raggiungere il livello{' '}
             <a className=" text-decoration-none fw-bold " href="">
               intermedio
             </a>
@@ -46,7 +46,7 @@ const Consigliato = () => (
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRb0lOhuAbflByagOfYUg5R8F1zGO1aN4woA&usqp=CAU"
                     alt=""
-                    style={{ height: "3em" }}
+                    style={{ height: '3em' }}
                   />
                   <p className="fw-bold">In quale settore lavori?</p>
                 </div>
@@ -71,7 +71,7 @@ const Consigliato = () => (
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRb0lOhuAbflByagOfYUg5R8F1zGO1aN4woA&usqp=CAU"
                     alt=""
-                    style={{ height: "3em" }}
+                    style={{ height: '3em' }}
                   />
                   <p className="fw-bold">
                     Quale scuola o università hai frequentato?
