@@ -28,12 +28,12 @@
 import './style/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import LeftSidebar from './components/home/LeftSidebar';
+import RightSidebar from './components/home/RightSidebar';
 
 function App() {
   return (
     <>
-      <LeftSidebar />
+      <RightSidebar />
     </>
   );
 }
