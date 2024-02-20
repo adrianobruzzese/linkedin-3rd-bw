@@ -5,12 +5,9 @@ import Modal from "react-bootstrap/Modal";
 import HomePagePosts from "./HomePagePosts";
 
 
-
-
 const HomePage = () => {
  const [show, setShow] = useState(false);
  const [postText, setPostText] = useState("");
-
  const handleClose = () => setShow(false);
  const handleShow = () => setShow(true);
 

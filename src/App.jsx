@@ -13,26 +13,28 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ProfileSideBar from "./components/ProfileSideBar";
 
+
 function App() {
-  return (
-    <>
-      <CustomNavbar />
-      <Container>
-        <Row className="my-3">
-          <Col md={9}>
-            <Body />
-            <Consigliato />
-            <Analisi />
-            <Risorse />
-            <Attivita />
-            <Esperienza />
-            <Innteressi />
-          </Col>
-          <ProfileSideBar />
-        </Row>
-      </Container>
-    </>
-  );
+ return (
+  <>
+   <CustomNavbar />
+   {/* <HomePage /> */}
+   <Container>
+    <Row className="my-3">
+     <Col md={9}>
+      <Body />
+      <Consigliato />
+      <Analisi />
+      <Risorse />
+      <Attivita />
+      <Esperienza />
+      <Innteressi />
+     </Col>
+     <ProfileSideBar />
+    </Row>
+   </Container>
+  </>
+ );
 }
 
 export default App;
