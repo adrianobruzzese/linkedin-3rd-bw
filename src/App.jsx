@@ -7,21 +7,30 @@ import Risorse from './components/Risorse';
 import Attivita from './components/Attivita';
 import Esperienza from './components/Esperienza';
 import Innteressi from './components/Interessi';
-import HomePage from './components/HomePage';
-import JobsSide from './components/JobsSide';
+import CustomNavbar from './components/CustomNavbar';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import ProfileSideBar from './components/ProfileSideBar';
 
 function App() {
   return (
     <>
-      {/* <Body />
-      <Consigliato />
-      <Analisi />
-      <Risorse />
-      <Attivita />
-      <Esperienza />
-      <Innteressi /> */}
-      {/* <HomePage /> */}
-      <JobsSide />
+      <CustomNavbar />
+      <Container>
+        <Row className="my-3">
+          <Col md={9}>
+            <Body />
+            <Consigliato />
+            <Analisi />
+            <Risorse />
+            <Attivita />
+            <Esperienza />
+            <Innteressi />
+          </Col>
+          <ProfileSideBar />
+        </Row>
+      </Container>
     </>
   );
 }
