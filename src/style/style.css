@@ -1,4 +1,29 @@
 @charset "UTF-8";
+.scrollable-modal {
+  max-height: 70vh !important;
+  overflow-y: auto !important;
+}
+
+.clickable-name:hover {
+  color: #297acb;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.clickable-button:hover {
+  background-color: #edf3f8 !important;
+  border: 2px solid #191919 !important;
+}
+
+.modal-opener:hover {
+  background-color: #edf3f8 !important;
+  cursor: pointer;
+}
+
+.text-small {
+  font-size: 0.9rem;
+}
+
 /*!
  * Bootstrap  v5.3.2 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors
