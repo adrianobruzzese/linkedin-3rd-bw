@@ -1,6 +1,6 @@
 import { Row, Col } from 'react-bootstrap';
 import UserHero from './UserHero';
-import UserInfoPage from './UserInfoPage';
+// import UserInfoPage from './UserInfoPage';
 import EditProfile from './EditProfile';
 // import OtherProfiles from "./OtherProfiles"; // capire se implementare quando avremo tempo
 
@@ -24,7 +24,7 @@ const ProfilePage = () => {
           slice2={40}
           title="People you may know"
         />{' '}
-        {/* Seconda istanza di OtherProfiles per "People you may know" */}
+        {/* Seconda istanza di OtherProfiles per "People you may know" uguale alla prima */}
       </Col>
     </Row>
   );

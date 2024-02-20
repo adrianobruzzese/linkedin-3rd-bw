@@ -1,3 +1,4 @@
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Col, Row, Container, Button } from 'react-bootstrap';
 import { PencilFill } from 'react-bootstrap-icons';
 

@@ -1,14 +1,25 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import "./style/style.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
+import { Container } from "react-bootstrap";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProfilePage from "./components/userProfile/ProfilePage";
 
 function App() {
-  return (
-    <>
-      <h1 className="text-primary">
-        Ciao <i className="bi bi-0-circle-fill"></i>
-      </h1>
-    </>
-  );
+	return (
+		<div className="bg-linkedin overflow-x-hidden">
+			<BrowserRouter>
+			
+				<Container className="px-0">
+					<Routes>
+						<Route path={"/:me"} element={<ProfilePage />} />
+					</Routes>
+
+			
+				</Container>
+			</BrowserRouter>
+		</div>
+	);
 }
 
 export default App;
