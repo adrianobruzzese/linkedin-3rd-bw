@@ -13,12 +13,12 @@ const Attivita = () => (
         <div className="d-flex justify-content-between ">
           <h5>Attività</h5>
           <div>
-            <Button
-              className="ms-2 ps-3 pe-3  me-2 rounded-pill"
-              variant="outline-primary"
-            >
-              Crea un post
-            </Button>
+          <Button
+         variant="outline-primary"
+         className="rounded-pill ps-4 pe-4 fw-bold me-3 "
+        >
+         Crea un post
+        </Button>
             <a href="">
               <i className="bi bi-pencil text-black fs-5"></i>
             </a>
@@ -29,7 +29,7 @@ const Attivita = () => (
             0 follower
           </a>
         </div>
-        <p className="fw-bold m-0">Non hai anncora pubblicato nulla</p>
+        <p className="fw-bold m-0">Non hai ancora pubblicato nulla</p>
 
         <span>I post che condividi appariranno qui</span>
       </Card.Body>

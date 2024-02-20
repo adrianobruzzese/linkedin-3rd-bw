@@ -138,9 +138,9 @@ const Body = () => {
           <button className="border border-0 bg-transparent">
            <span>
             <img
-             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRb0lOhuAbflByagOfYUg5R8F1zGO1aN4woA&usqp=CAU"
+             src="https://marketplace.canva.com/EAFpeiTrl4c/1/0/1600w/canva-abstract-chef-cooking-restaurant-free-logo-9Gfim1S8fHg.jpg"
              alt=""
-             style={{ height: "2em" }}
+             style={{ height: "2.5em", width: "2.5em" }}
              className="me-2"
             />
             <a className="text-dark text-decoration-none " href="">
