@@ -4,10 +4,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import CloseButton from 'react-bootstrap/CloseButton';
-import '../components/Body.css';
+import '../profileComponents/Body.css';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { actionGetMyProfile } from '../redux/actions';
+import { actionGetMyProfile } from '../../redux/actions';
 import Modal from 'react-bootstrap/Modal';
 
 const Body = () => {
@@ -24,6 +24,8 @@ const Body = () => {
 
   const me = useSelector((state) => state.meFetch.content);
   const isLoading = useSelector((state) => state.meFetch.isLoading);
+
+  console.log(me);
 
   return (
    <>
