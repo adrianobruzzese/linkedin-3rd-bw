@@ -24,6 +24,21 @@
   font-size: 0.9rem;
 }
 
+body {
+  background-color: rgb(231, 225, 218) !important;
+}
+
+.button-homepage {
+  background-color: transparent !important;
+  color: grey !important;
+  border-color: transparent !important;
+  padding: 10px 20px !important;
+}
+
+.button-homepage:hover {
+  background-color: rgb(226, 226, 226) !important;
+}
+
 /*!
  * Bootstrap  v5.3.2 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors
