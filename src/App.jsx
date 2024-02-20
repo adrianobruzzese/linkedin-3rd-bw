@@ -10,7 +10,7 @@ function App() {
    {/* <h1 className="text-primary">
         Ciao <i className="bi bi-0-circle-fill"></i>
       </h1> */}
-   <HomePage />
+   {/* <HomePage /> */}
    <Container>
     <Row>
      {/* MAIN */}
