@@ -5,11 +5,17 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import CloseButton from 'react-bootstrap/CloseButton';
 import '../components/Body.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionGetMyProfile } from '../redux/actions';
+import Modal from 'react-bootstrap/Modal';
 
 const Body = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,7 +31,7 @@ const Body = () => {
       <Row> */}
       {/* <Col xs={12} md={8}> */}
       {!isLoading && (
-        <Card>
+        <Card className="mb-2">
           <div>
             <Card.Img
               variant="top"
@@ -153,9 +159,9 @@ const Body = () => {
               </span>
             </Card.Text>
 
-            <div className="d-flex justify-content-between mt-2 ">
+            <div className="d-flex  mt-2 ">
               <Button
-                className=" rounded-pill ps-2 pe-2 fw-bold "
+                className=" rounded-pill ps-2 pe-2 fw-bold me-2 "
                 as="input"
                 type="button"
                 value="Disponibile per"
@@ -163,18 +169,11 @@ const Body = () => {
 
               <Button
                 variant="outline-primary"
-                className="rounded-pill ps-4 pe-4 fw-bold  "
+                className="rounded-pill ps-4 pe-4 fw-bold me-2 "
               >
                 Aggiungi sezione del profilo
               </Button>
               <div>
-                <Button
-                  variant="outline-secondary"
-                  className="rounded-pill me-1 ps-4 pe-4 fw-bold  "
-                >
-                  Aggiungi pulsante personalizzato
-                </Button>
-
                 <Button
                   variant="outline-secondary"
                   className="rounded-pill fw-bold   "
