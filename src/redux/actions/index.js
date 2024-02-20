@@ -4,7 +4,7 @@ export const GET_ALL_USERS = 'GET_ALL_USERS';
 export const STOP_LOADING = 'STOP_LOADING';
 export const GET_MY_PROFILE = 'GET_MY_PROFILE';
 export const STOP_LOADING_ME = 'STOP_LOADING_ME';
-
+export const POST_IMAGE = 'POST_IMAGE'
 // ACTION CREATORS
 
 export const actionStopLoading = () => ({
@@ -74,3 +74,8 @@ export const actionGetMyProfile = () => {
     }
   };
 };
+
+
+
+// Action per fare l'upload dell'immagine sull'api
+
