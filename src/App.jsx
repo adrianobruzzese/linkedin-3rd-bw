@@ -12,7 +12,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ProfileSideBar from './components/ProfileSideBar';
-
+// import HomePage from "./components/HomePage";
 
 function App() {
  return (
