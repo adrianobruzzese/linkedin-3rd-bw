@@ -1,11 +1,11 @@
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { useEffect, useState } from 'react'; 
-import { Container, Row, Col, Button, Carousel } from 'react-bootstrap'; 
-// import { PencilFill } from 'react-bootstrap-icons'; 
-// import { endpoint, getMeAction } from '../../Redux/actions'; // Action di Redux per recuperare i dati dell'utente da implementare
+import { useEffect, useState } from 'react';
+import { Container, Row, Col, Button, Carousel } from 'react-bootstrap';
+// import { PencilFill } from 'react-bootstrap-icons';
+import { endpoint, getMeAction } from '../../Redux/actions'; // Action di Redux per recuperare i dati dell'utente da implementare
 // import { token } from '../../token'; token per le richieste autenticate, capire se da implementare così
 import { useDispatch, useSelector } from 'react-redux'; // Hook di Redux per dispatchare azioni e accedere allo stato
-// import ModalImage from '../ModalImage'; // Componente per la modalità di modifica dell'immagine
+//import ModalImage from '../ModalImage'; // Componente per la modalità di modifica dell'immagine
 
 // Definisco il componente funzionale UserHero
 const UserHero = () => {
@@ -52,9 +52,7 @@ const UserHero = () => {
             <Col xs={12}>
               {/* Bottoni di azione in alto a destra */}
               <div className="d-flex justify-content-end mt-3">
-                <Button className="rounded-circle">
-                  <PencilFill /> {/* Icona di mod */}
-                </Button>
+                <Button className="rounded-circle"></Button>
               </div>
             </Col>
             <Col className="col-12">

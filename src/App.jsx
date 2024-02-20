@@ -8,17 +8,20 @@ import Attivita from './components/Attivita';
 import Esperienza from './components/Esperienza';
 import Innteressi from './components/Interessi';
 import HomePage from './components/HomePage';
+import JobsSide from './components/JobsSide';
+
 function App() {
   return (
     <>
-      <Body />
+      {/* <Body />
       <Consigliato />
       <Analisi />
       <Risorse />
       <Attivita />
       <Esperienza />
-      <Innteressi />
-      {/*<HomePage /> */}
+      <Innteressi /> */}
+      {/* <HomePage /> */}
+      <JobsSide />
     </>
   );
 }
