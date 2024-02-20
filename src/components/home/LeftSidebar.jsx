@@ -4,6 +4,7 @@ import '../../style/style.css';
 
 const LeftSidebar = () => {
   return (
+    <div>
     <div className="card profile-card mx-auto" style={{ maxWidth: '280px' }}>
       <img
         src="https://picsum.photos/200"
@@ -25,9 +26,26 @@ const LeftSidebar = () => {
         <div className="mt-2 text-start">
         <i className="bi bi-bookmark-fill"></i>
             <span className="font-weight-bold mb-2 ms-1">My Items</span>
-
         </div>
       </div>
+    </div>
+    <div className="card profile-card mx-auto mt-3" style={{ maxWidth: '280px' }}> 
+    <div><p className="text-start text-muted mt-2 ms-3 mb-0">Recent</p>
+          <p className="text-start text-muted mt-2 ms-3 mb-0"><span className="me-2" style={{ fontSize:'1.5rem', fontWeight:'bold'}}>#</span>hospitalitycareers</p>
+          <p className="text-start text-muted ms-3"><span className="me-2" style={{ fontSize:'1.5rem', fontWeight:'bold'}}>#</span>hospitalityindustry</p></div>
+          <div><div><p className="text-start text-primary fw-bold mt-2 ms-3 mb-0">Groups</p></div>
+          <div className="d-flex justify-content-between"><p className="text-start text-primary fw-bold mt-3 ms-3">Events</p>
+          <span className="me-2" style={{fontSize:'2rem'}}>+</span></div>
+          <div><p className="text-start text-primary fw-bold ms-3 mb-0">Followed Hashtags</p>
+          <p className="text-start text-muted mt-2 ms-3 mb-0"><span className="me-2" style={{ fontSize:'1.5rem', fontWeight:'bold'}}>#</span>hospitalitycareers</p>
+          <p className="text-start text-muted ms-3"><span className="me-2" style={{ fontSize:'1.5rem', fontWeight:'bold'}}>#</span>hospitalityindustry</p>
+          <p className="text-start text-muted ms-3">See all</p>
+          </div></div>
+          <div className="text-center mt-2" style={{borderTop: '0.7px solid grey'}}><p className="text-muted mt-3 fw-bold">Discover more</p></div>
+          
+
+          
+    </div>
     </div>
   );
 };
