@@ -19,6 +19,8 @@ const Body = () => {
   const me = useSelector((state) => state.meFetch.content);
   const isLoading = useSelector((state) => state.meFetch.isLoading);
 
+  console.log(me);
+
   return (
     <>
       {/* <Container className="mb-2">
