@@ -1,25 +1,24 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import './style/style.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import "./style/style.css";
-import { Container } from "react-bootstrap";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ProfilePage from "./components/userProfile/ProfilePage";
-
+import Body from './components/Body';
+import Consigliato from './components/Consigliato';
+import Analisi from './components/Analisi';
+import Risorse from './components/Risorse';
+import Attivita from './components/Attivita';
+import Esperienza from './components/Esperienza';
+import Innteressi from './components/Interessi';
 function App() {
-	return (
-		<div className="bg-linkedin overflow-x-hidden">
-			<BrowserRouter>
-			
-				<Container className="px-0">
-					<Routes>
-						<Route path={"/:me"} element={<ProfilePage />} />
-					</Routes>
-
-			
-				</Container>
-			</BrowserRouter>
-		</div>
-	);
+  return (
+    <>
+      <Body />
+      <Consigliato />
+      <Analisi />
+      <Risorse />
+      <Attivita />
+      <Esperienza />
+      <Innteressi />
+    </>
+  );
 }
 
 export default App;

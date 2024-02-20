@@ -1,18 +1,14 @@
-// import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import usersFetch from "../reducers/usersFetch";
+import FetchDataPostsReducer from "../reducers/PostsReducer";
 
-// const globalReducer = combineReducers({});
+const globalReducer = combineReducers({
+  usersFetch: usersFetch,
+  posts:FetchDataPostsReducer,
+});
 
-// const store = configureStore({
-//   reducer: globalReducer,
-// });
+const store = configureStore({
+  reducer: globalReducer,
+});
 
-// export default store;
-
-// const rootReducer = combineReducers({
-//     users: userReducer,
-//     me: meReducer,
-//     posts: postsReducer,
-//     jobs: jobsReducer,
-//     filter: setFilterReducer,
-// });
-// Aggiungere eventualmente altri, per ora ho pensato solo a questi
+export default store;
