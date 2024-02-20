@@ -7,7 +7,7 @@ import Risorse from './components/Risorse';
 import Attivita from './components/Attivita';
 import Esperienza from './components/Esperienza';
 import Innteressi from './components/Interessi';
-import CustomNavbar from './components/CustomNavbar';
+import NavbarComponent from './components/CustomNavbar';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -17,7 +17,7 @@ import ProfileSideBar from './components/ProfileSideBar';
 function App() {
  return (
   <>
-   <CustomNavbar />
+   <NavbarComponent />
    {/* <HomePage /> */}
    <Container>
     <Row className="my-3">
