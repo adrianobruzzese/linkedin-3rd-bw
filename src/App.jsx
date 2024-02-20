@@ -7,9 +7,11 @@ import Risorse from './components/Risorse';
 import Attivita from './components/Attivita';
 import Esperienza from './components/Esperienza';
 import Innteressi from './components/Interessi';
+import CustomNavbar from './components/CustomNavbar'
 function App() {
   return (
     <>
+      <CustomNavbar/>
       <Body />
       <Consigliato />
       <Analisi />
