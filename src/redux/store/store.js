@@ -1,12 +1,14 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import usersFetch from "../reducers/usersFetch";
 import FetchDataPostsReducer from "../reducers/PostsReducer";
 
 const globalReducer = combineReducers({
- posts: FetchDataPostsReducer,
+  usersFetch: usersFetch,
+  posts:FetchDataPostsReducer,
 });
 
 const store = configureStore({
- reducer: globalReducer,
+  reducer: globalReducer,
 });
 
 export default store;
