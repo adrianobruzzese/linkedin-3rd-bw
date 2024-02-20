@@ -1,11 +1,11 @@
-import { useEffect } from "react";
-import Col from "react-bootstrap/Col";
-import Spinner from "react-bootstrap/Spinner";
-import { useDispatch, useSelector } from "react-redux";
-import { actionGetAllUsers } from "../redux/actions";
-import PeopleViewed from "./PeopleViewed";
-import { Row } from "react-bootstrap";
-import PeopleMayKnow from "./PeopleMayKnow";
+import { useEffect } from 'react';
+import Col from 'react-bootstrap/Col';
+import Spinner from 'react-bootstrap/Spinner';
+import { useDispatch, useSelector } from 'react-redux';
+import { actionGetAllUsers } from '../redux/actions';
+import PeopleViewed from './PeopleViewed';
+import { Row } from 'react-bootstrap';
+import PeopleMayKnow from './PeopleMayKnow';
 
 const ProfileSideBar = () => {
   const dispatch = useDispatch();
@@ -49,6 +49,11 @@ const ProfileSideBar = () => {
           <PeopleMayKnow />
         </>
       )}
+      <img
+        src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png "
+        alt=""
+        className="rounded me-5"
+      />
     </Col>
   );
 };

@@ -1,9 +1,9 @@
 // ACTION REFERENCES
 
-export const GET_ALL_USERS = "GET_ALL_USERS";
-export const STOP_LOADING = "STOP_LOADING";
-export const GET_MY_PROFILE = "GET_MY_PROFILE";
-export const STOP_LOADING_ME = "STOP_LOADING_ME";
+export const GET_ALL_USERS = 'GET_ALL_USERS';
+export const STOP_LOADING = 'STOP_LOADING';
+export const GET_MY_PROFILE = 'GET_MY_PROFILE';
+export const STOP_LOADING_ME = 'STOP_LOADING_ME';
 
 // ACTION CREATORS
 
@@ -19,11 +19,11 @@ export const actionGetAllUsers = () => {
   return async (dispatch) => {
     try {
       const response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/",
+        'https://striveschool-api.herokuapp.com/api/profile/',
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg",
+              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg',
           },
         }
       );
@@ -49,11 +49,11 @@ export const actionGetMyProfile = () => {
   return async (dispatch) => {
     try {
       const response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/me",
+        'https://striveschool-api.herokuapp.com/api/profile/me',
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg",
+              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg',
           },
         }
       );

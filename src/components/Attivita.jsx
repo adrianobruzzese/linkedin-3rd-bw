@@ -1,14 +1,14 @@
-import Card from "react-bootstrap/Card";
+import Card from 'react-bootstrap/Card';
 // import Container from "react-bootstrap/Container";
 // import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
+import Button from 'react-bootstrap/Button';
 
 const Attivita = () => (
   <>
     {/* <Container className="mb-2">
       <Row> */}
     {/* <Col xs={12} md={8}> */}
-    <Card>
+    <Card className="mb-2">
       <Card.Body>
         <div className="d-flex justify-content-between ">
           <h5>Attività</h5>

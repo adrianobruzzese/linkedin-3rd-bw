@@ -1,14 +1,14 @@
-import Card from "react-bootstrap/Card";
+import Card from 'react-bootstrap/Card';
 // import Container from "react-bootstrap/Container";
 // import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Badge from "react-bootstrap/Badge";
+import Col from 'react-bootstrap/Col';
+import Badge from 'react-bootstrap/Badge';
 const Risorse = () => (
   <>
     {/* <Container className="mb-2">
       <Row> */}
     {/* <Col xs={12} md={8}> */}
-    <Card>
+    <Card className="mb-2">
       <Card.Body>
         <div className=" border-bottom ">
           <div>
