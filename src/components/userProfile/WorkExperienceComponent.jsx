@@ -7,10 +7,10 @@ function EsperienzaModale(props) {
   // Accesso ai dati dell'utente dallo stato Redux
   const utente = useSelector((state) => state.utente.datiUtente);
 
-  // Definisco l'URL per l'API basandomi sulle props ricevute, per gestire sia l'aggiunta che la modifica di un'esperienza
-  const urlAPI = props.esperienza
-      ? `https://api.vattelappesca.com/utenti/${utente.id}/esperienze/${props.esperienza.id}`
-      : `https://api.vattelappesca.com/utenti/${utente.id}/esperienze/`;
+//   // Definisco l'URL per l'API basandomi sulle props ricevute, per gestire sia l'aggiunta che la modifica di un'esperienza
+//   const urlAPI = props.esperienza
+//       ? `https://api.vattelappesca.com/utenti/${utente.id}/esperienze/${props.esperienza.id}`
+//       : `https://api.vattelappesca.com/utenti/${utente.id}/esperienze/`;
 
   // Intervallo di anni utilizzabile per la selezione dell'anno nel form
   const annoInizio = 1960;
