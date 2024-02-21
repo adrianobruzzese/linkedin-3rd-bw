@@ -1,10 +1,9 @@
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
 const JobsRightBar = () => (
   <>
-    <div className=" text-center mt-3">
+    <div className=" text-center mt-4 ">
       <div className="d-flex justify-content-center ">
         <Nav.Link className="text-secondary fs-6 me-3 " href="#home">
           Informazioni

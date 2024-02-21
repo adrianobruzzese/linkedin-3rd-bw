@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import JobsRightBar from '../JobComponents/JobsRightBar';
 import Button from 'react-bootstrap/Button';
-
+import './sticky.css';
 import '../../style/style.css';
 
 const RightSidebar = () => {
@@ -104,14 +104,16 @@ const RightSidebar = () => {
           </a>
         </div>
       </div>
-      <div className="mt-2">
+      <div className=" sticky-content  ">
         <img
           src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png "
           alt=""
           className=" rounded"
         />
+
+        <JobsRightBar />
+        <div style={{ height: '2000px' }}></div>
       </div>
-      <JobsRightBar />
     </>
   );
 };
