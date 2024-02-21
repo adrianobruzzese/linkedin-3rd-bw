@@ -7,6 +7,7 @@ export const STOP_LOADING_ME = "STOP_LOADING_ME";
 export const GET_EXPERIENCES = "GET_EXPERIENCES";
 export const STOP_LOADING_EXPERIENCES = "STOP_LOADING_EXPERIENCES";
 export const ADD_PROFILE_IMAGE = "ADD_PROFILE_IMAGE";
+export const ADD_POST_IMAGE = "ADD_POST_IMAGE";
 
 // ACTION CREATORS
 
@@ -112,7 +113,7 @@ export const actionGetExperiences = (id) => {
  };
 };
 
-export const profileImageAction = (image, userId) => {
+export const profileImageAction = (image, id) => {
  return async (dispatch) => {
   if (image) {
    const formData = new FormData();
@@ -120,7 +121,7 @@ export const profileImageAction = (image, userId) => {
    console.log(image);
    try {
     const response = await fetch(
-     `https://striveschool-api.herokuapp.com/api/profile/${userId}/picture`,
+     `https://striveschool-api.herokuapp.com/api/profile/${id}/picture`,
      {
       method: "POST",
       headers: {
@@ -136,6 +137,49 @@ export const profileImageAction = (image, userId) => {
      const imageUrl = await response.json();
      dispatch({
       type: ADD_PROFILE_IMAGE,
+      payload: imageUrl,
+     });
+    } else {
+     console.error(
+      "Errore durante il caricamento dell'immagine:",
+      response.status
+     );
+    }
+   } catch (error) {
+    console.error("Errore durante il caricamento dell'immagine:", error);
+   }
+  } else {
+   console.error("Nessun file selezionato");
+  }
+ };
+};
+
+// action immagine post
+
+export const postImageAction = (image, id) => {
+ return async (dispatch) => {
+  if (image) {
+   const formData = new FormData();
+   formData.append("post", image);
+   console.log(image);
+   try {
+    const response = await fetch(
+     `https://striveschool-api.herokuapp.com/api/posts/${id}`,
+     {
+      method: "POST",
+      headers: {
+       Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTViOTI0ZjYwNTAwMTkzN2Q0NmIiLCJpYXQiOjE3MDgzMzI1NTgsImV4cCI6MTcwOTU0MjE1OH0.E5teFLHLRXoT_qjcnO0crOO1fPEFQnonpSJswoJD-LY",
+      },
+      body: formData,
+     }
+    );
+
+    if (response.ok) {
+     console.log("Immagine caricata con successo", response.status);
+     const imageUrl = await response.json();
+     dispatch({
+      type: ADD_POST_IMAGE,
       payload: imageUrl,
      });
     } else {

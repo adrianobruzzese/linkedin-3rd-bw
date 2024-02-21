@@ -29,41 +29,6 @@ const Body = () => {
   }
  };
 
- // funzione fetch POST dell'immagine
- //  const handleSubmitImg = async (image) => {
- //   if (image) {
- //    const formData = new FormData();
- //    formData.append("profile", image);
-
- //    try {
- //     const response = await fetch(
- //      `https://striveschool-api.herokuapp.com/api/profile/${me._id}/picture`,
- //      {
- //       method: "POST",
- //       headers: {
- //        Authorization:
- //         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg",
- //       },
- //       body: formData,
- //      }
- //     );
-
- //     if (response.ok) {
- //      console.log("Immagine caricata con successo", response.status);
- //     } else {
- //      console.error(
- //       "Errore durante il caricamento dell'immagine:",
- //       response.status
- //      );
- //     }
- //    } catch (error) {
- //     console.error("Errore durante il caricamento dell'immagine:", error);
- //    }
- //   }
- //   else {
- //    console.error("Nessun file selezionato");
- //   }
- //  };
 
  useEffect(() => {
   dispatch(actionGetMyProfile());

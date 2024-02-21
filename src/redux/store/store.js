@@ -4,6 +4,7 @@ import FetchDataPostsReducer from "../reducers/PostsReducer";
 import meFetch from "../reducers/meFetch";
 import experiencesFetch from "../reducers/experiencesFetch";
 import profileImageReducer from "../reducers/profileImageReducer";
+import postImageReducer from "../reducers/postImageReducer";
 
 const globalReducer = combineReducers({
  usersFetch: usersFetch,
@@ -11,6 +12,7 @@ const globalReducer = combineReducers({
  meFetch: meFetch,
  experiencesFetch: experiencesFetch,
  image: profileImageReducer,
+ imagePost: postImageReducer,
 });
 
 const store = configureStore({
