@@ -20,10 +20,10 @@ const ProfileSideBar = () => {
     <Col xs={3}>
       {/* PROFILE AND PUBLIC URL SECTION --------------------------------------------------------------------------------------*/}
       <Row>
-        <Col className="border border-secondary rounded shadow p-2 bg-white" >
+        <Col className="border rounded p-2 bg-white" >
           <div className="d-flex align-items-center justify-content-between mt-2" >
             <h5>Profile language</h5>
-            <i className="bi bi-pencil fs-5"></i>
+            <i className="bi bi-pencil"></i>
           </div>
 
           <p className="text-secondary border-bottom border-secondary mb-0 pb-3 text-small">
@@ -31,7 +31,7 @@ const ProfileSideBar = () => {
           </p>
           <div className="d-flex align-items-center justify-content-between pt-3">
             <h5>Public profile and URL</h5>
-            <i className="bi bi-pencil fs-5"></i>
+            <i className="bi bi-pencil"></i>
           </div>
           <p className="text-secondary border-secondary mb-2 text-small">
             www.linkedin.com/in/fabio-gilardi-599b022a0

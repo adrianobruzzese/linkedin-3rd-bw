@@ -97,11 +97,11 @@ const Esperienza = () => {
               <h5>Esperienza</h5>
               <div className="d-flex align-items-center ">
                 <a onClick={handleShow}>
-                  <i className="bi bi-plus-lg me-3 text-black fs-3"></i>
+                  <i className="bi bi-plus-lg me-3 text-black"></i>
                 </a>
 
                 <a href="">
-                  <i className="bi bi-pencil text-black fs-5"></i>
+                  <i className="bi bi-pencil text-black"></i>
                 </a>
               </div>
             </div>
@@ -156,7 +156,7 @@ const Esperienza = () => {
                           }
                         }}
                       >
-                        <i className="bi bi-trash fs-5"></i>
+                        <i className="bi bi-trash"></i>
                       </Button>
                     </div>
                   </div>

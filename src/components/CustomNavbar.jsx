@@ -108,7 +108,7 @@ function NavbarComponent() {
                 title={
                   <div className="nav-icon-dropdown">
                     <i className="bi bi-grid-3x3-gap-fill"></i>
-                    <span className="nav-dropdown-text" style={{marginBottom:'3px'}}>For Businesses ▼</span>
+                    <span className="nav-dropdown-text" style={{marginBottom:'3px'}}>For business ▼</span>
                   </div>
                 }
                 id="navbarScrollingDropdown"

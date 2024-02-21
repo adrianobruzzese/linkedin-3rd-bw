@@ -19,7 +19,7 @@ const Risorse = () => (
           <div>
             <i className="bi bi-broadcast-pin me-2"></i>
             <a className="text-decoration-none text-dark fw-bold" href="">
-              Modalità creazione di contenuti <Badge bg="dark-subtle">No</Badge>
+              Modalità creazione di contenuti <Badge bg="dark-subtle" className='ms-1'>No</Badge>
             </a>
           </div>
           <p>

@@ -4,11 +4,12 @@ import Analisi from "./profileComponents/Analisi";
 import Risorse from "./profileComponents/Risorse";
 import Attivita from "./profileComponents/Attivita";
 import Esperienza from "./profileComponents/Esperienza";
-import Innteressi from "./profileComponents/Interessi";
+import Interessi from "./profileComponents/Interessi";
 import ProfileSideBar from "./profileComponents/ProfileSideBar";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+
 
 const Profile = () => (
  <Container>
@@ -20,7 +21,7 @@ const Profile = () => (
     <Risorse />
     <Attivita />
     <Esperienza />
-    <Innteressi />
+    <Interessi />
    </Col>
    <ProfileSideBar />
   </Row>

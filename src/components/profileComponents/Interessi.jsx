@@ -38,9 +38,9 @@ const Innteressi = () => (
                 <p className="text-secondary">3.083 follower</p>
                 <Button
                   variant="outline-secondary"
-                  className="rounded-pill    fw-bold  "
+                  className="  rounded-pill    fw-bold  "
                 >
-                  <i className="bi bi-check-lg fs-5 p-0"></i>Già segui
+                  <i className="bi bi-check-lg fs-5 p-0"></i><span className='segui-button'>Già segui</span>
                 </Button>
               </div>
             </div>
@@ -59,9 +59,9 @@ const Innteressi = () => (
                 <p className="text-secondary">3.083 follower</p>
                 <Button
                   variant="outline-secondary"
-                  className="rounded-pill    fw-bold  segui-button"
+                  className="segui-button rounded-pill fw-bold"
                 >
-                  <i className="bi bi-check-lg fs-5"></i>Già segui
+                  <i className="bi bi-check-lg fs-5"></i><span className='segui-button'>Già segui</span>
                 </Button>
               </div>
             </div>
