@@ -13,7 +13,7 @@ import Logo from '../assets/img/LInkedinlogo.png';
 
 function NavbarComponent() {
   return (
-    <Navbar bg="light" expand="lg" sticky="top">
+    <Navbar bg="light" expand="lg" sticky="top" id="navbar">
       <Container fluid>
         <Navbar.Brand href="#home">
           <Image
@@ -86,36 +86,40 @@ function NavbarComponent() {
                 <i className="bi bi-bell-fill"></i> <div>Notifications</div>
               </Nav.Link>
             </div>
-            <NavDropdown
-  title={
-    <div className="nav-icon-dropdown">
-      <img src="https://placehold.it/15x15" alt="Avatar" />
-      <span className="nav-dropdown-text">Me</span>
-    </div>
-  }
-  id="navbarScrollingDropdown"
-  align="end"
->
-              <NavDropdown.Item href="#action3">Action 1</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Action 2</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">Action 3</NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown
-  title={
-    <div className="nav-icon-dropdown">
-      <i className="bi bi-briefcase-fill"></i>
-      <span className="nav-dropdown-text">Work</span>
-    </div>
-  }
-  id="navbarScrollingDropdownWork"
-  align="end"
->
-              <NavDropdown.Item href="#action3">Action 4</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Action 5</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">Action 6</NavDropdown.Item>
-            </NavDropdown>
+            <div>
+              <NavDropdown
+                title={
+                  <div className="nav-icon-dropdown">
+                    <img src="https://picsum.photos/200/300" alt="Avatar" />
+                    <span className="nav-dropdown-text">Me ▼</span>
+                  </div>
+                }
+                id="navbarScrollingDropdown"
+                align="end"
+              >
+                <NavDropdown.Item href="#action3">Action 1</NavDropdown.Item>
+                <NavDropdown.Item href="#action4">Action 2</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action5">Action 3</NavDropdown.Item>
+              </NavDropdown>
+            </div>
+            <div>
+              <NavDropdown
+                title={
+                  <div className="nav-icon-dropdown">
+                    <i className="bi bi-grid-3x3-gap-fill"></i>
+                    <span className="nav-dropdown-text" style={{marginBottom:'3px'}}>For Businesses ▼</span>
+                  </div>
+                }
+                id="navbarScrollingDropdown"
+                align="end"
+              >
+                <NavDropdown.Item href="#action3">Action 1</NavDropdown.Item>
+                <NavDropdown.Item href="#action4">Action 2</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action5">Action 3</NavDropdown.Item>
+              </NavDropdown>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>

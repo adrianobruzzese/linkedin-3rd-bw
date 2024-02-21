@@ -27,17 +27,17 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  line-height: 1;
-}
-
-.nav-icon-dropdown i,
-.nav-icon-dropdown img {
-  margin-bottom: 2px; /* Adjust the space between the icon/image and the text */
+  margin-top: 4px;
+  margin-right: 35px;
 }
 
 .nav-icon-dropdown img {
-  width: 18px;
-  height: 18px;
+  margin-bottom: 5px;
+}
+
+.nav-icon-dropdown img {
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -46,7 +46,11 @@
 .nav-dropdown-text {
   display: flex;
   align-items: center;
-  height: 20px; /* Adjust based on your navbar's height */
+  font-size: 0.9rem;
+}
+
+.navbar .nav-item .nav-link.dropdown-toggle::after {
+  display: none;
 }
 
 .scrollable-modal {
