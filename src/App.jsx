@@ -9,8 +9,8 @@ function App() {
   return (
     <>
       <CustomNavbar />
-      {/* <HomePage /> */}
-      <Profile />
+      <HomePage />
+      {/* <Profile /> */}
 
       {/* <Jobs /> */}
     </>

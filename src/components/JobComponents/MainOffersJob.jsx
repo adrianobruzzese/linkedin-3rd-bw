@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import CloseButton from 'react-bootstrap/CloseButton';
 const MainOffersJob = () => {
   return (
-    <Card className="mb-3">
+    <Card className="mb-3 mt-4">
       <Card.Body>
         <div className="border-bottom">
           <div>

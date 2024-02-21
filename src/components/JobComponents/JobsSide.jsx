@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 const jobsSidebar = () => {
   return (
     <>
-      <Card>
+      <Card className="mt-4">
         <Card.Body>
           <p className="d-flex align-items-center">
             <i className="bi bi-bookmark-fill fs-4 me-1 "></i> Le mie offerte di
