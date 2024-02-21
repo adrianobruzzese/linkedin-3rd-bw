@@ -12,7 +12,8 @@ import Modal from "react-bootstrap/Modal";
 
 const Body = () => {
  const [show, setShow] = useState(false);
- const [fileImg, setFileImg] = useState(null);
+ //questo in teoria posso cancellarlo
+ //  const [fileImg, setFileImg] = useState(null);
  const handleClose = () => setShow(false);
  const handleShow = () => setShow(true);
 
@@ -22,16 +23,16 @@ const Body = () => {
  const handleChangeImg = (event) => {
   const selectedFile = event.target.files[0];
   if (selectedFile) {
-   setFileImg(selectedFile);
+   //  setFileImg(selectedFile);
    handleSubmitImg(selectedFile);
   }
  };
 
  // funzione fetch POST dell'immagine
- const handleSubmitImg = async () => {
-  if (fileImg) {
+ const handleSubmitImg = async (image) => {
+  if (image) {
    const formData = new FormData();
-   formData.append("profile", fileImg);
+   formData.append("profile", image);
 
    try {
     const response = await fetch(
