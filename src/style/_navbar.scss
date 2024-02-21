@@ -1,5 +1,5 @@
 #navbar {
-  height: 55px;
+  height: 60px;
 }
 
 #search-input-group {
@@ -8,16 +8,42 @@
   margin-right: 100px;
 }
 
-
 .nav-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.nav-icon i {
+  margin-bottom: 4px;
+}
+
+.nav-icon-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+}
+
+.nav-icon-dropdown i,
+.nav-icon-dropdown img {
+  margin-bottom: 2px; /* Adjust the space between the icon/image and the text */
+}
+
+.nav-icon-dropdown img {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    object-fit: cover; 
   }
   
-  .nav-icon i {
-    margin-bottom: 4px; /* Adjust space between icon and text */
-  }
+  .nav-dropdown-text {
+    display: flex;
+    align-items: center;
+    height: 20px; /* Adjust based on your navbar's height */}
+
   
