@@ -20,9 +20,9 @@ const ProfileSideBar = () => {
     <Col xs={3}>
       {/* PROFILE AND PUBLIC URL SECTION --------------------------------------------------------------------------------------*/}
       <Row>
-        <Col className="border border-secondary rounded shadow p-2 bg-white">
+        <Col className="border border-secondary rounded shadow p-2 bg-white" id='profile-language'>
           <div className="d-flex align-items-center justify-content-between mt-2">
-            <h5 className="fw-bold">Profile language</h5>
+            <h5>Profile language</h5>
             <i className="bi bi-pencil fs-5"></i>
           </div>
 
@@ -30,18 +30,18 @@ const ProfileSideBar = () => {
             English
           </p>
           <div className="d-flex align-items-center justify-content-between pt-3">
-            <h5 className="fw-bold">Public profile and URL</h5>
+            <h5>Public profile and URL</h5>
             <i className="bi bi-pencil fs-5"></i>
           </div>
           <p className="text-secondary border-secondary mb-2 text-small">
             www.linkedin.com/in/fabio-gilardi-599b022a0
           </p>
         </Col>
-        <div className="mt-2">
+        <div className='mt-2'>
           <img
             src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png "
-            alt=""
-            className=" rounded"
+            alt="advertisment"
+            className=" rounded" style={{maxWidth:'260px'}}
           />
         </div>
       </Row>

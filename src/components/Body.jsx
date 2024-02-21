@@ -243,7 +243,7 @@ const Body = () => {
          <strong className=" text-body-secondary">
           Fai sapere che stai facendo selezione
          </strong>
-         <p className="text-body-tertiary">e attrai canndidati qualificati</p>
+         <p className="text-body-tertiary">e attrai candidati qualificati</p>
 
          <span className="fw-bold">Inizia</span>
         </a>
@@ -258,7 +258,7 @@ const Body = () => {
          <strong className=" text-body-secondary">
           Fai sapere che stai facendo selezione
          </strong>
-         <p className="text-body-tertiary">e attrai canndidati qualificati</p>
+         <p className="text-body-tertiary">e attrai candidati qualificati</p>
 
          <span className="fw-bold">Inizia</span>
         </a>
