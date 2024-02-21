@@ -10,9 +10,9 @@ function App() {
     <>
       <CustomNavbar />
       {/* <HomePage /> */}
-      {/* <Profile /> */}
+      <Profile />
 
-      <Jobs />
+      {/* <Jobs /> */}
     </>
   );
 }
