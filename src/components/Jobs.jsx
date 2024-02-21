@@ -19,6 +19,9 @@ const Jobs = () => (
           {/* <BestJobsOffers />
           <OtherJobsOffer /> */}
         </Col>
+        <Col>
+          <JobsRightBar />
+        </Col>
       </Row>
     </Container>
   </>
