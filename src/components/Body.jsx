@@ -11,73 +11,28 @@ import { actionGetMyProfile } from '../redux/actions';
 import Modal from 'react-bootstrap/Modal';
 
 const Body = () => {
-<<<<<<< HEAD
   const [show, setShow] = useState(false);
-  const [fileImg, setFileImg] = useState(null);
+  //questo in teoria posso cancellarlo
+  //  const [fileImg, setFileImg] = useState(null);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-=======
- const [show, setShow] = useState(false);
- //questo in teoria posso cancellarlo
- //  const [fileImg, setFileImg] = useState(null);
- const handleClose = () => setShow(false);
- const handleShow = () => setShow(true);
->>>>>>> 7d2f1e1ebd17c2a54ca98a6fc6c61a441216bb18
 
   const dispatch = useDispatch();
 
-<<<<<<< HEAD
   //  funzione caricamento immagine nello stato
   const handleChangeImg = (event) => {
     const selectedFile = event.target.files[0];
     if (selectedFile) {
-      setFileImg(selectedFile);
+      //  setFileImg(selectedFile);
       handleSubmitImg(selectedFile);
-=======
- //  funzione caricamento immagine nello stato
- const handleChangeImg = (event) => {
-  const selectedFile = event.target.files[0];
-  if (selectedFile) {
-   //  setFileImg(selectedFile);
-   handleSubmitImg(selectedFile);
-  }
- };
-
- // funzione fetch POST dell'immagine
- const handleSubmitImg = async (image) => {
-  if (image) {
-   const formData = new FormData();
-   formData.append("profile", image);
-
-   try {
-    const response = await fetch(
-     `https://striveschool-api.herokuapp.com/api/profile/${me._id}/picture`,
-     {
-      method: "POST",
-      headers: {
-       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg",
-      },
-      body: formData,
-     }
-    );
-
-    if (response.ok) {
-     console.log("Immagine caricata con successo", response.status);
-    } else {
-     console.error(
-      "Errore durante il caricamento dell'immagine:",
-      response.status
-     );
->>>>>>> 7d2f1e1ebd17c2a54ca98a6fc6c61a441216bb18
     }
   };
 
   // funzione fetch POST dell'immagine
-  const handleSubmitImg = async () => {
-    if (fileImg) {
+  const handleSubmitImg = async (image) => {
+    if (image) {
       const formData = new FormData();
-      formData.append('profile', fileImg);
+      formData.append('profile', image);
 
       try {
         const response = await fetch(
