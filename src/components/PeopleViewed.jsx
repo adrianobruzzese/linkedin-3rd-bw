@@ -41,7 +41,7 @@ const PeopleViewed = () => {
             <div className="w-100 d-flex justify-content-center">
               <Button
                 variant="white"
-                className="text-black w-50 border border-black rounded-pill btn-sm mt-2 clickable-button"
+                className="text-black w-50 border border-secondary rounded-pill btn-sm mt-2 clickable-button"
               >
                 <i className="bi bi-person-fill"></i>+ Connect
               </Button>
@@ -83,7 +83,7 @@ const PeopleViewed = () => {
               <div>
                 <Button
                   variant="white"
-                  className="text-black border border-black rounded-pill btn-sm mt-2 ms-5 px-2 clickable-button"
+                  className="text-black border border-secondary rounded-pill btn-sm mt-2 ms-5 px-2 clickable-button"
                 >
                   <i className="bi bi-person-fill"></i>+ Connect
                 </Button>
