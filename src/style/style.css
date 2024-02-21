@@ -71,6 +71,12 @@
   font-size: 1rem;
 }
 
+#sticky-sidebar {
+  font-size: 0.8rem;
+  max-width: 230px;
+  line-height: 18px;
+}
+
 .scrollable-modal {
   max-height: 70vh !important;
   overflow-y: auto !important;

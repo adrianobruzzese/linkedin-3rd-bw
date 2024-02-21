@@ -5,6 +5,7 @@ import Modal from "react-bootstrap/Modal";
 import HomePagePosts from "./HomePagePosts";
 import LeftSidebar from "./home/LeftSidebar";
 import RightSidebar from "./home/RightSidebar";
+
 const HomePage = () => {
  const [show, setShow] = useState(false);
  const [postText, setPostText] = useState("");
