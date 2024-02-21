@@ -17,7 +17,7 @@ const HomePagePosts = () => {
    setArrayPostsSliced(arrayPosts.slice(-10));
    console.log("post array slice", arrayPostsSliced);
   }
- }, []);
+ }, [arrayPosts]);
 
  return (
   <>
