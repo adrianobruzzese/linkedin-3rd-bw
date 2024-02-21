@@ -9,10 +9,10 @@ import CustomNavbar from './components/CustomNavbar';
   return (
    <>
     <CustomNavbar />
-    {/* <Jobs />  */}
     {/* <HomePage /> */}
-
     {/* <Profile /> */}
+
+    <Jobs />
    </>
   );
  }
