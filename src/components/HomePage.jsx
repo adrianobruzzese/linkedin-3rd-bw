@@ -210,6 +210,6 @@ const HomePage = () => {
   </Container>
  )
 }
-}
+
 
 export default HomePage

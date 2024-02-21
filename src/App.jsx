@@ -7,13 +7,13 @@ import HomePage from "./components/HomePage";
 
 function App() {
   return (
-    <>
-      <CustomNavbar />
-      {/* <HomePage /> */}
-      {/* <Profile /> */}
+   <>
+    <CustomNavbar />
+    {/* <HomePage /> */}
+    {/* <Profile /> */}
 
-      <Jobs />
-    </>
+    {/* <Jobs /> */}
+   </>
   );
 }
 export default App;
