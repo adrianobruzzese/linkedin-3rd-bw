@@ -1,8 +1,9 @@
-import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import CloseButton from 'react-bootstrap/CloseButton';
-import Button from 'react-bootstrap/Button';
+import Card from "react-bootstrap/Card";
+
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import CloseButton from "react-bootstrap/CloseButton";
+import Button from "react-bootstrap/Button";
 const OfferSearch = () => {
   return (
     <Card className="mb-3">
@@ -19,43 +20,43 @@ const OfferSearch = () => {
               variant="outline-primary rounded-pill pe-4 ps-4 me-2 mb-2 fw-bold"
               size="sm"
             >
-              <i className="bi bi-search me-2 "></i>Food Server
+              <i className="bi bi-search me-2 "></i>Web Developer
             </Button>
             <Button
               variant="outline-primary rounded-pill pe-4 ps-4 me-2 mb-2 fw-bold"
               size="sm"
             >
-              <i className="bi bi-search me-2"></i>Hostess Server
+              <i className="bi bi-search me-2"></i>Front-End
             </Button>
             <Button
               variant="outline-primary rounded-pill pe-4 ps-4 me-2 mb-2 fw-bold"
               size="sm"
             >
-              <i className="bi bi-search me-2"></i>Server
+              <i className="bi bi-search me-2"></i>Back-End
             </Button>
             <Button
               variant="outline-primary rounded-pill pe-4 ps-4 me-2 mb-2 fw-bold"
               size="sm"
             >
-              <i className="bi bi-search me-2"></i>Busser
+              <i className="bi bi-search me-2"></i>Full-Stack
             </Button>
             <Button
               variant="outline-primary rounded-pill pe-4 ps-4 me-2 mb-2 fw-bold"
               size="sm"
             >
-              <i className="bi bi-search me-2"></i>Hostess
+              <i className="bi bi-search me-2"></i>DevOps
             </Button>
             <Button
               variant="outline-primary rounded-pill pe-4 ps-4 me-2 mb-2 fw-bold"
               size="sm"
             >
-              <i className="bi bi-search me-2"></i>Server Host
+              <i className="bi bi-search me-2"></i>Ethical Hacker
             </Button>
             <Button
               variant="outline-primary rounded-pill pe-4 ps-4 me-2 mb-2 fw-bold"
               size="sm"
             >
-              <i className="bi bi-search me-2"></i>Food Runner
+              <i className="bi bi-search me-2"></i>Polar Bears Rescuer
             </Button>
           </Col>
         </Row>
