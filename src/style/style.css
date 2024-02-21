@@ -1,4 +1,26 @@
 @charset "UTF-8";
+#navbar {
+  height: 55px;
+}
+
+#search-input-group {
+  position: relative;
+  max-width: 250px;
+  margin-right: 100px;
+}
+
+.nav-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.nav-icon i {
+  margin-bottom: 4px; /* Adjust space between icon and text */
+}
+
 .scrollable-modal {
   max-height: 70vh !important;
   overflow-y: auto !important;
