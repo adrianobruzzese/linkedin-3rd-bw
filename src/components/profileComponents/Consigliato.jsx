@@ -17,7 +17,7 @@ const Consigliato = () => (
           <span className="text-secondary">Solo per te</span>
         </div>
 
-        <div className="mt-2">
+        <div className="mt-4">
           <span>Principiante</span>
           <Row className="align-items-center">
             <Col md={11}>
@@ -44,11 +44,11 @@ const Consigliato = () => (
               <div>
                 <div className="d-flex align-items-center">
                   <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRb0lOhuAbflByagOfYUg5R8F1zGO1aN4woA&usqp=CAU"
+                    src="https://marketplace.canva.com/EAFpeiTrl4c/1/0/1600w/canva-abstract-chef-cooking-restaurant-free-logo-9Gfim1S8fHg.jpg"
                     alt=""
                     style={{ height: '3em' }}
                   />
-                  <p className="fw-bold">In quale settore lavori?</p>
+                  <p className="fw-bold ms-2">In quale settore lavori?</p>
                 </div>
                 <p className="text-body-tertiary">
                   Gli utenti che aggiungono un settore ricevono fino a 2,5 volte
@@ -69,11 +69,11 @@ const Consigliato = () => (
               <div>
                 <div className="d-flex align-items-center">
                   <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRb0lOhuAbflByagOfYUg5R8F1zGO1aN4woA&usqp=CAU"
+                    src="https://marketplace.canva.com/EAFpeiTrl4c/1/0/1600w/canva-abstract-chef-cooking-restaurant-free-logo-9Gfim1S8fHg.jpg"
                     alt=""
                     style={{ height: '3em' }}
                   />
-                  <p className="fw-bold">
+                  <p className="fw-bold ms-2">
                     Quale scuola o università hai frequentato?
                   </p>
                 </div>

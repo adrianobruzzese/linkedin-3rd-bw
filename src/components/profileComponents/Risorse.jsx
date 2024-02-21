@@ -28,7 +28,7 @@ const Risorse = () => (
           </p>
         </div>
 
-        <div>
+        <div className="mt-2">
           <i className="bi bi-people-fill me-2"></i>
           <a className="text-decoration-none text-dark fw-bold" href="">
             La mia rete

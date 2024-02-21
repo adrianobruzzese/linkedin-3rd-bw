@@ -49,6 +49,40 @@ padding: 10px 20px!important;
   
 }
 
+
+// stile input file
+#image-selector {
+  display: none !important; /* Nasconde l'input del file */
+}
+
+.custom-file-input-label {
+  background-color: #007bff !important;
+  color: #fff !important;
+  padding: 8px 20px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+}
+
+.custom-file-input-label span {
+  display: inline-block !important;
+}
+
+.custom-file-input-label input[type="file"] + span:before {
+  content: 'Carica file' !important; /* Testo personalizzato */
+  margin-right: 10px !important; /* Aggiungi spazio tra il testo e l'icona del file */
+}
+
+.custom-file-input-label:hover,
+.custom-file-input-label:active {
+  background-color: #0056b3 !important;
+  transition: 300ms;
+}
+
+.custom-file-input-label:focus {
+  outline: 1px solid #007bff !important;
+}
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 

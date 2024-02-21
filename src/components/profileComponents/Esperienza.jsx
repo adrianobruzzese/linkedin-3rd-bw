@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useDispatch, useSelector } from "react-redux";
-import { actionGetExperiences } from "../redux/actions";
+import { actionGetExperiences } from "../../redux/actions/index";
 // import Container from 'react-bootstrap/Container';
 // import Row from "react-bootstrap/Row";
 // import Col from "react-bootstrap/Col";
