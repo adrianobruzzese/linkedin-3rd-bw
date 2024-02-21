@@ -39,37 +39,35 @@ const HomePage = () => {
 
  const HandlePost = () => {
   if (!postText.trim()) {
-   alert("Il testo del post non può essere vuoto");
-   return;
+      alert("Il testo del post non può essere vuoto");
+      return;
   }
   fetch("https://striveschool-api.herokuapp.com/api/posts/", {
-   method: "POST",
-   headers: {
-    Authorization:
-     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTViOTI0ZjYwNTAwMTkzN2Q0NmIiLCJpYXQiOjE3MDgzMzI1NTgsImV4cCI6MTcwOTU0MjE1OH0.E5teFLHLRXoT_qjcnO0crOO1fPEFQnonpSJswoJD-LY",
-    "Content-Type": "application/json",
-   },
-   body: JSON.stringify({ text: postText }),
+      method: "POST",
+      headers: {
+          Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTViOTI0ZjYwNTAwMTkzN2Q0NmIiLCJpYXQiOjE3MDgzMzI1NTgsImV4cCI6MTcwOTU0MjE1OH0.E5teFLHLRXoT_qjcnO0crOO1fPEFQnonpSJswoJD-LY",
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ text: postText }),
   })
-   .then(async (response) => {
-    if (response.ok) {
-     const { _id } = await response.json();
-     setPostId(_id);
-
-     dispatch(postImageAction(fileImg, _id));
-     console.log(fileImg);
-     console.log("Post aggiunto");
-
-     handleCloseModalPost();
-     setFileImg(null);
-    } else {
-     console.log("errore nella richiesta POST", response.status);
-    }
-   })
-   .catch((error) => {
-    console.log(error);
-   });
- };
+      .then(async (response) => {
+          if (response.ok) {
+              const { _id } = await response.json();
+              setPostId(_id);
+              dispatch(postImageAction(fileImg, _id));
+              console.log(fileImg);
+              console.log("Post aggiunto");
+              handleCloseModalPost();
+              setFileImg(null);
+          } else {
+              console.log("errore nella richiesta POST", response.status);
+          }
+      })
+      .catch((error) => {
+          console.log(error);
+      });
+};
 
  return (
   <Container className="mt-3">
@@ -210,7 +208,8 @@ const HomePage = () => {
     </Col>
    </Row>
   </Container>
- );
-};
+ )
+}
+}
 
-export default HomePage;
+export default HomePage

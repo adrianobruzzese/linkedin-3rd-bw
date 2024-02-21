@@ -8,6 +8,10 @@ export const GET_EXPERIENCES = "GET_EXPERIENCES";
 export const STOP_LOADING_EXPERIENCES = "STOP_LOADING_EXPERIENCES";
 export const ADD_PROFILE_IMAGE = "ADD_PROFILE_IMAGE";
 export const ADD_POST_IMAGE = "ADD_POST_IMAGE";
+export const GET_JOBS = "GET_JOBS";
+export const STOP_LOADING_JOBS = "STOP_LOADING_JOBS";
+export const START_LOADING_JOBS = "START_LOADING_JOBS";
+export const UPDATE_NAVBAR_INPUT = "UPDATE_NAVBAR_INPUT";
 
 // ACTION CREATORS
 
@@ -21,6 +25,19 @@ export const actionStopLoadingMe = () => ({
 
 export const actionStopLoadingExperiences = () => ({
  type: STOP_LOADING_EXPERIENCES,
+});
+
+export const actionStopLoadingJobs = () => ({
+  type: STOP_LOADING_JOBS,
+});
+
+export const actionStartLoadingJobs = () => ({
+  type: START_LOADING_JOBS,
+});
+
+export const actionUpdateNavbarInput = (value) => ({
+  type: UPDATE_NAVBAR_INPUT,
+  payload: value,
 });
 
 export const actionGetAllUsers = () => {
@@ -195,4 +212,32 @@ export const postImageAction = (image, id) => {
    console.error("Nessun file selezionato");
   }
  };
+};
+export const actionGetJobs = (search) => {
+  return async (dispatch) => {
+    try {
+      dispatch(actionStartLoadingJobs());
+      const response = await fetch(
+        "https://strive-benchmark.herokuapp.com/api/jobs?search=" + search,
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg",
+          },
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        const newData = data.data.slice(0, 7);
+        dispatch({
+          type: GET_JOBS,
+          payload: newData,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      dispatch(actionStopLoadingJobs());
+    }
+  };
 };

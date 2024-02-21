@@ -5,6 +5,7 @@ import meFetch from "../reducers/meFetch";
 import experiencesFetch from "../reducers/experiencesFetch";
 import profileImageReducer from "../reducers/profileImageReducer";
 import postImageReducer from "../reducers/postImageReducer";
+import jobsFetch from "../reducers/jobsFetch";
 
 const globalReducer = combineReducers({
  usersFetch: usersFetch,
@@ -13,7 +14,10 @@ const globalReducer = combineReducers({
  experiencesFetch: experiencesFetch,
  image: profileImageReducer,
  imagePost: postImageReducer,
-});
+ jobsFetch: jobsFetch,
+
+})
+
 
 const store = configureStore({
   reducer: globalReducer,
