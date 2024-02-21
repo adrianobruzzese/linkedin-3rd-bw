@@ -1,6 +1,6 @@
 @charset "UTF-8";
 #navbar {
-  height: 60px;
+  height: 55px;
 }
 
 #search-input-group {
@@ -55,6 +55,17 @@
 
 #profile-language {
   border: 2px solid red;
+}
+
+.profile {
+  position: absolute;
+  top: 8em;
+  left: 2em;
+}
+
+.segui-button {
+  padding: 10px 10px 10px 10px;
+  background-color: red;
 }
 
 .scrollable-modal {

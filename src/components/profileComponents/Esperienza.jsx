@@ -115,8 +115,8 @@ const Esperienza = () => {
                     key={experience._id}
                   >
                     <img
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRb0lOhuAbflByagOfYUg5R8F1zGO1aN4woA&usqp=CAU"
-                      alt=""
+             src="https://marketplace.canva.com/EAFpeiTrl4c/1/0/1600w/canva-abstract-chef-cooking-restaurant-free-logo-9Gfim1S8fHg.jpg"
+             alt=""
                       style={{ height: "3em" }}
                       className="me-2 mb-3"
                     />

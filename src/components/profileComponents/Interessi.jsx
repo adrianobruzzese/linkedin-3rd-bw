@@ -25,13 +25,13 @@ const Innteressi = () => (
 
         <Row>
           <Col md={6}>
-            <div className="d-flex">
+            <div className="d-flex mt-2">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRb0lOhuAbflByagOfYUg5R8F1zGO1aN4woA&usqp=CAU"
+                src="https://marketplace.canva.com/EAFpeiTrl4c/1/0/1600w/canva-abstract-chef-cooking-restaurant-free-logo-9Gfim1S8fHg.jpg"
                 alt=""
                 style={{ height: '3em' }}
               />
-              <div>
+              <div className="ms-2">
                 <a className="text-decoration-none text-dark fw-bold" href="">
                   Ristorante
                 </a>
@@ -46,20 +46,20 @@ const Innteressi = () => (
             </div>
           </Col>
           <Col>
-            <div className="d-flex">
+            <div className="d-flex mt-2">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRb0lOhuAbflByagOfYUg5R8F1zGO1aN4woA&usqp=CAU"
+                src="https://marketplace.canva.com/EAFpeiTrl4c/1/0/1600w/canva-abstract-chef-cooking-restaurant-free-logo-9Gfim1S8fHg.jpg"
                 alt=""
                 style={{ height: '3em' }}
               />
-              <div>
+              <div className="ms-2">
                 <a className="text-decoration-none text-dark fw-bold" href="">
                   Ristorante
                 </a>
                 <p className="text-secondary">3.083 follower</p>
                 <Button
                   variant="outline-secondary"
-                  className="rounded-pill    fw-bold  "
+                  className="rounded-pill    fw-bold  segui-button"
                 >
                   <i className="bi bi-check-lg fs-5"></i>Già segui
                 </Button>

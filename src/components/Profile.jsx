@@ -1,4 +1,4 @@
-import Body from "./Body";
+import Body from "./profileComponents/Body";
 import Consigliato from "./profileComponents/Consigliato";
 import Analisi from "./profileComponents/Analisi";
 import Risorse from "./profileComponents/Risorse";
