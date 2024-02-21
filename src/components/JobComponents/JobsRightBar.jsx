@@ -31,7 +31,7 @@ const JobsRightBar = () => (
         </NavDropdown>
       </div>
       <div className="d-flex justify-content-center ">
-        <Nav.Link className="text-secondary fs-6 me-3" href="#home">
+        <Nav.Link className="text-secondary fs-6  " href="#home">
           Opzioni per gli annunci pubblicitari
         </Nav.Link>
       </div>
@@ -60,7 +60,7 @@ const JobsRightBar = () => (
           altro
         </Nav.Link>
       </div>
-      <div className="mt-4">
+      <div className="mt-3">
         <img
           alt=""
           src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg"
