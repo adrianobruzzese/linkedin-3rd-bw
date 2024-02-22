@@ -1,15 +1,15 @@
-import Card from 'react-bootstrap/Card';
+import Card from "react-bootstrap/Card";
 // import Container from "react-bootstrap/Container";
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import CloseButton from 'react-bootstrap/CloseButton';
-import './profileComponents/Body.css';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { actionGetMyProfile } from '../redux/actions';
-import { profileImageAction } from '../redux/actions';
-import Modal from 'react-bootstrap/Modal';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import CloseButton from "react-bootstrap/CloseButton";
+// import './profileComponents/Body.css';
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { actionGetMyProfile } from "../redux/actions";
+import { profileImageAction } from "../redux/actions";
+import Modal from "react-bootstrap/Modal";
 
 const Body = () => {
   const [show, setShow] = useState(false);
@@ -87,7 +87,7 @@ const Body = () => {
             <Card.Img
               variant="top"
               src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIQDw0QEA8QDxUPDQ0NEA8NDQ8NDxANFREWFhUSFRUYHSggGBolHRUVITEhJSktLi4uFx8zODMtNygtLisBCgoKDQ0NFQ8PFSsZFRkrKystLSstKysrLSsrKysrKy0tKysrLSsrLSsrKysrLSsrKysrKysrKysrKystKysrK//AABEIAJ8BPQMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAACAAEDBf/EABwQAQEBAQEBAAMAAAAAAAAAAAARAQISYQMxUf/EABkBAQEBAQEBAAAAAAAAAAAAAAABAgMFBP/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDxvK8nCzl7FfRA5/H8LrjNNFI4bz8Xl23A3CkDyvJxRaQPLeeDzkkpGec/mOfXEdmQpHHyvLpvLItIHleTjcwpAzh0zjP43MalI5dcD5dw3kpHPyvJxRaQPKzn4cPMSkHniM6/H8dEUjh5Xl165GFIHleTii0geT5/GXPJJSB1xXPz8d2byUjj5Xk4otIHleTihSB5Xk4oUh5jWpzrcYmopGKNRSDFmHmM0pGJqKRiaikYyEswpBjS3GFIxNRSMTUUg7yoTYUg5iaikYmopGM3CRSBCzCjCkYmopGJqKRm4yEoUgRQ4otIEUOKFIUZHSM3lzbgJqKkYswswoECKHFFqxzidNwNxKkYmrMKRmY2HFCrAjNx0ihSOaLcYVIxRsLMKQYocUWrA3GOkHeUqQU1FIxuYWcthVgRbhxRaRzR7yKVIxNbnJSMzFDii1YEUOKFIEUOKFIUUOKMVuOfXI88u/PJdcpUjjFDii1YEUOKFIEW8nFnJSOPk85dvIbiVIEUOKLVgRQ4oUgQN5doecpUjhnLYe8qLVgRQ4oUgRQ4oUjj1yXPLtzyzrlKkc4ocUWrAihxQpAg9cusbzyUjjzyUdeuRhSBFDihSBFDihSBFDihSFG5yWY1itRiakpB3BjotxaRzihRsKsDMPMbElSMW41FI5xR0jItWBFChZhSDmNakqRkHcNQpHOKHGRasGFmNzGlSMTUlIG8sjozcWkCKFG5hVg5yTUlSMZvJIpHOKHuMi1YMUKKFIMUKKFIaLcY51qMTUUjE1ZhSMiJbi0gpqSkYmopGJrYUgxFGRaRiakpGJqKRihZiWkFN3ElIxNRSMTW5hSDEbNxaQU1JSMTUUjFG5jVpBihRQqwYoUUKQ4PXLpFGK1HFOnXA5lKRmYeYWcqFIMUKKFWB1yDtGdclSOSjY6c8lIOcthRQqwYt5KKFI47idd5c9wqRh88t54KFIMUKKFWDA3HWLcKkcUXXMbzyUjOeShRQpBihRQqxz65F2gdcwqQG5y3nmukKQYoUUKsGKFFCkGKFFCkOKFGxitwMxu8T9HEVHOKHuMhSDFCihVgxQoWYVIHhkdFuFHOKFFCrBihRQpBjfB5iKjnuKOm4MKDFCihVgxQo3MKkHOL+2by6KFHOKHuMhVgxQooUgxZzTzGlQN4jI6M3CgRQooVYMUKKFIMUKKFIcRJitCiRUgqEikGKFEVRiJFSCiRSDFCRVGKFEUFEipBRIpBihKFUYiRUFEikFQkVRihRFBRIqQUSKQYoShVGKFFCrBihRQpG7jHWB1kYrUFNS1IxRp5yUg5i3DiiVY5I+uRWpGJqKRhZjeeSiVYG4LrGdclI5pqWpGJpc8lIOY3cOKJVjlE6byGrUjE1FIxuY3nKcSrBg7jpFCkckW5GLUjE1ZhSLMbDzlRKsGKFFCrBihRQpH/2Q=="
-              style={{ height: '14em' }}
+              style={{ height: "14em" }}
             />
             <div className=" ">
               <i className="bi bi-camera-fill position-absolute top-0 end-0 me-3 mt-3 border border-2 rounded-circle bg-light pe-1 ps-1  "></i>
@@ -103,37 +103,37 @@ const Body = () => {
               <Modal.Body className="fw-bold p-5">
                 <p className="text-center">
                   La tua foto non deve per forza essere un tuo primo piano!
-                </p>{' '}
+                </p>{" "}
                 <p className="text-center">Ma qualcosa che ti rappresenti.</p>
                 <div className="text-center mt-3 mb-4">
                   <img
                     src={me.image}
                     alt=""
-                    style={{ height: '3em' }}
+                    style={{ height: "3em" }}
                     className="rounded-circle "
                   />
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6fN3fQYT4v44UcLmMAyudCfBMiweCc-OgBw&usqp=CAU"
                     alt=""
-                    style={{ height: '5em' }}
+                    style={{ height: "5em" }}
                     className="rounded-circle pe-1 ps-1"
                   />
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj9QMoM4JNxSsrO_iIRkPPebsThja5DB1oHw&usqp=CAU"
                     alt=""
-                    style={{ height: '7em' }}
+                    style={{ height: "7em" }}
                     className="rounded-circle pe-1 ps-1"
                   />
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1IGhWi1O8OGtJ86l3vS4-Stte3E1OBQ4KxQ&usqp=CAU"
                     alt=""
-                    style={{ height: '5em' }}
+                    style={{ height: "5em" }}
                     className="rounded-circle pe-1 ps-1"
                   />
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR86Py_pFI5u5GFWLNhnfJ--GVhedOuXfCGGw&usqp=CAU"
                     alt=""
-                    style={{ height: '3em' }}
+                    style={{ height: "3em" }}
                     className="rounded-circle pe-1 ps-1"
                   />
                 </div>
@@ -169,13 +169,13 @@ const Body = () => {
                 id="img"
                 src={me.image}
                 alt="UserIMG"
-                style={{ height: '9em' }}
+                style={{ height: "9em" }}
                 className="profile border border-white-5 rounded-circle "
               />
             </button>
 
             <a className="text-decoration-none text-dark" href="">
-              {' '}
+              {" "}
               <i className="bi bi-pencil me-3  fs-5"></i>
             </a>
           </div>
@@ -186,12 +186,12 @@ const Body = () => {
                   <Col md={8}>
                     <div>
                       <div className="d-flex">
-                        <h4>{me.name + ' ' + me.surname}</h4>
+                        <h4>{me.name + " " + me.surname}</h4>
                         <Button
                           className="ms-2 ps-3 pe-3 rounded-pill"
                           variant="outline-primary"
                         >
-                          <i className="bi bi-patch-check-fill"></i>{' '}
+                          <i className="bi bi-patch-check-fill"></i>{" "}
                           <span className="fw-semibold">Check now</span>
                         </Button>
                       </div>
@@ -217,7 +217,7 @@ const Body = () => {
                 </div>
               </Row>
               <span className="text-body-tertiary">
-                {me.area} •{' '}
+                {me.area} •{" "}
                 <a className=" text-decoration-none " href="">
                   <span className=" fw-semibold ">contact info</span>
                 </a>
@@ -254,7 +254,7 @@ const Body = () => {
               <div className="d-flex">
                 <a className="text-decoration-none" href="">
                   <strong className=" text-body-secondary fw-semibold ">
-                    Let them know you're making a selection
+                    Let them know you&apos;re making a selection
                   </strong>
                   <p className="text-body-tertiary m-0 fw-semibold ">
                     and attract qualified candidates

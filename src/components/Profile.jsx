@@ -1,4 +1,4 @@
-import Body from "./profileComponents/Body";
+import Body from "../components/Body";
 import Consigliato from "./profileComponents/Consigliato";
 import Analisi from "./profileComponents/Analisi";
 import Risorse from "./profileComponents/Risorse";
@@ -10,7 +10,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-
 const Profile = () => (
   <Container>
     <Row className="my-3 justify-content-center">
@@ -21,7 +20,7 @@ const Profile = () => (
         <Risorse />
         <Attivita />
         <Esperienza />
-        <Innteressi />
+        <Interessi />
       </Col>
       <ProfileSideBar />
     </Row>
