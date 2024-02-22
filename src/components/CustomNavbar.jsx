@@ -160,6 +160,7 @@ function NavbarComponent() {
                   title="Me"
                   align={{ lg: "end", md: "end", sm: "end", xs: "end" }}
                   style={{ fontSize: "1rem", marginBottom: "3px" }}
+                  className="p-0"
                 >
                   <NavDropdown.Item href="#gestioni-profili">
                     Gestione Profili
