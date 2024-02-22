@@ -11,8 +11,12 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import { useDispatch, useSelector } from "react-redux";
 import { actionUpdateNavbarInput } from "../redux/actions";
+import { Link, useLocation } from "react-router-dom";
 
 function NavbarComponent() {
+  const location = useLocation().pathname;
+  console.log(location);
+
   const dispatch = useDispatch();
 
   const navbarSearch = useSelector((state) => state.jobsFetch.navbarInput);
@@ -56,7 +60,14 @@ function NavbarComponent() {
           </Form>
           <Navbar.Collapse className="mobile-collapse">
             <Nav className="ms-5">
-              <Nav.Link href="#home" className="me-1 mt-2">
+              <Link
+                to={"/"}
+                className={
+                  location === "/"
+                    ? "me-1 mt-2 nav-link active"
+                    : "me-1 mt-2 nav-link"
+                }
+              >
                 <i
                   className="bi bi-house-door-fill"
                   style={{
@@ -68,7 +79,7 @@ function NavbarComponent() {
                   }}
                 ></i>
                 Home
-              </Nav.Link>
+              </Link>
               <Nav.Link href="#" className="me-1 mt-2">
                 {" "}
                 <i
@@ -83,7 +94,14 @@ function NavbarComponent() {
                 ></i>
                 My Network
               </Nav.Link>
-              <Nav.Link href="#" className="me-1 mt-2">
+              <Link
+                to={"/jobs"}
+                className={
+                  location === "/jobs"
+                    ? "me-1 mt-2 nav-link active"
+                    : "me-1 mt-2 nav-link"
+                }
+              >
                 <i
                   className="bi bi-briefcase-fill"
                   style={{
@@ -95,7 +113,7 @@ function NavbarComponent() {
                   }}
                 ></i>
                 Jobs
-              </Nav.Link>
+              </Link>
               <Nav.Link href="#" className="me-1 mt-2">
                 <i
                   className="bi bi-chat-dots-fill"
@@ -130,16 +148,19 @@ function NavbarComponent() {
                   justifyContent: "center",
                 }}
               >
-                <img
-                  src="https://picsum.photos/200"
-                  className="rounded-circle border border-secondary mt-2"
-                  style={{ width: "25px", height: "25px" }}
-                  alt="profile picture"
-                />
+                <Link to={"/profile"} className="nav-link p-0">
+                  <img
+                    src="https://picsum.photos/200"
+                    className="rounded-circle border border-secondary mt-2"
+                    style={{ width: "25px", height: "25px" }}
+                    alt="profile picture"
+                  />
+                </Link>
                 <NavDropdown
                   title="Me"
                   align={{ lg: "end", md: "end", sm: "end", xs: "end" }}
                   style={{ fontSize: "1rem", marginBottom: "3px" }}
+                  className="p-0"
                 >
                   <NavDropdown.Item href="#gestioni-profili">
                     Gestione Profili
