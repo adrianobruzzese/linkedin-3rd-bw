@@ -10,18 +10,18 @@ import FooterComponent from './components/Footer';
 
 function App() {
   return (
-    <BrowserRouter>
-      <>
-        <CustomNavbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/jobs" element={<Jobs />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-        <FooterComponent />
-      </>
-    </BrowserRouter>
+   <BrowserRouter>
+    <>
+     <CustomNavbar />
+     <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/jobs" element={<Jobs />} />
+      <Route path="*" element={<ErrorPage />} />
+     </Routes>
+     <FooterComponent />
+    </>
+   </BrowserRouter>
   );
 }
 export default App;
