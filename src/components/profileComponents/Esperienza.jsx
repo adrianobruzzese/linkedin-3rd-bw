@@ -37,7 +37,9 @@ const Esperienza = () => {
     });
   };
 
-  const postExperience = async (id) => {
+  const token = useSelector((state) => state.activeUser.token);
+
+  const postExperience = async (id, token) => {
     try {
       const response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
@@ -46,8 +48,7 @@ const Esperienza = () => {
         {
           method: "POST",
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg",
+            Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formControl),
@@ -56,7 +57,7 @@ const Esperienza = () => {
       if (response.ok) {
         alert("Salvataggio è andato a buon fine");
         setFormControl(startingForm);
-        dispatch(actionGetExperiences(returnPersonalId()));
+        dispatch(actionGetExperiences(returnPersonalId(), token));
       } else {
         alert("Qualcosa è andato storto");
       }
@@ -80,8 +81,8 @@ const Esperienza = () => {
   const me = useSelector((state) => state.meFetch.content);
 
   useEffect(() => {
-    dispatch(actionGetExperiences(returnPersonalId()));
-  }, [me]);
+    dispatch(actionGetExperiences(returnPersonalId(), token));
+  }, [me, token]);
 
   const experiences = useSelector((state) => state.experiencesFetch.content);
 
@@ -138,15 +139,14 @@ const Esperienza = () => {
                               {
                                 method: "DELETE",
                                 headers: {
-                                  Authorization:
-                                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg",
+                                  Authorization: `Bearer ${token}`,
                                 },
                               }
                             );
                             if (response.ok) {
                               alert("Il file è stato eliminato correttamente");
                               dispatch(
-                                actionGetExperiences(returnPersonalId())
+                                actionGetExperiences(returnPersonalId(), token)
                               );
                             } else {
                               alert("Qualcosa è andato storto");
@@ -180,7 +180,7 @@ const Esperienza = () => {
           <Form
             onSubmit={(e) => {
               e.preventDefault();
-              postExperience(returnPersonalId());
+              postExperience(returnPersonalId(), token);
             }}
           >
             <Form.Group className="mb-3">
