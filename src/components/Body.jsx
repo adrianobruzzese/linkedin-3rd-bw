@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import CloseButton from 'react-bootstrap/CloseButton';
-import './profileComponents/Body.css';
+// import './profileComponents/Body.css';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionGetMyProfile } from '../redux/actions';
@@ -256,7 +256,7 @@ const Body = () => {
               <div className="d-flex">
                 <a className="text-decoration-none" href="">
                   <strong className=" text-body-secondary fw-semibold ">
-                    Let them know you're making a selection
+                    Let them know you&apos;re making a selection
                   </strong>
                   <p className="text-body-tertiary m-0 fw-semibold ">
                     and attract qualified candidates
