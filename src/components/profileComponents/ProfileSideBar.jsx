@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
-import Col from 'react-bootstrap/Col';
-import Spinner from 'react-bootstrap/Spinner';
-import { useDispatch, useSelector } from 'react-redux';
-import { actionGetAllUsers } from '../../redux/actions';
-import PeopleViewed from '../PeopleViewed';
-import { Row } from 'react-bootstrap';
-import PeopleMayKnow from '../PeopleMayKnow';
+import { useEffect } from "react";
+import Col from "react-bootstrap/Col";
+import Spinner from "react-bootstrap/Spinner";
+import { useDispatch, useSelector } from "react-redux";
+import { actionGetAllUsers } from "../../redux/actions";
+import PeopleViewed from "../PeopleViewed";
+import { Row } from "react-bootstrap";
+import PeopleMayKnow from "../PeopleMayKnow";
 
 const ProfileSideBar = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const ProfileSideBar = () => {
   }, []);
 
   return (
-    <Col xs={3}>
+    <Col xs={12} md={3}>
       {/* PROFILE AND PUBLIC URL SECTION --------------------------------------------------------------------------------------*/}
       <Row>
         <Col className="border border-secondary rounded shadow p-2 bg-white">
@@ -37,7 +37,7 @@ const ProfileSideBar = () => {
             www.linkedin.com/in/fabio-gilardi-599b022a0
           </p>
         </Col>
-        <div className="mt-2">
+        <div className="mt-2 d-flex justify-content-center">
           <img
             src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png "
             alt=""
@@ -53,10 +53,8 @@ const ProfileSideBar = () => {
       )}
       {!isLoading && (
         <>
-    
           <PeopleViewed />
           <PeopleMayKnow />
-  
         </>
       )}
     </Col>
