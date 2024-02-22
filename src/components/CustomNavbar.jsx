@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Modal from "react-bootstrap/Modal";
 import Image from "react-bootstrap/Image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -10,14 +11,29 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import { useDispatch, useSelector } from "react-redux";
-import { actionUpdateNavbarInput } from "../redux/actions";
+import {
+  actionActiveAdriano,
+  actionActiveFabio,
+  actionActiveMarco,
+  actionActiveNicolo,
+  actionActiveSalvatore,
+  actionUpdateNavbarInput,
+} from "../redux/actions";
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 function NavbarComponent() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const location = useLocation().pathname;
   console.log(location);
 
   const dispatch = useDispatch();
+
+  const token = useSelector((state) => state.activeUser.token);
 
   const navbarSearch = useSelector((state) => state.jobsFetch.navbarInput);
 
@@ -167,7 +183,9 @@ function NavbarComponent() {
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#account">Account</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#logout">Logout</NavDropdown.Item>
+                  <NavDropdown.Item onClick={handleShow}>
+                    Switch User
+                  </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Nav>
@@ -202,6 +220,89 @@ function NavbarComponent() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      {/* MODAL PER IL CHANGE DELL'USER */}
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Select the user to login</Modal.Title>
+        </Modal.Header>
+        <Modal.Body
+          className="d-flex align-items-center modal-hoverable"
+          onClick={() => {
+            dispatch(actionActiveFabio());
+            handleClose();
+          }}
+        >
+          <i
+            className={
+              token ===
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg"
+                ? "bi bi-person-circle fs-4 me-2 text-primary"
+                : "bi bi-person-circle fs-4 me-2"
+            }
+          ></i>{" "}
+          Fabio Gilardi
+        </Modal.Body>
+        <Modal.Body
+          className="d-flex align-items-center modal-hoverable"
+          onClick={() => {
+            dispatch(actionActiveMarco());
+            handleClose();
+          }}
+        >
+          <i
+            className={
+              token ===
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTViOTI0ZjYwNTAwMTkzN2Q0NmIiLCJpYXQiOjE3MDgzMzI1NTgsImV4cCI6MTcwOTU0MjE1OH0.E5teFLHLRXoT_qjcnO0crOO1fPEFQnonpSJswoJD-LY"
+                ? "bi bi-person-circle fs-4 me-2 text-primary"
+                : "bi bi-person-circle fs-4 me-2"
+            }
+          ></i>{" "}
+          Marco Brunetti
+        </Modal.Body>
+        <Modal.Body
+          className="d-flex align-items-center modal-hoverable"
+          onClick={() => {
+            dispatch(actionActiveNicolo());
+            handleClose();
+          }}
+        >
+          <i
+            className={
+              token ===
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ3MTY4MTc2YTY0YjAwMTllZjE5ZDYiLCJpYXQiOjE3MDg1OTQ4MTcsImV4cCI6MTcwOTgwNDQxN30.DWoqHGpxkg6gv0A1NJW-N6WbzV0aGQ43Y0gsc4cnj_M"
+                ? "bi bi-person-circle fs-4 me-2 text-primary"
+                : "bi bi-person-circle fs-4 me-2"
+            }
+          ></i>{" "}
+          Nicolò di Giacinto
+        </Modal.Body>
+        <Modal.Body
+          className="d-flex align-items-center modal-hoverable"
+          onClick={() => {
+            dispatch(actionActiveSalvatore());
+            handleClose();
+          }}
+        >
+          <i
+            className={
+              token ===
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ3MTUxNTc2YTY0YjAwMTllZjE5ZDIiLCJpYXQiOjE3MDg1OTQ0NTQsImV4cCI6MTcwOTgwNDA1NH0.6OvRL-RvHRYiA5IXrVjtxS6IBZMmL_oqwXyKcMNMPUo"
+                ? "bi bi-person-circle fs-4 me-2 text-primary"
+                : "bi bi-person-circle fs-4 me-2"
+            }
+          ></i>{" "}
+          Salavatore Malanchino
+        </Modal.Body>
+        <Modal.Body
+          className="d-flex align-items-center modal-hoverable"
+          onClick={() => {
+            dispatch(actionActiveAdriano());
+            handleClose();
+          }}
+        >
+          <i className="bi bi-person-circle fs-4 me-2"></i> Adriano Bruzzese
+        </Modal.Body>
+      </Modal>
     </>
   );
 }
