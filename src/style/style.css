@@ -28,17 +28,6 @@ body {
   background-color: rgb(231, 225, 218) !important;
 }
 
-.button-homepage {
-  background-color: transparent !important;
-  color: grey !important;
-  border-color: transparent !important;
-  padding: 10px 20px !important;
-}
-
-.button-homepage:hover {
-  background-color: rgb(226, 226, 226) !important;
-}
-
 #image-selector {
   display: none !important; /* Nasconde l'input del file */
 }
@@ -69,6 +58,17 @@ body {
 
 .custom-file-input-label:focus {
   outline: 1px solid #007bff !important;
+}
+
+.button-homepage {
+  background-color: transparent !important;
+  color: grey !important;
+  border-color: transparent !important;
+  padding: 10px 20px !important;
+}
+
+.button-homepage:hover {
+  background-color: rgb(226, 226, 226) !important;
 }
 
 /*!
