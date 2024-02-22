@@ -28,9 +28,12 @@ const Body = () => {
   if (selectedFile) {
    //  setFileImg(selectedFile);
    dispatch(profileImageAction(selectedFile, me._id, token));
+   // dispatch(actionGetMyProfile(token));
+   setTimeout(() => {
+    dispatch(actionGetMyProfile(token));
+   }, 1000);
   }
  };
-
  // // funzione fetch POST dell'immagine
  // const handleSubmitImg = async (image) => {
  //   if (image) {
