@@ -12,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <>
-        {/* <CustomNavbar /> */}
+        <CustomNavbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/profile" element={<Profile />} />
