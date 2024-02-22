@@ -91,15 +91,14 @@ export const actionGetAllUsers = () => {
   };
 };
 
-export const actionGetMyProfile = () => {
+export const actionGetMyProfile = (token) => {
   return async (dispatch) => {
     try {
       const response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/me",
         {
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg",
+            Authorization: `Bearer ${token}`,
           },
         }
       );
@@ -121,7 +120,7 @@ export const actionGetMyProfile = () => {
   };
 };
 
-export const actionGetExperiences = (id) => {
+export const actionGetExperiences = (id, token) => {
   return async (dispatch) => {
     try {
       const response = await fetch(
@@ -130,8 +129,7 @@ export const actionGetExperiences = (id) => {
           "/experiences",
         {
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg",
+            Authorization: `Bearer ${token}`,
           },
         }
       );
