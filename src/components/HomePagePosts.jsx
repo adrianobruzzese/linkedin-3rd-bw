@@ -40,7 +40,12 @@ const HomePagePosts = () => {
        <Card.Text>{post.text}</Card.Text>
        {!post.image && ``}
        {post.image && (
-        <img className="" width={250} alt="img post" src={post.image} />
+        <img
+         className="img-fluid img-thumbnail"
+         //  width={350}
+         alt="img post"
+         src={post.image}
+        />
        )}
        {/* //    <img className="" width={250} alt="img post" src={post.image} /> */}
       </Card.Body>
