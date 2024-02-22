@@ -10,13 +10,13 @@ const HomePagePosts = () => {
   // LIKE
   const [liked, setLiked] = useState(false);
 
-  const handleClick = (i) => {
+  const handleClick = () => {
    setLiked(!liked);
   };
   //   COMMENTI
   const [isCommenting, setIsCommenting] = useState(false);
 
-  const toggleCommentSection = (i) => {
+  const toggleCommentSection = () => {
    setIsCommenting(!isCommenting);
   };
 
