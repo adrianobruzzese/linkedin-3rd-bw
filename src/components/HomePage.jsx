@@ -98,7 +98,12 @@ const HomePage = () => {
     <Container className="mt-3">
       <Row className="g-4">
         <Col className="col-12 col-lg-3 col-md-6">
-          <LeftSidebar />
+          <LeftSidebar
+            profileIcon={!isLoading && me.image}
+            profileSurname={!isLoading && me.surname}
+            profileName={!isLoading && me.name}
+            profileTitle={!isLoading && me.title}
+          />
         </Col>
 
         <Col className="col-12 col-lg-6">

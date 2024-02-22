@@ -5,7 +5,12 @@ import { useSelector } from "react-redux";
 
 import { Link } from "react-router-dom";
 
-const LeftSidebar = () => {
+const LeftSidebar = ({
+  profileIcon,
+  profileName,
+  profileSurname,
+  profileTitle,
+}) => {
   const isLoading = useSelector((state) => state.meFetch.isLoading);
   const me = useSelector((state) => state.meFetch.content);
 
@@ -14,7 +19,7 @@ const LeftSidebar = () => {
       <div className="card profile-card mx-auto" style={{ maxWidth: "280px" }}>
         {!isLoading && (
           <img
-            src={me.image}
+            src={profileIcon}
             className="card-img-top rounded-circle border border-secondary mb-4 mt-4 mx-auto"
             style={{ width: "100px" }}
             alt="profile picture"
@@ -22,11 +27,9 @@ const LeftSidebar = () => {
         )}
         <div className="card-body text-center">
           <Link to={"/profile"} className="nav-link">
-            <h5 className="card-title">
-              {!isLoading && me.name + " " + me.surname}
-            </h5>
+            <h5 className="card-title">{profileName + " " + profileSurname}</h5>
           </Link>
-          <p className="card-text text-muted mb-3">{!isLoading && me.title}</p>
+          <p className="card-text text-muted mb-3">{profileTitle}</p>
           {/* da qui collassa in sm */}
           <div
             className="d-flex justify-content-between mt-3"
