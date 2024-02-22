@@ -32,84 +32,83 @@ const HomePagePosts = () => {
   }, [arrayPosts]);
 
   return (
-    <>
-      {arrayPosts.slice(-10).map((post, i) => (
-        <Col className="col-12 p-0" key={i}>
-          <Card className="p-2">
-            <Card.Body className="border-bottom mb-2">
-              <div className="d-flex align-items-center">
-                {post.user.image ? (
-                  <img
-                    className="rounded-circle me-2"
-                    src={post.user.image}
-                    width={55}
-                    alt="User profile"
-                  />
-                ) : (
-                  <img
-                    className="rounded-circle me-2"
-                    src={defaultUserImg}
-                    width={55}
-                    alt="Default profile"
-                  />
-                )}
-                <Card.Title className="me-2 fs-6">{post.username}</Card.Title>
-              </div>
-              <span>{post.user.title}</span>
-              <Card.Text>{post.text}</Card.Text>
-              {!post.image && ``}
-              {post.image && (
-                <img
-                  className="img-fluid img-thumbnail"
-                  //  width={350}
-                  alt="img post"
-                  src={post.image}
-                />
-              )}
-              {/* //    <img className="" width={250} alt="img post" src={post.image} /> */}
-            </Card.Body>
-            <div className="d-flex justify-content-evenly">
-              <Button
-                className={`d-flex align-items-center button-homepage${
-                  liked ? ' text-primary' : ''
-                }`}
-                onClick={handleClick}
-              >
-                <i
-                  className={`bi bi-hand-thumbs-up me-2${
-                    liked ? ' text-primary' : ''
-                  }`}
-                ></i>
-                <span>Like</span>
-              </Button>
-              <Button
-                className="d-flex align-items-center button-homepage"
-                onClick={toggleCommentSection}
-              >
-                <i className="bi bi-chat-left-dots me-2"></i>
-                <span>Comment</span>
-              </Button>
-              {isCommenting && (
-                <div className="comment-section d-flex align-items-center">
-                  <textarea placeholder="Inserisci il tuo commento"></textarea>
-                  <div>
-                    <Button className="ms-1" variant="outline-info">
-                      Invia
-                    </Button>
-                  </div>
-                </div>
-              )}
-              <Button className="button-homepage">
-                <i className="bi bi-repeat me-2"></i>Repost
-              </Button>
-              <Button className="button-homepage">
-                <i className="bi bi-send me-2"></i>Send
-              </Button>
-            </div>
-          </Card>
-        </Col>
-      ))}
-    </>
+   <>
+    {arrayPosts.slice(-10).map((post, i) => (
+     <Col className="col-12 p-0" key={i}>
+      <Card className="p-2">
+       <Card.Body className="border-bottom mb-2">
+        <div className="d-flex align-items-center">
+         {post.user.image ? (
+          <img
+           className="rounded-circle me-2"
+           src={post.user.image}
+           width={55}
+           height={55}
+           alt="User profile"
+          />
+         ) : (
+          <img
+           className="rounded-circle me-2"
+           src={defaultUserImg}
+           width={55}
+           alt="Default profile"
+          />
+         )}
+         <Card.Title className="me-2 fs-6">{post.username}</Card.Title>
+        </div>
+        <span>{post.user.title}</span>
+        <Card.Text>{post.text}</Card.Text>
+        {!post.image && ``}
+        {post.image && (
+         <img
+          className="img-fluid img-thumbnail"
+          //  width={350}
+          alt="img post"
+          src={post.image}
+         />
+        )}
+        {/* //    <img className="" width={250} alt="img post" src={post.image} /> */}
+       </Card.Body>
+       <div className="d-flex justify-content-evenly">
+        <Button
+         className={`d-flex align-items-center button-homepage${
+          liked ? " text-primary" : ""
+         }`}
+         onClick={handleClick}
+        >
+         <i
+          className={`bi bi-hand-thumbs-up me-2${liked ? " text-primary" : ""}`}
+         ></i>
+         <span>Like</span>
+        </Button>
+        <Button
+         className="d-flex align-items-center button-homepage"
+         onClick={toggleCommentSection}
+        >
+         <i className="bi bi-chat-left-dots me-2"></i>
+         <span>Comment</span>
+        </Button>
+        {isCommenting && (
+         <div className="comment-section d-flex align-items-center">
+          <textarea placeholder="Inserisci il tuo commento"></textarea>
+          <div>
+           <Button className="ms-1" variant="outline-info">
+            Invia
+           </Button>
+          </div>
+         </div>
+        )}
+        <Button className="button-homepage">
+         <i className="bi bi-repeat me-2"></i>Repost
+        </Button>
+        <Button className="button-homepage">
+         <i className="bi bi-send me-2"></i>Send
+        </Button>
+       </div>
+      </Card>
+     </Col>
+    ))}
+   </>
   );
 };
 
