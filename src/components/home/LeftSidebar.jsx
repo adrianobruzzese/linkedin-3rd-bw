@@ -1,24 +1,36 @@
 // import 'bootstrap/dist/css/bootstrap.min.css'
 // import 'bootstrap-icons/font/bootstrap-icons.css';
 // import '../../style/style.css';
+import { useSelector } from "react-redux";
 
 import { Link } from "react-router-dom";
 
-const LeftSidebar = () => {
+const LeftSidebar = ({
+  profileIcon,
+  profileName,
+  profileSurname,
+  profileTitle,
+}) => {
+  const isLoading = useSelector((state) => state.meFetch.isLoading);
+  const me = useSelector((state) => state.meFetch.content);
+
   return (
     <div>
       <div className="card profile-card mx-auto" style={{ maxWidth: "280px" }}>
-        <img
-          src="https://picsum.photos/200"
-          className="card-img-top rounded-circle border border-secondary mb-4 mt-4 mx-auto"
-          style={{ width: "100px" }}
-          alt="profile picture"
-        />
+        {!isLoading && (
+          <img
+            src={profileIcon}
+            className="card-img-top rounded-circle border border-secondary mb-4 mt-4 mx-auto"
+            style={{ width: "100px" }}
+            alt="profile picture"
+          />
+        )}
         <div className="card-body text-center">
           <Link to={"/profile"} className="nav-link">
-            <h5 className="card-title">Adriano Bruzzese</h5>
+            <h5 className="card-title">{profileName + " " + profileSurname}</h5>
           </Link>
-          <p className="card-text text-muted mb-3">Bar Manager</p>
+          <p className="card-text text-muted mb-3">{profileTitle}</p>
+          {/* da qui collassa in sm */}
           <div
             className="d-flex justify-content-between mt-3"
             style={{ borderTop: "0.7px solid grey" }}
@@ -117,6 +129,7 @@ const LeftSidebar = () => {
         >
           <p className="text-muted mt-3 fw-bold">Discover more</p>
         </div>
+        {/* fino a qui deve collassare */}
       </div>
     </div>
   );

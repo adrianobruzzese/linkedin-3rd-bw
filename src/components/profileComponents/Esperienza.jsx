@@ -82,7 +82,7 @@ const Esperienza = () => {
 
   useEffect(() => {
     dispatch(actionGetExperiences(returnPersonalId(), token));
-  }, [me]);
+  }, [me, token]);
 
   const experiences = useSelector((state) => state.experiencesFetch.content);
 
