@@ -18,19 +18,19 @@ const PeopleMayKnow = () => {
 
   return (
     <Row>
-      <Col xs={12} className="border border-secondary rounded shadow p-2 my-3 bg-white">
-        <h6 className="fw-bold mb-3">People you may know</h6>
+      <Col xs={12} className="border rounded p-2 my-3 bg-white">
+        <h6 className="fw-bold mb-3 ms-1 mt-1">People you may know</h6>
         {users5.map((user) => (
           <div
             key={user._id}
-            className="mb-4 border-bottom border-secondary pb-4"
+            className="mb-4 border-bottom pb-4"
           >
             <div className="d-flex align-items-center">
               <img
                 src={user.image}
                 width={"40px"}
                 height={"40px"}
-                className="rounded-circle me-2"
+                className="rounded-circle me-2 ms-1"
               ></img>
               <div>
                 <p className="my-0 fw-bold clickable-name">
@@ -42,9 +42,9 @@ const PeopleMayKnow = () => {
             <div className="w-100 d-flex justify-content-center">
               <Button
                 variant="white"
-                className="text-black w-50 border border-black rounded-pill btn-sm mt-2 clickable-button"
+                className="text-black w-50 border border-secondary rounded-pill btn-sm mt-2 clickable-button"
               >
-                <i className="bi bi-person-fill"></i> Connect
+                <i className="bi bi-person-fill"></i>+ Connect
               </Button>
             </div>
           </div>
@@ -65,14 +65,14 @@ const PeopleMayKnow = () => {
           {users20.map((user) => (
             <div
               key={user._id}
-              className="mb-4 border-bottom border-secondary pb-4"
+              className="mb-4 border-bottom pb-4"
             >
               <div className="d-flex align-items-center">
                 <img
                   src={user.image}
                   width={"40px"}
                   height={"40px"}
-                  className="rounded-circle me-2"
+                  className="rounded-circle me-2 ms-1"
                 ></img>
                 <div>
                   <p className="my-0 fw-bold clickable-name">
@@ -84,9 +84,9 @@ const PeopleMayKnow = () => {
               <div>
                 <Button
                   variant="white"
-                  className="text-black border border-black rounded-pill btn-sm mt-2 ms-5 px-2 clickable-button"
+                  className="text-black border border-secondary rounded-pill btn-sm mt-2 ms-5 px-2 clickable-button"
                 >
-                  <i className="bi bi-person-fill"></i> Connect
+                  <i className="bi bi-person-fill"></i>+ Connect
                 </Button>
               </div>
             </div>
