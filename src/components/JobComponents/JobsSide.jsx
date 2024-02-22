@@ -4,8 +4,8 @@ import './jobsticky.css';
 const jobsSidebar = () => {
   return (
     <>
-      <div className="job-sticky sticky-top ">
-        <Card className=" ">
+      <div className="job-sticky py-0">
+        <Card>
           <Card.Body>
             <p className="d-flex align-items-center">
               <i className="bi bi-bookmark-fill fs-4 me-1 "></i> My offers of
@@ -27,12 +27,10 @@ const jobsSidebar = () => {
             </p>
           </Card.Body>
         </Card>
-        <div>
-          <Button
-            className=" p-3   rounded-5 mt-2 ms-4 "
-            variant="outline-primary "
-          >
-            <i className="bi bi-pencil-square me-3"></i>Publish offer free
+        <div className="d-flex justify-content-center mb-3">
+          <Button className="p-3 rounded-5 mt-2" variant="outline-primary ">
+            <i className="bi bi-pencil-square me-3"></i>Pubblica offerta
+            gratuita
           </Button>
         </div>
       </div>

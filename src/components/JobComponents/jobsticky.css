@@ -1,9 +1,8 @@
-.job-sticky{
-    position: -webkit-sticky; /* For Safari */
-    position: sticky;
-    top: 0;
-   /* Adjust as needed */
-    padding-top:0.1em ;
-    z-index: 1000; /* Adjust as needed */
-
+.job-sticky {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  /* Adjust as needed */
+  padding-top: 1.6em;
+  z-index: 1000; /* Adjust as needed */
 }
