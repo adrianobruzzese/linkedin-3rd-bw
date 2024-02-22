@@ -33,15 +33,15 @@ const HomePagePosts = () => {
 
   return (
     <>
-      {arrayPostsSliced.map((post, i) => (
+      {arrayPosts.slice(-10).map((post, i) => (
         <Col className="col-12 p-0" key={i}>
           <Card className="p-2">
             <Card.Body className="border-bottom mb-2">
               <div className="d-flex align-items-center">
-                {post.image ? (
+                {post.user.image ? (
                   <img
                     className="rounded-circle me-2"
-                    src={post.image}
+                    src={post.user.image}
                     width={55}
                     alt="User profile"
                   />
@@ -57,12 +57,16 @@ const HomePagePosts = () => {
               </div>
               <span>{post.user.title}</span>
               <Card.Text>{post.text}</Card.Text>
-              <img
-                className="img-fluid"
-                width={400}
-                alt="img post"
-                src="https://placekitten.com/g/100/100"
-              />
+              {!post.image && ``}
+              {post.image && (
+                <img
+                  className="img-fluid img-thumbnail"
+                  //  width={350}
+                  alt="img post"
+                  src={post.image}
+                />
+              )}
+              {/* //    <img className="" width={250} alt="img post" src={post.image} /> */}
             </Card.Body>
             <div className="d-flex justify-content-evenly">
               <Button

@@ -6,6 +6,7 @@ import Jobs from './components/Jobs';
 import HomePage from './components/HomePage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ErrorPage from './components/ErrorPage';
+import FooterComponent from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/jobs" element={<Jobs />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
+        <FooterComponent />
       </>
     </BrowserRouter>
   );
