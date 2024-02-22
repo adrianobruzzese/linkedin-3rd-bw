@@ -12,33 +12,35 @@ const Risorse = () => (
       <Card.Body>
         <div className=" border-bottom ">
           <div>
-            <h5>Risorse</h5>
+            <h5>Resources</h5>
             <i className="bi bi-eye-fill me-2"></i>
-            <span className="text-secondary">Solo per te</span>
+            <span className="text-secondary">Only for you</span>
           </div>
           <div>
             <i className="bi bi-broadcast-pin me-2"></i>
-            <a className="text-decoration-none text-dark fw-bold" href="">
-              Modalità creazione di contenuti <Badge bg="dark-subtle">No</Badge>
+            <a className="text-decoration-none text-dark fw-semibold" href="">
+              Content creation mode <Badge bg="dark-subtle">No</Badge>
             </a>
           </div>
-          <p>
-            Fatti scoprire, metti in risalto i contenuti sul tuo profilo e
-            accedi agli strumenti di creazione
+          <p className="text-secondary-emphasis">
+            Get discovered, highlight the content on your profile and access the
+            creation tools
           </p>
         </div>
 
         <div className="mt-2">
           <i className="bi bi-people-fill me-2"></i>
-          <a className="text-decoration-none text-dark fw-bold" href="">
-            La mia rete
+          <a className="text-decoration-none text-dark fw-semibold" href="">
+            My network
           </a>
         </div>
-        <p>Salva e gestisci i tuoi collegamenti e interessi.</p>
+        <p className="text-secondary-emphasis">
+          Save and manage your connections and interests.
+        </p>
       </Card.Body>
       <Card.Footer className="text-muted text-center ">
         <a className="text-decoration-none text-secondary" href="">
-          Mostra tutte le risorse <i className="bi bi-arrow-right"></i>
+          Show all resources <i className="bi bi-arrow-right"></i>
         </a>
       </Card.Footer>
     </Card>

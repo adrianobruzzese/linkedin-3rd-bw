@@ -13,19 +13,21 @@ const Analisi = () => (
         <div>
           <h5>Analisi</h5>
           <i className="bi bi-eye-fill me-2"></i>
-          <span className="text-secondary">Solo per te</span>
+          <span className="text-secondary">Only for you</span>
         </div>
         <div>
           <i className="bi bi-people-fill me-2"></i>
-          <a className="text-decoration-none text-dark fw-bold" href="">
-            0 visualizzazioni del profilo
+          <a className="text-decoration-none text-dark fw-semibold" href="">
+            0 profile views
           </a>
         </div>
-        <p>Aggiorna il tuo profilo per attrarre visitatori.</p>
+        <p className="text-secondary-emphasis">
+          Update your profile to attract visitors.
+        </p>
       </Card.Body>
       <Card.Footer className="text-muted text-center ">
         <a className="text-decoration-none text-secondary" href="">
-          Mostra tutte le analisi <i className="bi bi-arrow-right"></i>
+          Show all analyses <i className="bi bi-arrow-right"></i>
         </a>
       </Card.Footer>
     </Card>

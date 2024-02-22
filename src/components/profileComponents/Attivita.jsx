@@ -11,31 +11,31 @@ const Attivita = () => (
     <Card className="mb-2">
       <Card.Body>
         <div className="d-flex justify-content-between ">
-          <h5>Attività</h5>
+          <h5>Activity</h5>
           <div>
-          <Button
-         variant="outline-primary"
-         className="rounded-pill ps-4 pe-4 fw-bold me-3 "
-        >
-         Crea un post
-        </Button>
+            <Button
+              variant="outline-primary"
+              className="rounded-pill ps-4 pe-4 fw-semibold me-3 "
+            >
+              Create a post
+            </Button>
             <a href="">
               <i className="bi bi-pencil text-black fs-5"></i>
             </a>
           </div>
         </div>
         <div>
-          <a className="text-decoration-none  fw-bold" href="">
+          <a className="text-decoration-none  fw-semibold" href="">
             0 follower
           </a>
         </div>
-        <p className="fw-bold m-0">Non hai ancora pubblicato nulla</p>
+        <p className="fw-semibold m-0">You haven't posted anything yet</p>
 
-        <span>I post che condividi appariranno qui</span>
+        <span>Posts you share will appear here</span>
       </Card.Body>
       <Card.Footer className="text-muted text-center ">
         <a className="text-decoration-none text-secondary" href="">
-          Mostra tutte le attività <i className="bi bi-arrow-right"></i>
+          Show all activities <i className="bi bi-arrow-right"></i>
         </a>
       </Card.Footer>
     </Card>
