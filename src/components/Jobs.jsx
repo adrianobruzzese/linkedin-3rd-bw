@@ -11,16 +11,16 @@ const Jobs = () => (
   <>
     <Container>
       <Row className="my-4">
-        <Col md={3} className="h-100">
+        <Col xs={12} md={3} className="h-100">
           <JobsSide />
         </Col>
-        <Col md={6}>
+        <Col xs={12} md={6}>
           <OfferSearch />
           <MainOffersJob />
           {/* <BestJobsOffers />
           <OtherJobsOffer /> */}
         </Col>
-        <Col>
+        <Col xs={12} md={3} className="d-none d-md-block">
           <JobsRightBar />
         </Col>
       </Row>
