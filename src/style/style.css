@@ -82,6 +82,16 @@
   max-width: 260px;
 }
 
+.card-background-image {
+  background-size: cover;
+  background-position: center;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #job-title {
   margin-bottom: 10px !important;
 }

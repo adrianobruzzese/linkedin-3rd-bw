@@ -117,14 +117,19 @@ const LeftSidebar = () => {
       <Row className="justify-content-center">
         <Col xs={12}>
           <Card className="mb-3">
+          <div className="card-background-image" style={{
+              backgroundImage: 'url("https://wallpapers.com/images/high/ubuntu-4k-5120-x-2880-uwdo176k9rm0tojp.webp")',
+            
+            }}>
             <Card.Img
               variant="top"
               src="https://picsum.photos/200"
-              className="rounded-circle border border-primary mx-auto mt-4"
-              style={{ width: '100px' }}
-            />
+              className="rounded-circle border mt-5"
+              style={{ width: '80px', position: 'relative', top: '50%', transform: 'translateY(-50%)' }}
+              />
+            </div>
             <Card.Body>
-              <Card.Title className="text-center">Adriano Bruzzese</Card.Title>
+              <Card.Title className="text-center mt-3">Adriano Bruzzese</Card.Title>
               <Card.Text className="text-muted text-center" id="job-title">
                 Bar Manager
               </Card.Text>
