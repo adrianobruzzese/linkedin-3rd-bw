@@ -64,34 +64,34 @@ function NavbarComponent() {
             </Nav.Link>
             <div className="d-none d-lg-flex align-items-center">
               <Nav.Link href="#home" className="nav-icon d-none d-lg-block">
-                <i className="bi bi-house-door-fill"></i> <div>Home</div>
+                <i className="bi bi-house-door-fill"></i> <div className='nav-label'>Home</div>
               </Nav.Link>
               <Nav.Link href="#network" className="nav-icon d-none d-lg-block">
                 <i className="bi bi-people-fill"></i>
-                <div>My Network</div>
+                <div className='nav-label'>My Network</div>
               </Nav.Link>
               <Nav.Link href="#jobs" className="nav-icon d-none d-lg-block">
-                <i className="bi bi-briefcase-fill"></i> <div>Jobs</div>
+                <i className="bi bi-briefcase-fill"></i> <div className='nav-label'>Jobs</div>
               </Nav.Link>
               <Nav.Link
                 href="#messaging"
                 className="nav-icon d-none d-lg-block"
               >
-                <i className="bi bi-chat-dots-fill"></i> <div>Messaging</div>
+                <i className="bi bi-chat-dots-fill"></i> <div className='nav-label'>Messaging</div>
               </Nav.Link>
               <Nav.Link
                 href="#notifications"
                 className="nav-icon d-none d-lg-block me-5"
               >
-                <i className="bi bi-bell-fill"></i> <div>Notifications</div>
+                <i className="bi bi-bell-fill"></i> <div className='nav-label'>Notifications</div>
               </Nav.Link>
             </div>
             <div>
               <NavDropdown
                 title={
-                  <div className="nav-icon-dropdown">
+                  <div className="nav-icon-dropdown mt-2">
                     <img src="https://picsum.photos/200/300" alt="Avatar" />
-                    <span className="nav-dropdown-text">Me ▼</span>
+                    <span className="nav-dropdown-text" >Me ▼</span>
                   </div>
                 }
                 id="navbarScrollingDropdown"
@@ -106,9 +106,9 @@ function NavbarComponent() {
             <div>
               <NavDropdown
                 title={
-                  <div className="nav-icon-dropdown">
-                    <i className="bi bi-grid-3x3-gap-fill"></i>
-                    <span className="nav-dropdown-text" style={{marginBottom:'3px'}}>For business ▼</span>
+                  <div className="nav-icon-dropdown" style={{marginBottom:'4px'}}>
+                    <i className="bi bi-grid-3x3-gap-fill" style={{fontSize:'1.4rem'}}></i>
+                    <span className="nav-dropdown-text">For business ▼</span>
                   </div>
                 }
                 id="navbarScrollingDropdown"

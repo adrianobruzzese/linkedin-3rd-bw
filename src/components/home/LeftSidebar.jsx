@@ -109,19 +109,11 @@
 
 // export default LeftSidebar;
 
-import {
-  Card,
-  Button,
-  Container,
-  Row,
-  Col,
-  ListGroup,
-  Badge,
-} from 'react-bootstrap';
+import { Card, Container, Row, Col, ListGroup } from 'react-bootstrap';
 
 const LeftSidebar = () => {
   return (
-    <Container id="sticky-sidebar">
+    <Container id="sticky-sidebars">
       <Row className="justify-content-center">
         <Col xs={12}>
           {/* Profile Card */}
@@ -129,50 +121,45 @@ const LeftSidebar = () => {
             <Card.Img
               variant="top"
               src="https://picsum.photos/200"
-              className="rounded-circle border border-secondary mx-auto mt-4"
+              className="rounded-circle border border-primary mx-auto mt-4"
               style={{ width: '100px' }}
             />
             <Card.Body>
               <Card.Title className="text-center">Adriano Bruzzese</Card.Title>
-              <Card.Text className="text-muted text-center">
+              <Card.Text className="text-muted text-center" id="job-title">
                 Bar Manager
               </Card.Text>
               <ListGroup variant="flush">
-                <ListGroup.Item className="d-flex justify-content-between" style={{border: 'none'}}>
-                  Connections
-                  <Badge bg="primary">20</Badge>
+                <ListGroup.Item
+                  className="d-flex justify-content-between align-items-center"
+                  style={{ border: 'none' }}
+                >
+                  <span>Connections</span>
+                  <span className="fw-bold text-primary">20</span>
                 </ListGroup.Item>
-                <ListGroup.Item className="d-flex justify-content-between" style={{marginTop: '0'}}>
+                <ListGroup.Item className="fw-bold grow-network pb-2">
                   Grow your network
                 </ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item
+                  className="mt-2 mb-2"
+                  style={{ border: 'none' }}
+                >
                   Strengthen your profile with an AI writing assistant
-                  <Button variant="primary" size="sm" className="d-block mt-2">
-                    Retry Premium for €0
-                  </Button>
                 </ListGroup.Item>
+                <ListGroup.Item className='pb-2'>
+                  <i className="bi bi-square-fill" style={{color: 'orange'}}></i> Retry Premium for €0
+                </ListGroup.Item>
+                <ListGroup.Item className='mt-2'>
+              <i className="bi bi-bookmark-fill"></i> My Items
+            </ListGroup.Item>
               </ListGroup>
+              
             </Card.Body>
-            <ListGroup className="list-group-flush">
-              <ListGroup.Item>
-                <i className="bi bi-bookmark-fill"></i> My Items
-              </ListGroup.Item>
-            </ListGroup>
-            <Card.Body>
-              <Card.Link href="#">Discover more</Card.Link>
-            </Card.Body>
+            
+            
           </Card>
 
-          {/* Additional Cards/Content */}
-          <Card>
-            <Card.Body>
-              <Card.Title>Groups & Events</Card.Title>
-              <Card.Text>
-                Join new groups and find events related to your interests.
-              </Card.Text>
-              <Button variant="primary">Explore Groups</Button>
-            </Card.Body>
-          </Card>
+         
         </Col>
       </Row>
     </Container>

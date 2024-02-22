@@ -14,10 +14,15 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin-right: 10px;
+}
+.nav-label{
+  font-size: 0.8rem;
 }
 
 .nav-icon i {
   margin-bottom: 4px;
+  font-size: 1.5rem;
 }
 
 .nav-icon-dropdown {
@@ -35,8 +40,8 @@
 }
 
 .nav-icon-dropdown img {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -44,7 +49,7 @@
 .nav-dropdown-text {
   display: flex;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   
 }
 
