@@ -142,7 +142,7 @@ function NavbarComponent() {
                   style={{ fontSize: "1rem", marginBottom: "3px" }}
                 >
                   <NavDropdown.Item href="#gestioni-profili">
-                    Gestione Profili
+                    Profile management
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#account">Account</NavDropdown.Item>
                   <NavDropdown.Divider />

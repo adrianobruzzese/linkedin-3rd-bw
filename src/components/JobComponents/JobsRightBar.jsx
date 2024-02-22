@@ -6,15 +6,15 @@ const JobsRightBar = () => (
     <div className=" text-center mt-4 ">
       <div className="d-flex justify-content-center ">
         <Nav.Link className="text-secondary fs-6 me-3 " href="#home">
-          Informazioni
+          Information
         </Nav.Link>
         <Nav.Link className="text-secondary fs-6" href="#home">
-          Accessibilità
+          Accessibility
         </Nav.Link>
       </div>
       <div className="d-flex justify-content-center ">
         <Nav.Link className="text-secondary fs-6 me-3" href="#home">
-          Centro Assistenza
+          Service Center
         </Nav.Link>
         <NavDropdown
           id="nav-dropdown-dark-example"
@@ -31,12 +31,12 @@ const JobsRightBar = () => (
       </div>
       <div className="d-flex justify-content-center ">
         <Nav.Link className="text-secondary fs-6  " href="#home">
-          Opzioni per gli annunci pubblicitari
+          Options for advertisements
         </Nav.Link>
       </div>
       <div className="d-flex justify-content-center ">
         <Nav.Link className="text-secondary fs-6 me-3" href="#home">
-          Pubblicità
+          Advertising
         </Nav.Link>
         <NavDropdown
           id="nav-dropdown-dark-example"
@@ -53,10 +53,10 @@ const JobsRightBar = () => (
       </div>
       <div className="d-flex justify-content-center ">
         <Nav.Link className="text-secondary fs-6 me-3" href="#home">
-          Scarica l'app LinkedIn
+          Download the LinkedIn app
         </Nav.Link>
         <Nav.Link className="text-secondary fs-6" href="#home">
-          altro
+          more
         </Nav.Link>
       </div>
       <div className="mt-3">
