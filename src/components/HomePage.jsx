@@ -1,14 +1,17 @@
 import { Col, Container, Form, Row } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import HomePagePosts from "./HomePagePosts";
 import LeftSidebar from "./home/LeftSidebar";
 import RightSidebar from "./home/RightSidebar";
 import { useSelector, useDispatch } from "react-redux";
-import { postImageAction } from "../redux/actions";
+import { actionGetMyProfile, postImageAction } from "../redux/actions";
+import { FetchDataPosts } from "../redux/actions/FetchDataPostsAction";
 
 const HomePage = () => {
+ // costanti pagina
+
  const [showModalPost, setShowModalPost] = useState(false);
  const [showModalImg, setShowModalImg] = useState(false);
  const [postText, setPostText] = useState("");
@@ -17,12 +20,18 @@ const HomePage = () => {
  const [fileImg, setFileImg] = useState();
 
  const post = useSelector((state) => state.posts.posts);
+ const token = useSelector((state) => state.activeUser.token);
+ const me = useSelector((state) => state.meFetch.content);
+ const isLoading = useSelector((state) => state.meFetch.isLoading);
 
  const handleCloseModalPost = () => setShowModalPost(false);
  const handleShowModalPost = () => setShowModalPost(true);
  const handleCloseModalImg = () => setShowModalImg(false);
  const handleShowModalImg = () => setShowModalImg(true);
 
+ // -----------------------------------------------------
+
+ // funzione per caricare immagine preview e dispatch
  const handleChangeImg = (event) => {
   const selectedFile = event.target.files[0];
   if (selectedFile) {
@@ -31,43 +40,59 @@ const HomePage = () => {
     const imgPreview = reader.result;
     console.log(imgPreview);
    };
-   reader.readAsDataURL(selectedFile); // Leggi il contenuto del file come URL dati
+   reader.readAsDataURL(selectedFile); // Legge il contenuto del file come URL dati (base64?)
    setFileImg(selectedFile);
-   dispatch(postImageAction(selectedFile, postId));
+   dispatch(postImageAction(selectedFile, postId, token));
   }
  };
 
+ //-----------------------------------------------------
+
+ // useEffect per recuperare i dati del profilo
+
+ useEffect(() => {
+  dispatch(actionGetMyProfile(token));
+ }, []);
+
+ // Funzione per effettuare post
  const HandlePost = () => {
   if (!postText.trim()) {
-      alert("Il testo del post non può essere vuoto");
-      return;
+   alert("Il testo del post non può essere vuoto");
+   return;
   }
   fetch("https://striveschool-api.herokuapp.com/api/posts/", {
-      method: "POST",
-      headers: {
-          Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTViOTI0ZjYwNTAwMTkzN2Q0NmIiLCJpYXQiOjE3MDgzMzI1NTgsImV4cCI6MTcwOTU0MjE1OH0.E5teFLHLRXoT_qjcnO0crOO1fPEFQnonpSJswoJD-LY",
-          "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ text: postText }),
+   method: "POST",
+   headers: {
+    Authorization: `Bearer ${token}`,
+    "Content-Type": "application/json",
+   },
+   body: JSON.stringify({ text: postText }),
   })
-      .then(async (response) => {
-          if (response.ok) {
-              const { _id } = await response.json();
-              setPostId(_id);
-              dispatch(postImageAction(fileImg, _id));
-              console.log(fileImg);
-              console.log("Post aggiunto");
-              handleCloseModalPost();
-              setFileImg(null);
-          } else {
-              console.log("errore nella richiesta POST", response.status);
-          }
-      })
-      .catch((error) => {
-          console.log(error);
-      });
-};
+   .then(async (response) => {
+    if (response.ok) {
+     const { _id } = await response.json();
+     setPostId(_id);
+     dispatch(postImageAction(fileImg, _id, token));
+     handleCloseModalPost();
+     setTimeout(() => {
+      dispatch(FetchDataPosts(token));
+     }, 500);
+
+     console.log(fileImg);
+     console.log("Post aggiunto");
+     setFileImg(null);
+    } else {
+     console.log("errore nella richiesta POST", response.status);
+    }
+   })
+   .catch((error) => {
+    console.log(error);
+   });
+ };
+
+ // -----------------------------------------------------
+
+ // Render Homepage
 
  return (
   <Container className="mt-3">
@@ -79,12 +104,14 @@ const HomePage = () => {
     <Col className="col-12 col-lg-6">
      <Row className="border rounded p-2 mb-4 bg-white">
       <Col className="d-flex align-items-center justify-content-center">
-       <img
-        width={50}
-        className="rounded-circle me-2"
-        src="https://media.licdn.com/dms/image/D5603AQH1ACEDEXpJ1g/profile-displayphoto-shrink_800_800/0/1708334310484?e=1714003200&v=beta&t=jnVi5OdhJrMBfnQmUh0IPRV_UtSWLI0YqQXsreQXXlA"
-        alt="profile img"
-       />
+       {!isLoading && (
+        <img
+         width={50}
+         className="rounded-circle me-2"
+         src={me.image}
+         alt="profile img"
+        />
+       )}
        <Button
         className="bg-white text-secondary btn-outline-secondary rounded-pill d-flex flex-grow-1"
         onClick={handleShowModalPost}
@@ -95,13 +122,15 @@ const HomePage = () => {
        <Modal show={showModalPost} onHide={handleCloseModalPost}>
         <Modal.Header closeButton>
          <Modal.Title className="d-flex align-items-center">
-          <img
-           width={50}
-           className="rounded-circle me-2"
-           src="https://media.licdn.com/dms/image/D5603AQH1ACEDEXpJ1g/profile-displayphoto-shrink_800_800/0/1708334310484?e=1714003200&v=beta&t=jnVi5OdhJrMBfnQmUh0IPRV_UtSWLI0YqQXsreQXXlA"
-           alt="profile img"
-          />{" "}
-          <h6>Prova nome</h6>
+          {!isLoading && (
+           <img
+            width={50}
+            className="rounded-circle me-2"
+            src={me.image}
+            alt="profile img"
+           />
+          )}
+          {!isLoading && <h6>{me.name + " " + me.surname}</h6>}
          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -208,8 +237,8 @@ const HomePage = () => {
     </Col>
    </Row>
   </Container>
- )
-}
+ );
+};
 
 
 export default HomePage

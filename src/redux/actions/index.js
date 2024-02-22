@@ -151,89 +151,90 @@ export const actionGetExperiences = (id, token) => {
   };
 };
 
-export const profileImageAction = (image, id) => {
-  return async (dispatch) => {
-    if (image) {
-      const formData = new FormData();
-      formData.append("profile", image);
-      console.log(image);
-      try {
-        const response = await fetch(
-          `https://striveschool-api.herokuapp.com/api/profile/${id}/picture`,
-          {
-            method: "POST",
-            headers: {
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg",
-            },
-            body: formData,
-          }
-        );
+export const profileImageAction = (image, id, token) => {
+ return async (dispatch) => {
+  if (image) {
+   const formData = new FormData();
+   formData.append("profile", image);
+   console.log(image);
+   try {
+    const response = await fetch(
+     `https://striveschool-api.herokuapp.com/api/profile/${id}/picture`,
+     {
+      method: "POST",
+      headers: {
+       Authorization: `Bearer ${token}`,
+      },
+      body: formData,
+     }
+    );
 
-        if (response.ok) {
-          console.log("Immagine caricata con successo", response.status);
-          const imageUrl = await response.json();
-          dispatch({
-            type: ADD_PROFILE_IMAGE,
-            payload: imageUrl,
-          });
-        } else {
-          console.error(
-            "Errore durante il caricamento dell'immagine:",
-            response.status
-          );
-        }
-      } catch (error) {
-        console.error("Errore durante il caricamento dell'immagine:", error);
-      }
+    if (response.ok) {
+     console.log("Immagine caricata con successo", response.status);
+     const imageUrl = await response.json();
+     dispatch({
+      type: ADD_PROFILE_IMAGE,
+      payload: imageUrl,
+     });
     } else {
-      console.error("Nessun file selezionato");
+     console.error(
+      "Errore durante il caricamento dell'immagine:",
+      response.status
+     );
     }
-  };
+   } catch (error) {
+    console.error("Errore durante il caricamento dell'immagine:", error);
+   }
+  } else {
+   console.error("Nessun file selezionato");
+  }
+ };
 };
 
 // action immagine post
 
-export const postImageAction = (image, id) => {
-  return async (dispatch) => {
-    if (image) {
-      const formData = new FormData();
-      formData.append("post", image);
-      console.log(image);
-      try {
-        const response = await fetch(
-          `https://striveschool-api.herokuapp.com/api/posts/${id}`,
-          {
-            method: "POST",
-            headers: {
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTViOTI0ZjYwNTAwMTkzN2Q0NmIiLCJpYXQiOjE3MDgzMzI1NTgsImV4cCI6MTcwOTU0MjE1OH0.E5teFLHLRXoT_qjcnO0crOO1fPEFQnonpSJswoJD-LY",
-            },
-            body: formData,
-          }
-        );
+export const postImageAction = (image, id, token) => {
+ return async (dispatch) => {
+  if (image) {
+   const formData = new FormData();
+   formData.append("post", image);
+   console.log(image);
+   try {
+    const response = await fetch(
+     `https://striveschool-api.herokuapp.com/api/posts/${id}`,
+     {
+      method: "POST",
+      headers: {
+       Authorization: `Bearer ${token}`,
+      },
+      body: formData,
+     }
+    );
 
-        if (response.ok) {
-          console.log("Immagine caricata con successo", response.status);
-          const imageUrl = await response.json();
-          dispatch({
-            type: ADD_POST_IMAGE,
-            payload: imageUrl,
-          });
-        } else {
-          console.error(
-            "Errore durante il caricamento dell'immagine:",
-            response.status
-          );
-        }
-      } catch (error) {
-        console.error("Errore durante il caricamento dell'immagine:", error);
-      }
+    if (response.ok) {
+     console.log("Immagine caricata con successo", response.status);
+     const imageUrl = await response.json();
+     dispatch({
+      type: ADD_POST_IMAGE,
+      payload: imageUrl,
+     });
     } else {
-      console.error("Nessun file selezionato");
+     console.error(
+      "Errore durante il caricamento dell'immagine:",
+      response.status
+     );
     }
-  };
+   } catch (error) {
+    console.error("Errore durante il caricamento dell'immagine:", error);
+   }
+  } else {
+   console.error("Nessun file selezionato");
+  }
+ };
 };
+
+
+
 export const actionGetJobs = (search) => {
   return async (dispatch) => {
     try {

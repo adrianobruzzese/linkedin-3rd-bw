@@ -38,7 +38,11 @@ const HomePagePosts = () => {
        </div>
        <span>{post.user.title}</span>
        <Card.Text>{post.text}</Card.Text>
-       <img className="" width={250} alt="img post" src={post.image} />
+       {!post.image && ``}
+       {post.image && (
+        <img className="" width={250} alt="img post" src={post.image} />
+       )}
+       {/* //    <img className="" width={250} alt="img post" src={post.image} /> */}
       </Card.Body>
       <div className="d-flex justify-content-evenly">
        <Button className="d-flex align-items-center button-homepage">
