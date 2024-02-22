@@ -27,7 +27,7 @@ const Body = () => {
     const selectedFile = event.target.files[0];
     if (selectedFile) {
       //  setFileImg(selectedFile);
-      dispatch(profileImageAction(selectedFile, me._id));
+      dispatch(profileImageAction(selectedFile, me._id, token));
     }
   };
 
