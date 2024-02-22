@@ -12,19 +12,19 @@ import Col from "react-bootstrap/Col";
 
 
 const Profile = () => (
- <Container>
-  <Row className="my-3">
-   <Col md={9}>
-    <Body />
-    <Consigliato />
-    <Analisi />
-    <Risorse />
-    <Attivita />
-    <Esperienza />
-    <Interessi />
-   </Col>
-   <ProfileSideBar />
-  </Row>
- </Container>
+  <Container>
+    <Row className="my-3 justify-content-center">
+      <Col xs={12} md={9}>
+        <Body />
+        <Consigliato />
+        <Analisi />
+        <Risorse />
+        <Attivita />
+        <Esperienza />
+        <Innteressi />
+      </Col>
+      <ProfileSideBar />
+    </Row>
+  </Container>
 );
 export default Profile;

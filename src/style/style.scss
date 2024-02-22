@@ -38,23 +38,9 @@ $bs-search-field: #edf3f8;
   font-size: 0.9rem;
 }
 
-body{
-  background-color: rgb(231, 225, 218)!important
+body {
+  background-color: rgb(231, 225, 218) !important;
 }
-
-.button-homepage{
-  background-color: transparent!important;
-color: grey!important;
-border-color: transparent!important;
-padding: 10px 20px!important;
-
-}
-
-.button-homepage:hover{
-  background-color: rgb(226, 226, 226)!important;
-  
-}
-
 
 // stile input file
 #image-selector {
@@ -75,7 +61,7 @@ padding: 10px 20px!important;
 }
 
 .custom-file-input-label input[type="file"] + span:before {
-  content: 'Carica file' !important; /* Testo personalizzato */
+  content: "Carica file" !important; /* Testo personalizzato */
   margin-right: 10px !important; /* Aggiungi spazio tra il testo e l'icona del file */
 }
 
@@ -89,6 +75,21 @@ padding: 10px 20px!important;
   outline: 1px solid #007bff !important;
 }
 
+// stile bottone homepage
+.button-homepage {
+  background-color: transparent !important;
+  color: grey !important;
+  border-color: transparent !important;
+  padding: 10px 20px !important;
+}
+
+.button-homepage:hover {
+  background-color: rgb(226, 226, 226) !important;
+}
+
+.modal-hoverable:hover {
+  background-color: #e3e5e6;
+  cursor: pointer;
+}
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-
-

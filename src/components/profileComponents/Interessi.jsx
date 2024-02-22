@@ -13,11 +13,11 @@ const Innteressi = () => (
       <Card.Body>
         <div>
           <div className="d-flex justify-content-between align-items-start   ">
-            <h5>Interessi</h5>
+            <h5>Interests</h5>
           </div>
           <div>
-            <button className="border border-top-0 border-start-0  border-end-0 bg-transparent border-success text-success ">
-              Aziende
+            <button className="border border-top-0 border-start-0  border-end-0 bg-transparent border-success text-success fw-semibold">
+              Companies
             </button>
           </div>
         </div>
@@ -25,43 +25,45 @@ const Innteressi = () => (
 
         <Row>
           <Col md={6}>
-            <div className="d-flex mt-2">
+            <div className="d-flex">
               <img
-                src="https://marketplace.canva.com/EAFpeiTrl4c/1/0/1600w/canva-abstract-chef-cooking-restaurant-free-logo-9Gfim1S8fHg.jpg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPi0sN4dfWmkvPXpzy8dqlHeCpCwO8k_hQXA&usqp=CAU"
                 alt=""
                 style={{ height: '3em' }}
+                className="me-1"
               />
-              <div className="ms-2">
+              <div>
                 <a className="text-decoration-none text-dark fw-bold" href="">
-                  Ristorante
+                  StreetFood
                 </a>
                 <p className="text-secondary">3.083 follower</p>
                 <Button
                   variant="outline-secondary"
-                  className="  rounded-pill    fw-bold  "
+                  className="rounded-pill    fw-semibold  "
                 >
-                  <i className="bi bi-check-lg fs-5 p-0"></i><span className='segui-button'>Già segui</span>
+                  <i className="bi bi-check-lg fs-5 p-0"></i>Already follow
                 </Button>
               </div>
             </div>
           </Col>
           <Col>
-            <div className="d-flex mt-2">
+            <div className="d-flex">
               <img
-                src="https://marketplace.canva.com/EAFpeiTrl4c/1/0/1600w/canva-abstract-chef-cooking-restaurant-free-logo-9Gfim1S8fHg.jpg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFk84oQocz3W6fWyTgkZk3XSs9zHzqLEWzJQ&usqp=CAU"
                 alt=""
                 style={{ height: '3em' }}
+                className="me-1"
               />
-              <div className="ms-2">
+              <div>
                 <a className="text-decoration-none text-dark fw-bold" href="">
-                  Ristorante
+                  Restaurant
                 </a>
                 <p className="text-secondary">3.083 follower</p>
                 <Button
                   variant="outline-secondary"
-                  className="segui-button rounded-pill fw-bold"
+                  className="rounded-pill    fw-semibold  "
                 >
-                  <i className="bi bi-check-lg fs-5"></i><span className='segui-button'>Già segui</span>
+                  <i className="bi bi-check-lg fs-5"></i>Already follow
                 </Button>
               </div>
             </div>

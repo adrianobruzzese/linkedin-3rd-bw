@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import Card from "react-bootstrap/Card";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import { useDispatch, useSelector } from "react-redux";
-import { actionGetExperiences } from "../../redux/actions/index";
+import { useEffect, useState } from 'react';
+import Card from 'react-bootstrap/Card';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { useDispatch, useSelector } from 'react-redux';
+import { actionGetExperiences } from '../../redux/actions/index';
 // import Container from 'react-bootstrap/Container';
 // import Row from "react-bootstrap/Row";
 // import Col from "react-bootstrap/Col";
@@ -13,10 +13,10 @@ const Esperienza = () => {
   // STATO INIZIALE DEL FORM
 
   const startingForm = {
-    role: "",
-    company: "",
-    description: "",
-    area: "",
+    role: '',
+    company: '',
+    description: '',
+    area: '',
     startDate: null,
     endDate: null,
   };
@@ -37,28 +37,29 @@ const Esperienza = () => {
     });
   };
 
-  const postExperience = async (id) => {
+  const token = useSelector((state) => state.activeUser.token);
+
+  const postExperience = async (id, token) => {
     try {
       const response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/" +
+        'https://striveschool-api.herokuapp.com/api/profile/' +
           id +
-          "/experiences",
+          '/experiences',
         {
-          method: "POST",
+          method: 'POST',
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg",
-            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify(formControl),
         }
       );
       if (response.ok) {
-        alert("Salvataggio è andato a buon fine");
+        alert('Salvataggio è andato a buon fine');
         setFormControl(startingForm);
-        dispatch(actionGetExperiences(returnPersonalId()));
+        dispatch(actionGetExperiences(returnPersonalId(), token));
       } else {
-        alert("Qualcosa è andato storto");
+        alert('Qualcosa è andato storto');
       }
     } catch (error) {
       alert(error);
@@ -80,8 +81,8 @@ const Esperienza = () => {
   const me = useSelector((state) => state.meFetch.content);
 
   useEffect(() => {
-    dispatch(actionGetExperiences(returnPersonalId()));
-  }, [me]);
+    dispatch(actionGetExperiences(returnPersonalId(), token));
+  }, [me, token]);
 
   const experiences = useSelector((state) => state.experiencesFetch.content);
 
@@ -91,10 +92,10 @@ const Esperienza = () => {
       <Row> */}
       {/* <Col xs={12} md={8}> */}
       {!isLoading && (
-        <Card>
+        <Card className="mb-2">
           <Card.Body>
             <div className="d-flex justify-content-between align-items-start   ">
-              <h5>Esperienza</h5>
+              <h5>Experience</h5>
               <div className="d-flex align-items-center ">
                 <a onClick={handleShow}>
                   <i className="bi bi-plus-lg me-3 text-black"></i>
@@ -106,7 +107,7 @@ const Esperienza = () => {
               </div>
             </div>
             {experiences.length === 0 &&
-              "Non hai ancora inserito nella esperienza lavorativa"}
+              'Non hai ancora inserito nella esperienza lavorativa'}
             {experiences.length !== 0 &&
               experiences.map((experience) => {
                 return (
@@ -115,14 +116,14 @@ const Esperienza = () => {
                     key={experience._id}
                   >
                     <img
-             src="https://marketplace.canva.com/EAFpeiTrl4c/1/0/1600w/canva-abstract-chef-cooking-restaurant-free-logo-9Gfim1S8fHg.jpg"
-             alt=""
-                      style={{ height: "3em" }}
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiQ8tPe9t5RYfJCPxS2c6aCijrxIGKAAiI50BP0Qyrpn8NOz2YsS5_gHJH4pXxZ--9TQw&usqp=CAU"
+                      alt=""
+                      style={{ height: '3em' }}
                       className="me-2 mb-3"
                     />
                     <div>
                       <p className="fw-bold m-0">{experience.role}</p>
-                      <p>{experience.company + " • " + experience.area} </p>
+                      <p>{experience.company + ' • ' + experience.area} </p>
                     </div>
                     <div>
                       <Button
@@ -131,25 +132,24 @@ const Esperienza = () => {
                         onClick={async () => {
                           try {
                             const response = await fetch(
-                              "https://striveschool-api.herokuapp.com/api/profile/" +
+                              'https://striveschool-api.herokuapp.com/api/profile/' +
                                 returnPersonalId() +
-                                "/experiences/" +
+                                '/experiences/' +
                                 experience._id,
                               {
-                                method: "DELETE",
+                                method: 'DELETE',
                                 headers: {
-                                  Authorization:
-                                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg",
+                                  Authorization: `Bearer ${token}`,
                                 },
                               }
                             );
                             if (response.ok) {
-                              alert("Il file è stato eliminato correttamente");
+                              alert('Il file è stato eliminato correttamente');
                               dispatch(
-                                actionGetExperiences(returnPersonalId())
+                                actionGetExperiences(returnPersonalId(), token)
                               );
                             } else {
-                              alert("Qualcosa è andato storto");
+                              alert('Qualcosa è andato storto');
                             }
                           } catch (error) {
                             alert(error);
@@ -173,14 +173,14 @@ const Esperienza = () => {
       <Modal size="lg" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title className="fs-5">
-            Registra la tua esperienza lavorativa
+            Record your work experience
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form
             onSubmit={(e) => {
               e.preventDefault();
-              postExperience(returnPersonalId());
+              postExperience(returnPersonalId(), token);
             }}
           >
             <Form.Group className="mb-3">
@@ -190,7 +190,7 @@ const Esperienza = () => {
                 required
                 value={formControl.role}
                 onChange={(e) => {
-                  handleForm("role", e.target.value);
+                  handleForm('role', e.target.value);
                 }}
               />
             </Form.Group>
@@ -201,7 +201,7 @@ const Esperienza = () => {
                 required
                 value={formControl.company}
                 onChange={(e) => {
-                  handleForm("company", e.target.value);
+                  handleForm('company', e.target.value);
                 }}
               />
             </Form.Group>
@@ -212,7 +212,7 @@ const Esperienza = () => {
                 required
                 value={formControl.description}
                 onChange={(e) => {
-                  handleForm("description", e.target.value);
+                  handleForm('description', e.target.value);
                 }}
               />
             </Form.Group>
@@ -223,7 +223,7 @@ const Esperienza = () => {
                 required
                 value={formControl.area}
                 onChange={(e) => {
-                  handleForm("area", e.target.value);
+                  handleForm('area', e.target.value);
                 }}
               />
             </Form.Group>
@@ -234,7 +234,7 @@ const Esperienza = () => {
                 required
                 value={formControl.startDate}
                 onChange={(e) => {
-                  handleForm("startDate", e.target.value);
+                  handleForm('startDate', e.target.value);
                 }}
               />
             </Form.Group>
@@ -244,7 +244,7 @@ const Esperienza = () => {
                 type="date"
                 value={formControl.endDate}
                 onChange={(e) => {
-                  handleForm("endDate", e.target.value);
+                  handleForm('endDate', e.target.value);
                 }}
               />
             </Form.Group>
