@@ -57,16 +57,29 @@ const RightSidebar = () => {
                   Epicode Full-stack student
                 </p>
               </div>
+            </div>
+            <Button
+              variant="outline-secondary"
+              className="rounded-pill me-1 fw-bold mt-2"
+              style={{
+                fontSize: "1rem",
+                padding: "3px 10px 3px 10px",
+                marginLeft: "80px",
+              }}
+            >
+              + Follow
+            </Button>
+          </div>
+          <div className="mt-4 mb-2">
+            <div className="d-flex align-items-center">
+              <img
+                src="https://picsum.photos/200"
+                className="card-img-top rounded-circle border border-secondary mx-3"
+                style={{ width: "50px" }}
+                alt="profile picture"
+              />
               <div>
-                <p className="mb-0 fw-semibold text-dark">
-                  Salvatore Malanchino
-                </p>
-                <p className="mb-0 text-muted" style={{ fontSize: "0.8rem" }}>
-                  Epicode Full-stack student
-                </p>
-              </div>
-              <div>
-                <p className="mb-0 fw-semibold text-dark">Adriano Bruzzese</p>
+                <p className="mb-0 fw-semibold text-dark">Nicolò di Giacinto</p>
                 <p className="mb-0 text-muted" style={{ fontSize: "0.8rem" }}>
                   Epicode Full-stack student
                 </p>
@@ -93,7 +106,36 @@ const RightSidebar = () => {
                 alt="profile picture"
               />
               <div>
-                <p className="mb-0 fw-semibold text-dark">Nicolò di Giacinto</p>
+                <p className="mb-0 fw-semibold text-dark">
+                  Salvatore Malanchino
+                </p>
+                <p className="mb-0 text-muted" style={{ fontSize: "0.8rem" }}>
+                  Epicode Full-stack student
+                </p>
+              </div>
+            </div>
+            <Button
+              variant="outline-secondary"
+              className="rounded-pill me-1 fw-bold mt-2"
+              style={{
+                fontSize: "1rem",
+                padding: "3px 10px 3px 10px",
+                marginLeft: "80px",
+              }}
+            >
+              + Follow
+            </Button>
+          </div>
+          <div className="mt-4 mb-2">
+            <div className="d-flex align-items-center">
+              <img
+                src="https://picsum.photos/200"
+                className="card-img-top rounded-circle border border-secondary mx-3"
+                style={{ width: "50px" }}
+                alt="profile picture"
+              />
+              <div>
+                <p className="mb-0 fw-semibold text-dark">Adriano Bruzzese</p>
                 <p className="mb-0 text-muted" style={{ fontSize: "0.8rem" }}>
                   Epicode Full-stack student
                 </p>
