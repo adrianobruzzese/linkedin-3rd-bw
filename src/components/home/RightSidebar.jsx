@@ -104,15 +104,16 @@ const RightSidebar = () => {
           </a>
         </div>
       </div>
-      <div className=" sticky-content  ">
-        <img
-          src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png "
-          alt=""
-          className=" rounded"
-        />
 
+      <div className=" sticky-content d-flex flex-column ">
+        <div className="text-center">
+          <img
+            src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png "
+            alt=""
+            className=" rounded"
+          />
+        </div>
         <JobsRightBar />
-        <div style={{ height: '2000px' }}></div>
       </div>
     </>
   );

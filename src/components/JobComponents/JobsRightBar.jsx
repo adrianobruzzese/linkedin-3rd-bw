@@ -40,7 +40,7 @@ const JobsRightBar = () => (
         </Nav.Link>
         <NavDropdown
           id="nav-dropdown-dark-example"
-          title="Servizi alle aziende"
+          title="Business services"
           menuVariant="dark"
           className="text-body-tertiary"
         >
@@ -60,11 +60,13 @@ const JobsRightBar = () => (
         </Nav.Link>
       </div>
       <div className="mt-3">
-        <img
-          alt=""
-          src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg"
-          style={{ height: '1em' }}
-        />{' '}
+        <div>
+          <img
+            alt=""
+            src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg"
+            style={{ height: '1em' }}
+          />{' '}
+        </div>
         <span className="fs-6">LinkedIn Corporation © 2024</span>
       </div>
     </div>

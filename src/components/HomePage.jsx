@@ -1,20 +1,20 @@
-import { Col, Container, Form, Row } from "react-bootstrap";
-import { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import HomePagePosts from "./HomePagePosts";
-import LeftSidebar from "./home/LeftSidebar";
-import RightSidebar from "./home/RightSidebar";
-import { useSelector, useDispatch } from "react-redux";
-import { actionGetMyProfile, postImageAction } from "../redux/actions";
-import { FetchDataPosts } from "../redux/actions/FetchDataPostsAction";
+import { Col, Container, Form, Row } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import HomePagePosts from './HomePagePosts';
+import LeftSidebar from './home/LeftSidebar';
+import RightSidebar from './home/RightSidebar';
+import { useSelector, useDispatch } from 'react-redux';
+import { actionGetMyProfile, postImageAction } from '../redux/actions';
+import { FetchDataPosts } from '../redux/actions/FetchDataPostsAction';
 
 const HomePage = () => {
   // costanti pagina
 
   const [showModalPost, setShowModalPost] = useState(false);
   const [showModalImg, setShowModalImg] = useState(false);
-  const [postText, setPostText] = useState("");
+  const [postText, setPostText] = useState('');
   const dispatch = useDispatch();
   const [postId, setPostId] = useState();
   const [fileImg, setFileImg] = useState();
@@ -57,14 +57,14 @@ const HomePage = () => {
   // Funzione per effettuare post
   const HandlePost = () => {
     if (!postText.trim()) {
-      alert("Il testo del post non può essere vuoto");
+      alert('Il testo del post non può essere vuoto');
       return;
     }
-    fetch("https://striveschool-api.herokuapp.com/api/posts/", {
-      method: "POST",
+    fetch('https://striveschool-api.herokuapp.com/api/posts/', {
+      method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ text: postText }),
     })
@@ -79,10 +79,10 @@ const HomePage = () => {
           }, 500);
 
           console.log(fileImg);
-          console.log("Post aggiunto");
+          console.log('Post aggiunto');
           setFileImg(null);
         } else {
-          console.log("errore nella richiesta POST", response.status);
+          console.log('errore nella richiesta POST', response.status);
         }
       })
       .catch((error) => {
@@ -96,8 +96,8 @@ const HomePage = () => {
 
   return (
     <Container className="mt-3">
-      <Row className="g-4">
-        <Col className="col-12 col-lg-3 col-md-6">
+      <Row className="g-4 justify-content-end ">
+        <Col className="col-12 col-md-4 col-lg-3 ">
           <LeftSidebar
             profileIcon={!isLoading && me.image}
             profileSurname={!isLoading && me.surname}
@@ -106,7 +106,7 @@ const HomePage = () => {
           />
         </Col>
 
-        <Col className="col-12 col-lg-6">
+        <Col className="col-12 col-md-8 col-lg-6">
           <Row className="border rounded p-2 mb-4 bg-white">
             <Col className="d-flex align-items-center justify-content-center">
               {!isLoading && (
@@ -135,7 +135,7 @@ const HomePage = () => {
                         alt="profile img"
                       />
                     )}
-                    {!isLoading && <h6>{me.name + " " + me.surname}</h6>}
+                    {!isLoading && <h6>{me.name + ' ' + me.surname}</h6>}
                   </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -244,7 +244,7 @@ const HomePage = () => {
           </Row>
         </Col>
 
-        <Col className="col-12 col-lg-3 col-md-6">
+        <Col className="col-12 col-lg-3 col-md-8">
           <RightSidebar />
         </Col>
       </Row>
