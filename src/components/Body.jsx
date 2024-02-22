@@ -69,7 +69,7 @@ const Body = () => {
 
   useEffect(() => {
     dispatch(actionGetMyProfile(token));
-  }, []);
+  }, [token]);
 
   const me = useSelector((state) => state.meFetch.content);
   const isLoading = useSelector((state) => state.meFetch.isLoading);
