@@ -20,7 +20,7 @@ const Attivita = () => (
               Create a post
             </Button>
             <a href="">
-              <i className="bi bi-pencil text-black"></i>
+              <i className="bi bi-pencil text-black fs-5"></i>
             </a>
           </div>
         </div>
