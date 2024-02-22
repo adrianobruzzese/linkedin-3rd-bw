@@ -198,7 +198,7 @@ const Body = () => {
                     </div>
                     <p>{me.title}</p>
                   </Col>
-                  <button className="border border-0 bg-transparent">
+                  {/* <button className="border border-0 bg-transparent">
                     <span>
                       <img
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRb0lOhuAbflByagOfYUg5R8F1zGO1aN4woA&usqp=CAU"
@@ -210,7 +210,7 @@ const Body = () => {
                         Ristorante
                       </a>
                     </span>
-                  </button>
+                  </button> */}
                 </div>
               </Row>
               <span className="text-body-tertiary">
