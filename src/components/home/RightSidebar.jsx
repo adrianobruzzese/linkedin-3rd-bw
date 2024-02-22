@@ -57,6 +57,20 @@ const RightSidebar = () => {
                   Epicode Full-stack student
                 </p>
               </div>
+              <div>
+                <p className="mb-0 fw-semibold text-dark">
+                  Salvatore Malanchino
+                </p>
+                <p className="mb-0 text-muted" style={{ fontSize: "0.8rem" }}>
+                  Epicode Full-stack student
+                </p>
+              </div>
+              <div>
+                <p className="mb-0 fw-semibold text-dark">Adriano Bruzzese</p>
+                <p className="mb-0 text-muted" style={{ fontSize: "0.8rem" }}>
+                  Epicode Full-stack student
+                </p>
+              </div>
             </div>
             <Button
               variant="outline-secondary"
