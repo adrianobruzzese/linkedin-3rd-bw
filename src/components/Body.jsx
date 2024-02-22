@@ -97,14 +97,16 @@ const Body = () => {
           <div className="d-flex  justify-content-between mb-3 ">
             <Modal show={show} onHide={handleClose} size="lg" className=" m-0 ">
               <Modal.Header closeButton>
-                <Modal.Title className="ms-3">Aggiungi foto</Modal.Title>
+                <Modal.Title className="ms-3">Add photos</Modal.Title>
               </Modal.Header>
 
               <Modal.Body className="fw-bold p-5">
                 <p className="text-center">
-                  La tua foto non deve per forza essere un tuo primo piano!
+                  Your photo doesn't have to be a close-up of you!
                 </p>{' '}
-                <p className="text-center">Ma qualcosa che ti rappresenti.</p>
+                <p className="text-center">
+                  But something that represents you.
+                </p>
                 <div className="text-center mt-3 mb-4">
                   <img
                     src={me.image}
@@ -138,22 +140,22 @@ const Body = () => {
                   />
                 </div>
                 <p className="text-center text-secondary ">
-                  Chiediamo agli utenti di LinkedIn di utilizzare le loro vere
-                  identità, quindi scatta o carica una tua foto. Poi ritagliala,
-                  applica dei filtri e perfezionala come vuoi.
+                  We ask LinkedIn users to use their real ones identity, then
+                  take or upload a photo of yourself. Then cut it out, apply
+                  filters and refine it as you want.
                 </p>
               </Modal.Body>
 
               <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
-                  Chiudi
+                  Close
                 </Button>
                 <div>
                   <label
                     className="custom-file-input-label"
                     htmlFor="image-selector"
                   >
-                    Carica Foto
+                    Upload Photos
                   </label>
                   <input
                     id="image-selector"
@@ -229,7 +231,7 @@ const Body = () => {
                 className=" rounded-pill ps-2 pe-2 fw-bold me-2 "
                 as="input"
                 type="button"
-                value="Disponibile per"
+                value="Available for"
               />
 
               <Button
