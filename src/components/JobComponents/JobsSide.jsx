@@ -4,7 +4,7 @@ import './jobsticky.css';
 const jobsSidebar = () => {
   return (
     <>
-      <div className="job-sticky">
+      <div className="job-sticky sticky-top ">
         <Card className=" ">
           <Card.Body>
             <p className="d-flex align-items-center">
