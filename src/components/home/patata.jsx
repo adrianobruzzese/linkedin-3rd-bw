@@ -2,7 +2,7 @@
 // import 'bootstrap-icons/font/bootstrap-icons.css';
 // import '../../style/style.css';
 import { useSelector } from 'react-redux';
-import Dropdown from 'react-bootstrap/Dropdown';
+
 import { Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
