@@ -52,7 +52,7 @@ const HomePage = () => {
 
   useEffect(() => {
     dispatch(actionGetMyProfile(token));
-  }, []);
+  }, [token]);
 
   // Funzione per effettuare post
   const HandlePost = () => {
