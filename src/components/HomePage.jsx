@@ -466,6 +466,7 @@ const HomePage = () => {
               {!isLoading && (
                 <img
                   width={50}
+              height={50}
                   className="rounded-circle me-2 mt-2"
                   src={me.image}
                   alt="profile img"
@@ -577,19 +578,18 @@ const HomePage = () => {
             {/* Col di col-6 per icone media Event Write Article */}
 
             <div className="d-flex justify-content-around text-secondary mt-3">
-                <Button className="button-homepage">
-                  <i className="me-1 bi bi-card-image text-primary"></i>
-                  <span>Media</span>
-                </Button>
-                <Button className="button-homepage">
-                  <i className="me-1 bi bi-calendar3 text-warning"></i>
-                  <span>Event</span>
-                </Button>
-                <Button className="button-homepage">
-                  <i className="me-1 bi bi-newspaper text-danger"></i>
-                  <span>Write article</span>
-                </Button>
-    
+              <Button className="button-homepage">
+                <i className="me-1 bi bi-card-image text-primary"></i>
+                <span>Media</span>
+              </Button>
+              <Button className="button-homepage">
+                <i className="me-1 bi bi-calendar3 text-warning"></i>
+                <span>Event</span>
+              </Button>
+              <Button className="button-homepage">
+                <i className="me-1 bi bi-newspaper text-danger"></i>
+                <span>Write article</span>
+              </Button>
             </div>
           </Row>
           {/* Row di Col-6 post utenti e notizie */}
