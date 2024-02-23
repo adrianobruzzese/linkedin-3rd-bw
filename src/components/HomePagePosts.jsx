@@ -123,7 +123,9 @@ const HomePagePosts = () => {
         />
        )}
        {/* //    <img className="" width={250} alt="img post" src={post.image} /> */}
-       <span>comments: {getCommentsCount(post._id)} </span>
+       <span className="comments-number-style">
+        {getCommentsCount(post._id)} Comments{" "}
+       </span>
        <ul>
         {comments
          .filter((comment) => comment.elementId === post._id)

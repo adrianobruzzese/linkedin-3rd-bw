@@ -86,4 +86,15 @@ body {
   cursor: pointer;
 }
 
+.comments-number-style {
+  
+  color: grey;
+}
+
+.comments-number-style:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
