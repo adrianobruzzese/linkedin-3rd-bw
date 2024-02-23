@@ -8,8 +8,8 @@ import '../../style/style.css';
 const RightSidebar = () => {
   return (
     <>
-      <div className="card profile-card mx-auto" style={{ maxWidth: '430px' }}>
-        <div className="d-flex justify-content-between align-items-center mt-3 ms-2 mb-3">
+      <div className="card profile-card mx-auto"  style={{ maxWidth: '430px' }}>
+        <div className="d-flex justify-content-between align-items-center mt-4 ms-3 mb-3">
           <h2 className="h5 mb-0 font-weight-bold text-dark">
             Add to your feed
           </h2>
