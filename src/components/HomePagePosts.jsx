@@ -207,7 +207,9 @@ const HomePagePosts = () => {
         onChange={(e) => setCommentText(e.target.value)}
        />
       </Form.Group>
-      <Button onClick={HandleComment}>Post Comment</Button>
+      <Button className="button-homepage" onClick={HandleComment}>
+       Post Comment
+      </Button>
      </Form>
     </Modal.Body>
    </Modal>
