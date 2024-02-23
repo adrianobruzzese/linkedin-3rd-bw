@@ -1,21 +1,21 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { FetchDataPosts } from '../redux/actions/FetchDataPostsAction';
-import { Button, Card, Col } from 'react-bootstrap';
-import defaultUserImg from '../assets/img/default-profile-picture1.jpg';
-import { Modal } from 'react-bootstrap';
-import { Form } from 'react-bootstrap';
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { FetchDataPosts } from "../redux/actions/FetchDataPostsAction";
+import { Button, Card, Col } from "react-bootstrap";
+import defaultUserImg from "../assets/img/default-profile-picture1.jpg";
+import { Modal } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { getCommentsAction } from "../redux/actions";
 
 const HomePagePosts = () => {
-  const dispatch = useDispatch();
-  const arrayPosts = useSelector((state) => state.posts.posts); // slice per ottenere solo i primi 20 post
-  const [arrayPostsSliced, setArrayPostsSliced] = useState([]);
-  // LIKE
-  const [liked, setLiked] = useState(false);
+ const dispatch = useDispatch();
+ const arrayPosts = useSelector((state) => state.posts.posts); // slice per ottenere solo i primi 20 post
+ const [arrayPostsSliced, setArrayPostsSliced] = useState([]);
+ // LIKE
+ const [liked, setLiked] = useState(false);
 
-  //stato modale
-  const [smShow, setSmShow] = useState(false);
+ //stato modale
+ const [smShow, setSmShow] = useState(false);
 
  const handleClick = () => {
   setLiked(!liked);
@@ -72,9 +72,9 @@ const HomePagePosts = () => {
    setCommentingStates(arrayPosts.slice(-10).map(() => false));
    setCommentId(arrayPosts.slice(-10).map((post) => post._id));
 
-      console.log('post array slice', arrayPostsSliced);
-    }
-  }, [arrayPosts]);
+   console.log("post array slice", arrayPostsSliced);
+  }
+ }, [arrayPosts]);
 
  const toggleCommentSection = (i) => {
   const newCommentingStates = [...commentingStates];
@@ -86,58 +86,59 @@ const HomePagePosts = () => {
   return comments.filter((comment) => comment.elementId === postId).length;
  };
 
+ const generateRandomFollowers = () =>
+  Math.floor(Math.random() * (99999 - 1000 + 1)) + 1000;
+ const generateRandomDay = () => Math.floor(Math.random() * 4) + 1;
 
+ return (
+  <>
+   {arrayPosts.slice(-10).map((post, i) => (
+    <Col className="col-12 p-0" key={i}>
+     <Card className="p-2">
+      <Card.Body className="border-bottom mb-2">
+       <div className="d-flex align-items-center">
+        {post.user.image ? (
+         <img
+          className="rounded-circle me-2"
+          src={post.user.image}
+          width={55}
+          height={55}
+          alt="User profile"
+         />
+        ) : (
+         <img
+          className="rounded-circle me-2"
+          src={defaultUserImg}
+          width={55}
+          alt="Default profile"
+         />
+        )}
+        <div className="ms-1">
+         <Card.Title className="fs-6 mb-0">{post.username}</Card.Title>
+         <span style={{ fontSize: "0.75rem", fontWeight: "bold" }}>
+          {post.user.title}
+         </span>
+         <div className="text-muted" style={{ fontSize: "0.7rem" }}>
+          Followers: {generateRandomFollowers()}
+         </div>
+         <div className="text-muted" style={{ fontSize: "0.7rem" }}>
+          {generateRandomDay()}d ago
+         </div>
+        </div>
+       </div>
+       <span>{post.user.title}</span>
+       <Card.Text id="comment">{post.text}</Card.Text>
+       {!post.image && ``}
+       {post.image && (
+        <img
+         className="img-fluid img-thumbnail"
+         //  width={350}
+         alt="img post"
+         src={post.image}
+        />
+       )}
 
-  const generateRandomFollowers = () =>
-    Math.floor(Math.random() * (99999 - 1000 + 1)) + 1000;
-  const generateRandomDay = () => Math.floor(Math.random() * 4) + 1;
-
-  return (
-    <>
-      {arrayPosts.slice(-10).map((post, i) => (
-        <Col className="col-12 p-0" key={i}>
-          <Card className="p-2">
-            <Card.Body className="border-bottom mb-2">
-              <div className="d-flex align-items-center">
-                {post.user.image ? (
-                  <img
-                    className="rounded-circle me-2"
-                    src={post.user.image}
-                    width={55}
-                    height={55}
-                    alt="User profile"
-                  />
-                ) : (
-                  <img
-                    className="rounded-circle me-2"
-                    src={defaultUserImg}
-                    width={55}
-                    alt="Default profile"
-                  />
-                )}
-                <div className='ms-1'>
-                <Card.Title className="fs-6 mb-0">{post.username}</Card.Title>
-                <span style={{fontSize: '0.75rem', fontWeight: 'bold'}}>{post.user.title}</span>
-                <div className="text-muted" style={{fontSize: '0.7rem'}}>
-                    Followers: {generateRandomFollowers()}
-                  </div>
-                  <div className="text-muted" style={{fontSize: '0.7rem'}}>
-                  {generateRandomDay()}d ago
-                  </div>
-                  </div>
-              </div>
-              <span>{post.user.title}</span>
-              <Card.Text id="comment">{post.text}</Card.Text>
-              {!post.image && ``}
-              {post.image && (
-                <img
-                  className="img-fluid img-thumbnail"
-                  //  width={350}
-                  alt="img post"
-                  src={post.image}
-                />
-              )}
-<button className="commentsButton">
+       <button className="commentsButton d-block">
         <span className="comments-number-style">
          {getCommentsCount(post._id)} Comments{" "}
         </span>
@@ -148,38 +149,37 @@ const HomePagePosts = () => {
          .map((comment, i) => (
           <div className="commentsDiv rounded" key={i}>
            <li>
-            {comment.author} : {comment.comment}
+            <span className="fw-bold">{comment.author}</span> :{" "}
+            {comment.comment}
            </li>
           </div>
          ))}
-       </ul>            </Card.Body>
-            <div className="d-flex justify-content-evenly">
-              <Button
-                className={`d-flex align-items-center button-homepage${
-                  liked ? ' text-primary' : ''
-                }`}
-                onClick={handleClick}
-              >
-                <i
-                  className={`bi bi-hand-thumbs-up me-2${
-                    liked ? ' text-primary' : ''
-                  }`}
-                ></i>
-                <span>Like</span>
-              </Button>
-              <Button
-                className="d-flex align-items-center button-homepage"
-                onClick={() => {
-                  toggleCommentSection(i);
-                  setSmShow(true);
-                  setCommentId(post._id);
-
-                }}
-              >
-                <i className="bi bi-chat-left-dots me-2"></i>
-                <span>Comment</span>
-              </Button>
-              {/* {commentingStates[i] && (
+       </ul>
+      </Card.Body>
+      <div className="d-flex justify-content-evenly">
+       <Button
+        className={`d-flex align-items-center button-homepage${
+         liked ? " text-primary" : ""
+        }`}
+        onClick={handleClick}
+       >
+        <i
+         className={`bi bi-hand-thumbs-up me-2${liked ? " text-primary" : ""}`}
+        ></i>
+        <span>Like</span>
+       </Button>
+       <Button
+        className="d-flex align-items-center button-homepage"
+        onClick={() => {
+         toggleCommentSection(i);
+         setSmShow(true);
+         setCommentId(post._id);
+        }}
+       >
+        <i className="bi bi-chat-left-dots me-2"></i>
+        <span>Comment</span>
+       </Button>
+       {/* {commentingStates[i] && (
         // <div className="comment-section d-flex align-items-center">
         //  <textarea placeholder="Inserisci il tuo commento"></textarea>
         //  <div>
