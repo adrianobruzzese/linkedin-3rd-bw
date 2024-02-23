@@ -344,18 +344,22 @@ function NavbarComponent() {
             }}
           ></i>
         </InputGroup>
-
+        {/* hamburger menu per md navbar */}
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto" navbarScroll>
-            <Nav.Link href="#home" className="d-lg-none">
-              Home
+            <Nav.Link className="d-lg-none">
+              <Link to={'/'} className="nav-link p-0">
+                Home
+              </Link>
             </Nav.Link>
             <Nav.Link href="#network" className="d-lg-none">
               My Network
             </Nav.Link>
-            <Nav.Link href="#network" className="d-lg-none">
-              Jobs
+            <Nav.Link className="d-lg-none">
+              <Link to={'/jobs'} className="nav-link p-0">
+                Jobs
+              </Link>
             </Nav.Link>
             <Nav.Link href="#network" className="d-lg-none">
               Messaging
@@ -366,16 +370,20 @@ function NavbarComponent() {
 
             <div className="d-none d-lg-flex align-items-center">
               <Nav.Link href="#home" className="nav-icon d-none d-lg-block">
-                <i className="bi bi-house-door-fill"></i>{' '}
-                <div className="nav-label">Home</div>
+                <Link to={'/'} className="nav-link p-0">
+                  <i className="bi bi-house-fill"></i>{' '}
+                  <div className="nav-label">Home</div>{' '}
+                </Link>
               </Nav.Link>
               <Nav.Link href="#network" className="nav-icon d-none d-lg-block">
                 <i className="bi bi-people-fill"></i>
                 <div className="nav-label">My Network</div>
               </Nav.Link>
               <Nav.Link href="#jobs" className="nav-icon d-none d-lg-block">
-                <i className="bi bi-briefcase-fill"></i>{' '}
-                <div className="nav-label">Jobs</div>
+                <Link to={'/jobs'} className="nav-link p-0">
+                  <i className="bi bi-briefcase-fill"></i>{' '}
+                  <div className="nav-label">Jobs</div>{' '}
+                </Link>
               </Nav.Link>
               <Nav.Link
                 href="#messaging"
