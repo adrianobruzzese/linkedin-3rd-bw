@@ -3,19 +3,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FetchDataPosts } from '../redux/actions/FetchDataPostsAction';
 import { Button, Card, Col } from 'react-bootstrap';
 import defaultUserImg from '../assets/img/default-profile-picture1.jpg';
-import { Modal } from "react-bootstrap";
-import { Form } from "react-bootstrap";
+import { Modal } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { getCommentsAction } from "../redux/actions";
 
 const HomePagePosts = () => {
- const dispatch = useDispatch();
- const arrayPosts = useSelector((state) => state.posts.posts); // slice per ottenere solo i primi 20 post
- const [arrayPostsSliced, setArrayPostsSliced] = useState([]);
- // LIKE
- const [liked, setLiked] = useState(false);
+  const dispatch = useDispatch();
+  const arrayPosts = useSelector((state) => state.posts.posts); // slice per ottenere solo i primi 20 post
+  const [arrayPostsSliced, setArrayPostsSliced] = useState([]);
+  // LIKE
+  const [liked, setLiked] = useState(false);
 
- //stato modale
- const [smShow, setSmShow] = useState(false);
+  //stato modale
+  const [smShow, setSmShow] = useState(false);
 
  const handleClick = () => {
   setLiked(!liked);
@@ -72,9 +72,9 @@ const HomePagePosts = () => {
    setCommentingStates(arrayPosts.slice(-10).map(() => false));
    setCommentId(arrayPosts.slice(-10).map((post) => post._id));
 
-   console.log("post array slice", arrayPostsSliced);
-  }
- }, [arrayPosts]);
+      console.log('post array slice', arrayPostsSliced);
+    }
+  }, [arrayPosts]);
 
  const toggleCommentSection = (i) => {
   const newCommentingStates = [...commentingStates];
@@ -175,17 +175,17 @@ const HomePagePosts = () => {
         //  </div>
         // </div>
        )} */}
-       <Button className="button-homepage">
-        <i className="bi bi-repeat me-2"></i>Repost
-       </Button>
-       <Button className="button-homepage">
-        <i className="bi bi-send me-2"></i>Send
-       </Button>
-      </div>
-     </Card>
-    </Col>
-   ))}
-   {/* MODALE COMMENTI */}
+              <Button className="button-homepage">
+                <i className="bi bi-repeat me-2"></i>Repost
+              </Button>
+              <Button className="button-homepage">
+                <i className="bi bi-send me-2"></i>Send
+              </Button>
+            </div>
+          </Card>
+        </Col>
+      ))}
+      {/* MODALE COMMENTI */}
 
    <Modal
     size="sm"
@@ -214,12 +214,5 @@ const HomePagePosts = () => {
   </>
  );
 };
-
-
-
-
-
-
-
 
 export default HomePagePosts;
