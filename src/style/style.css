@@ -1,6 +1,8 @@
 @charset "UTF-8";
 #navbar {
   max-height: 55px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #search-input-group {
@@ -25,6 +27,14 @@
 @media (max-width: 726px) {
   .nav-label {
     display: none;
+  }
+  .nav-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 7px;
   }
 }
 .nav-icon i {
