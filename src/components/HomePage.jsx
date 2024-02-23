@@ -42,7 +42,7 @@ const HomePage = () => {
    };
    reader.readAsDataURL(selectedFile); // Legge il contenuto del file come URL dati (base64?)
    setFileImg(selectedFile);
-   dispatch(postImageAction(selectedFile, postId, token));
+   //  dispatch(postImageAction(selectedFile, postId, token));
   }
  };
 
