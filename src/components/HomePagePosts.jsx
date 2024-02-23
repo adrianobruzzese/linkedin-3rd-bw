@@ -130,12 +130,7 @@ const HomePagePosts = () => {
        <Card.Text id="comment">{post.text}</Card.Text>
        {!post.image && ``}
        {post.image && (
-        <img
-         className="img-fluid img-thumbnail"
-         //  width={350}
-         alt="img post"
-         src={post.image}
-        />
+        <img className="border" width={500} alt="img post" src={post.image} />
        )}
 
        <button className="commentsButton d-block">
@@ -221,7 +216,13 @@ const HomePagePosts = () => {
         onChange={(e) => setCommentText(e.target.value)}
        />
       </Form.Group>
-      <Button className="button-homepage" onClick={HandleComment}>
+      <Button
+       className="button-homepage"
+       onClick={() => {
+        HandleComment();
+        setSmShow(false);
+       }}
+      >
        Post Comment
       </Button>
      </Form>
