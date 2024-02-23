@@ -118,7 +118,7 @@ const HomePage = () => {
                 />
               )}
               <Button
-                className="bg-white text-secondary btn-outline-secondary rounded-pill d-flex flex-grow-1"
+                className="btn-lg bg-white text-secondary btn-outline-secondary rounded-pill d-flex flex-grow-1" id="start-post"
                 onClick={handleShowModalPost}
               >
                 Start Post
@@ -220,20 +220,20 @@ const HomePage = () => {
             </Col>
             {/* Col di col-6 per icone media Event Write Article */}
 
-            <div className="d-flex justify-content-around text-secondary mt-2">
-              <div>
-                <i className="bi bi-card-image text-primary"></i>
+            <div className="d-flex justify-content-around text-secondary mt-4">
+              <Button className="button-homepage">
+                <i className="me-1 bi bi-card-image text-primary"></i>
                 <span>Media</span>
-              </div>
-              <div>
-                <i className="bi bi-calendar3 text-warning"></i>
+              </Button>
+              <Button className="button-homepage">
+                <i className="me-1 bi bi-calendar3 text-warning"></i>
                 <span>Event</span>
-              </div>
+              </Button>
 
-              <div>
-                <i className="bi bi-newspaper text-danger"></i>
+              <Button className="button-homepage">
+                <i className="me-1 bi bi-newspaper text-danger"></i>
                 <span>Write article</span>
-              </div>
+              </Button>
             </div>
           </Row>
 
