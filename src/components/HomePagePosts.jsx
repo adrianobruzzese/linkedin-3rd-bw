@@ -86,6 +86,8 @@ const HomePagePosts = () => {
   return comments.filter((comment) => comment.elementId === postId).length;
  };
 
+
+
  return (
   <>
    {arrayPosts.slice(-10).map((post, i) => (
@@ -123,14 +125,20 @@ const HomePagePosts = () => {
         />
        )}
        {/* //    <img className="" width={250} alt="img post" src={post.image} /> */}
-       <span className="comments-number-style">
-        {getCommentsCount(post._id)} Comments{" "}
-       </span>
+       <button className="commentsButton">
+        <span className="comments-number-style">
+         {getCommentsCount(post._id)} Comments{" "}
+        </span>
+       </button>
        <ul>
         {comments
          .filter((comment) => comment.elementId === post._id)
          .map((comment, i) => (
-          <li key={i}>{comment.comment}</li>
+          <div className="commentsDiv rounded" key={i}>
+           <li>
+            {comment.author} : {comment.comment}
+           </li>
+          </div>
          ))}
        </ul>
       </Card.Body>
