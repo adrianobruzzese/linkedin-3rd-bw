@@ -3,10 +3,10 @@ import { Row, Col, Container, Card, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const LeftSidebar = ({
-  profileIcon,
-  profileName,
-  profileSurname,
-  profileTitle,
+ profileIcon,
+ profileName,
+ profileSurname,
+ profileTitle,
 }) => {
   const isLoading = useSelector((state) => state.meFetch.isLoading);
 

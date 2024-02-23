@@ -43,9 +43,9 @@ const activeUser = (state = initialState, action) => {
     }
     case ACTIVE_ADRIANO: {
       return {
-        ...state,
-        token:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTFlNjI0ZjYwNTAwMTkzN2Q0NTciLCJpYXQiOjE3MDgzMzE0OTUsImV4cCI6MTcwOTU0MTA5NX0.KHAcN2ZmdInZibSsuN6-ccclj1K1u8EHV-HfobzUCsg",
+       ...state,
+       token:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ3ODQ5Zjg5Y2Y4ZDAwMTljZjRiMmQiLCJpYXQiOjE3MDg2MjMwMDgsImV4cCI6MTcwOTgzMjYwOH0.noGvnA7R1Iq-Tg3afamy-0ASlh9WWiUIDAMYG0anwsE",
       };
     }
 

@@ -3,33 +3,34 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FetchDataPosts } from '../redux/actions/FetchDataPostsAction';
 import { Button, Card, Col } from 'react-bootstrap';
 import defaultUserImg from '../assets/img/default-profile-picture1.jpg';
+import { Modal } from "react-bootstrap";
+import { Form } from "react-bootstrap";
+
 const HomePagePosts = () => {
-  const dispatch = useDispatch();
-  const arrayPosts = useSelector((state) => state.posts.posts); // slice per ottenere solo i primi 20 post
-  const [arrayPostsSliced, setArrayPostsSliced] = useState([]);
-  // LIKE
-  const [liked, setLiked] = useState(false);
+ const dispatch = useDispatch();
+ const arrayPosts = useSelector((state) => state.posts.posts); // slice per ottenere solo i primi 20 post
+ const [arrayPostsSliced, setArrayPostsSliced] = useState([]);
+ // LIKE
+ const [liked, setLiked] = useState(false);
 
-  const handleClick = () => {
-    setLiked(!liked);
-  };
-  //   COMMENTI
-  const [isCommenting, setIsCommenting] = useState(false);
+ //stato modale
+ const [smShow, setSmShow] = useState(false);
 
-  const toggleCommentSection = () => {
-    setIsCommenting(!isCommenting);
-  };
+ const handleClick = () => {
+  setLiked(!liked);
+ };
+ //   COMMENTI
+ // const [isCommenting, setIsCommenting] = useState(false);
+ const [commentingStates, setCommentingStates] = useState([]);
 
-  useEffect(() => {
-    dispatch(FetchDataPosts());
-  }, []);
+ useEffect(() => {
+  dispatch(FetchDataPosts());
+ }, []);
 
-  useEffect(() => {
-    if (arrayPosts.length > 0) {
-      setArrayPostsSliced(arrayPosts.slice(-10));
-      console.log('post array slice', arrayPostsSliced);
-    }
-  }, [arrayPosts]);
+ useEffect(() => {
+  if (arrayPosts.length > 0) {
+   setArrayPostsSliced(arrayPosts.slice(-10));
+   setCommentingStates(arrayPosts.slice(-10).map(() => false));
 
   const generateRandomFollowers = () =>
     Math.floor(Math.random() * (99999 - 1000 + 1)) + 1000;
@@ -124,5 +125,12 @@ const HomePagePosts = () => {
     </>
   );
 };
+
+
+
+
+
+
+
 
 export default HomePagePosts;
