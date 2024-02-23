@@ -220,7 +220,7 @@ const HomePage = () => {
             </Col>
             {/* Col di col-6 per icone media Event Write Article */}
 
-            <div className="d-flex justify-content-around text-secondary mt-4">
+            <div className="d-flex justify-content-around text-secondary mt-2">
               <Button className="button-homepage">
                 <i className="me-1 bi bi-card-image text-primary"></i>
                 <span>Media</span>
