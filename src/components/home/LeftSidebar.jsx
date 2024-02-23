@@ -1,8 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Row, Col, Container, Card, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import Accordion from 'react-bootstrap/Accordion';
 
 const LeftSidebar = ({
  profileIcon,
@@ -81,8 +80,8 @@ const LeftSidebar = ({
           </Card>
 
           <Card
-            className="profile-card mx-auto mt-3"
-            d-none d-md-block
+            className="profile-card mx-auto mt-3
+            d-none d-md-block"
           >
             <ListGroup variant="flush">
               <ListGroup.Item className="text-start text-muted">
@@ -149,10 +148,10 @@ const LeftSidebar = ({
             </Card.Footer>
           </Card>
           <div className="d-sm d-flex justify-content-center  d-md-none  dropdown">
-  <DropdownButton id="dropdown-basic-button" variant="outline-secondary" title="Dropdown button">
-      <Dropdown.Item href="#/action-1"><Card
-            className="profile-card mx-auto mt-3"
-          >
+          <Accordion defaultActiveKey={['0']} alwaysOpen className="d-sm d-flex justify-content-center  d-md-none  dropdown">
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Discover more</Accordion.Header>
+        <Accordion.Body>
             <ListGroup variant="flush">
               <ListGroup.Item className="text-start text-muted">
                 <p className="mt-3 ms-3 mb-0">Recent</p>
@@ -210,16 +209,10 @@ const LeftSidebar = ({
                 <p className="text-start text-muted ms-3">See all</p>
               </ListGroup.Item>
             </ListGroup>
-            <Card.Footer
-              className="text-center"
-              style={{ borderTop: '0.7px solid grey' }}
-            >
-              <p className="text-muted mt-1 mb-1 fw-bold">Discover more</p>
-            </Card.Footer>
-          </Card></Dropdown.Item>
 
-    </DropdownButton>
-
+        </Accordion.Body>
+      </Accordion.Item>
+      </Accordion>
 </div>
         </Col>
       </Row>
