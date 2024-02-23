@@ -112,13 +112,13 @@ const HomePage = () => {
               {!isLoading && (
                 <img
                   width={50}
-                  className="rounded-circle me-2"
+                  className="rounded-circle me-2 mt-2"
                   src={me.image}
                   alt="profile img"
                 />
               )}
               <Button
-                className="btn-lg bg-white text-secondary btn-outline-secondary rounded-pill d-flex flex-grow-1" id="start-post"
+                className="btn-lg bg-white text-secondary btn-outline-secondary rounded-pill d-flex flex-grow-1 mt-2" id="start-post"
                 onClick={handleShowModalPost}
               >
                 Start Post

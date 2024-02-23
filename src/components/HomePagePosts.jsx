@@ -34,9 +34,9 @@ const HomePagePosts = () => {
   return (
     <>
       {arrayPosts.slice(-10).map((post, i) => (
-        <Col className="col-12 p-0" key={i}>
+        <Col className="col-12 p-0 mt-1 mb-2" key={i}>
           <Card className="p-2">
-            <Card.Body className="border-bottom mb-2">
+            <Card.Body className="border-bottom">
               <div className="d-flex align-items-center">
                 {post.user.image ? (
                   <img
@@ -68,7 +68,7 @@ const HomePagePosts = () => {
               )}
               {/* //    <img className="" width={250} alt="img post" src={post.image} /> */}
             </Card.Body>
-            <div className="d-flex justify-content-evenly">
+            <div className="d-flex justify-content-evenly mt-1">
               <Button
                 className={`d-flex align-items-center button-homepage${
                   liked ? ' text-primary' : ''
