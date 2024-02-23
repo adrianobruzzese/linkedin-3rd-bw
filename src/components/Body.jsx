@@ -28,9 +28,12 @@ const Body = () => {
   if (selectedFile) {
    //  setFileImg(selectedFile);
    dispatch(profileImageAction(selectedFile, me._id, token));
+   // dispatch(actionGetMyProfile(token));
+   setTimeout(() => {
+    dispatch(actionGetMyProfile(token));
+   }, 1000);
   }
  };
-
  // // funzione fetch POST dell'immagine
  // const handleSubmitImg = async (image) => {
  //   if (image) {
@@ -196,22 +199,19 @@ const Body = () => {
           </div>
           <p>{me.title}</p>
          </Col>
-         {/* <button className="border border-0 bg-transparent">
-                    <span>
-                      <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFk84oQocz3W6fWyTgkZk3XSs9zHzqLEWzJQ&usqp=CAU"
-                        alt=""
-                        style={{ height: '3em' }}
-                        className="me-1"
-                      />
-                      <a
-                        className="text-dark text-decoration-none fw-medium "
-                        href=""
-                      >
-                        Ristorante
-                      </a>
-                    </span>
-                  </button> */}
+         <button className="border border-0 bg-transparent">
+          <span>
+           <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFk84oQocz3W6fWyTgkZk3XSs9zHzqLEWzJQ&usqp=CAU"
+            alt=""
+            style={{ height: "3em" }}
+            className="me-1"
+           />
+           <a className="text-dark text-decoration-none fw-medium " href="">
+            Ristorante
+           </a>
+          </span>
+         </button>
         </div>
        </Row>
        <span className="text-body-tertiary">

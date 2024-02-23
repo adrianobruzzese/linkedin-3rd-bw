@@ -13,11 +13,10 @@ const LeftSidebar = ({
   profileTitle,
 }) => {
   const isLoading = useSelector((state) => state.meFetch.isLoading);
-  const me = useSelector((state) => state.meFetch.content);
 
   return (
     <div>
-      <div className="card profile-card mx-auto">
+      <div className="card profile-card mx-auto" style={{ maxWidth: '280px' }}>
         {!isLoading && (
           <img
             src={profileIcon}
