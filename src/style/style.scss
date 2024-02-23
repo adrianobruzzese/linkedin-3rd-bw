@@ -93,4 +93,33 @@ body {
   cursor: pointer;
 }
 
+.comments-number-style {
+  
+  color: grey;
+}
+
+.comments-number-style:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.commentsButton{
+  background-color: transparent !important;
+  
+  border-color: transparent !important;
+  
+}
+
+.commentsDiv{
+  background-color: lightgrey;
+  margin-bottom: 2px;
+padding: 5px
+
+}
+
+ul{
+  list-style: none;
+}
+
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
