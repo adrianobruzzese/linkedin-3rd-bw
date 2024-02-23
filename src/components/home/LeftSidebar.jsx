@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
 import { Row, Col, Container, Card, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 const LeftSidebar = ({
  profileIcon,
@@ -80,7 +82,7 @@ const LeftSidebar = ({
 
           <Card
             className="profile-card mx-auto mt-3"
-            style={{ maxWidth: '280px' }}
+            d-none d-md-block
           >
             <ListGroup variant="flush">
               <ListGroup.Item className="text-start text-muted">
@@ -146,6 +148,79 @@ const LeftSidebar = ({
               <p className="text-muted mt-1 mb-1 fw-bold">Discover more</p>
             </Card.Footer>
           </Card>
+          <div className="d-sm d-flex justify-content-center  d-md-none  dropdown">
+  <DropdownButton id="dropdown-basic-button" variant="outline-secondary" title="Dropdown button">
+      <Dropdown.Item href="#/action-1"><Card
+            className="profile-card mx-auto mt-3"
+          >
+            <ListGroup variant="flush">
+              <ListGroup.Item className="text-start text-muted">
+                <p className="mt-3 ms-3 mb-0">Recent</p>
+                <p className="mt-2 ms-3 mb-0">
+                  <span
+                    className="me-1"
+                    style={{ fontSize: '1.1rem', fontWeight: 'bold' }}
+                  >
+                    #
+                  </span>
+                  hospitalitycareers
+                </p>
+                <p className="ms-3">
+                  <span
+                    className="me-2"
+                    style={{ fontSize: '1.1rem', fontWeight: 'bold' }}
+                  >
+                    #
+                  </span>
+                  hospitalityindustry
+                </p>
+              </ListGroup.Item>
+              <ListGroup.Item className="text-start">
+                <p className="text-primary fw-bold ms-3 mb-0">Groups</p>
+              </ListGroup.Item>
+              <ListGroup.Item className="d-flex justify-content-between align-items-center text-start">
+                <p className="text-primary fw-bold ms-3 mb-0">Events</p>
+                <span className="me-2 " style={{ fontSize: '1.5rem' }}>
+                  +
+                </span>
+              </ListGroup.Item>
+
+              <ListGroup.Item>
+                <p className="text-primary fw-bold ms-3 mb-0">
+                  Followed Hashtags
+                </p>
+                <p className="text-muted mt-2 ms-3 mb-0">
+                  <span
+                    className="me-2"
+                    style={{ fontSize: '1.1rem', fontWeight: 'bold' }}
+                  >
+                    #
+                  </span>
+                  hospitalitycareers
+                </p>
+                <p className="text-start text-muted ms-3">
+                  <span
+                    className="me-2"
+                    style={{ fontSize: '1.1rem', fontWeight: 'bold' }}
+                  >
+                    #
+                  </span>
+                  hospitalityindustry
+                </p>
+                <p className="text-start text-muted ms-3">See all</p>
+              </ListGroup.Item>
+            </ListGroup>
+            <Card.Footer
+              className="text-center"
+              style={{ borderTop: '0.7px solid grey' }}
+            >
+              <p className="text-muted mt-1 mb-1 fw-bold">Discover more</p>
+            </Card.Footer>
+          </Card></Dropdown.Item>
+
+    </DropdownButton>
+
+</div>
         </Col>
       </Row>
     </Container>
