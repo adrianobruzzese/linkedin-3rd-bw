@@ -224,7 +224,15 @@ const HomePagePosts = () => {
         onChange={(e) => setCommentText(e.target.value)}
        />
       </Form.Group>
-      <Button onClick={HandleComment}></Button>
+      <Button
+       className="button-homepage"
+       onClick={() => {
+        HandleComment();
+        setSmShow(false);
+       }}
+      >
+       Post Comment
+      </Button>
      </Form>
     </Modal.Body>
    </Modal>
