@@ -29,6 +29,7 @@ const LeftSidebar = ({
                   className="rounded-circle border mt-5"
                   style={{
                     width: '80px',
+                    height: '80px',
                     position: 'relative',
                     top: '50%',
                     transform: 'translateY(-50%)',

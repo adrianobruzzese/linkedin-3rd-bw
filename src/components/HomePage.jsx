@@ -485,6 +485,7 @@ const HomePage = () => {
                     {!isLoading && (
                       <img
                         width={50}
+                        height={50}
                         className="rounded-circle me-2"
                         src={me.image}
                         alt="profile img"

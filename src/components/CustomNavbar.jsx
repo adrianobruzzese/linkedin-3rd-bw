@@ -74,7 +74,6 @@ function NavbarComponent() {
             }}
           ></i>
         </InputGroup>
-        {/* hamburger menu per md navbar */}
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto" navbarScroll>
