@@ -5,6 +5,7 @@ import { Button, Card, Col } from 'react-bootstrap';
 import defaultUserImg from '../assets/img/default-profile-picture1.jpg';
 import { Modal } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
+import { getCommentsAction } from "../redux/actions";
 
 const HomePagePosts = () => {
   const dispatch = useDispatch();
@@ -16,31 +17,76 @@ const HomePagePosts = () => {
   //stato modale
   const [smShow, setSmShow] = useState(false);
 
-  const handleClick = () => {
-    setLiked(!liked);
-  };
-  //   COMMENTI
-  // const [isCommenting, setIsCommenting] = useState(false);
-  const [commentingStates, setCommentingStates] = useState([]);
+ const handleClick = () => {
+  setLiked(!liked);
+ };
+ //   COMMENTI
+ // const [isCommenting, setIsCommenting] = useState(false);
+ const [commentingStates, setCommentingStates] = useState([]);
+ const [commentText, setCommentText] = useState("");
+ const [commentId, setCommentId] = useState([]);
+ console.log(commentId);
 
-  useEffect(() => {
-    dispatch(FetchDataPosts());
-  }, []);
+ const comments = useSelector((state) => state.comments.comments);
 
-  useEffect(() => {
-    if (arrayPosts.length > 0) {
-      setArrayPostsSliced(arrayPosts.slice(-10));
-      setCommentingStates(arrayPosts.slice(-10).map(() => false));
+ // Funzione HandleComment per fare Post commento
+ const HandleComment = () => {
+  if (!commentText.trim()) {
+   alert("Il testo del post non può essere vuoto");
+   return;
+  }
+  fetch("https://striveschool-api.herokuapp.com/api/comments/", {
+   method: "POST",
+   headers: {
+    Authorization:
+     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJiYTg1MDViMjYxNTAwMTk4YTY5NjkiLCJpYXQiOjE3MDg2ODQ3MzksImV4cCI6MTcwOTg5NDMzOX0.IeWVE4UXnwa3p3rB8ApX7xBtzkOV4ACeO6OsyTcXYUo",
+    "Content-Type": "application/json",
+   },
+   body: JSON.stringify({
+    comment: commentText,
+    elementId: commentId,
+    rate: 1,
+   }),
+  })
+   .then((response) => {
+    if (response.ok) {
+     console.log("Post aggiunto");
+     dispatch(getCommentsAction());
+    } else {
+     console.log("errore nella richiesta POST", response.status);
+    }
+   })
+   .catch((error) => {
+    console.log(error);
+   });
+ };
+
+ useEffect(() => {
+  dispatch(FetchDataPosts());
+  dispatch(getCommentsAction());
+ }, []);
+
+ useEffect(() => {
+  if (arrayPosts.length > 0) {
+   setArrayPostsSliced(arrayPosts.slice(-10));
+   setCommentingStates(arrayPosts.slice(-10).map(() => false));
+   setCommentId(arrayPosts.slice(-10).map((post) => post._id));
 
       console.log('post array slice', arrayPostsSliced);
     }
   }, [arrayPosts]);
 
-  const toggleCommentSection = (i) => {
-    const newCommentingStates = [...commentingStates];
-    newCommentingStates[i] = !newCommentingStates[i];
-    setCommentingStates(newCommentingStates);
-  };
+ const toggleCommentSection = (i) => {
+  const newCommentingStates = [...commentingStates];
+  newCommentingStates[i] = !newCommentingStates[i];
+  setCommentingStates(newCommentingStates);
+ };
+
+ const getCommentsCount = (postId) => {
+  return comments.filter((comment) => comment.elementId === postId).length;
+ };
+
+
 
   const generateRandomFollowers = () =>
     Math.floor(Math.random() * (99999 - 1000 + 1)) + 1000;
@@ -91,8 +137,22 @@ const HomePagePosts = () => {
                   src={post.image}
                 />
               )}
-              {/* //    <img className="" width={250} alt="img post" src={post.image} /> */}
-            </Card.Body>
+<button className="commentsButton">
+        <span className="comments-number-style">
+         {getCommentsCount(post._id)} Comments{" "}
+        </span>
+       </button>
+       <ul>
+        {comments
+         .filter((comment) => comment.elementId === post._id)
+         .map((comment, i) => (
+          <div className="commentsDiv rounded" key={i}>
+           <li>
+            {comment.author} : {comment.comment}
+           </li>
+          </div>
+         ))}
+       </ul>            </Card.Body>
             <div className="d-flex justify-content-evenly">
               <Button
                 className={`d-flex align-items-center button-homepage${
@@ -112,6 +172,8 @@ const HomePagePosts = () => {
                 onClick={() => {
                   toggleCommentSection(i);
                   setSmShow(true);
+                  setCommentId(post._id);
+
                 }}
               >
                 <i className="bi bi-chat-left-dots me-2"></i>
@@ -139,33 +201,32 @@ const HomePagePosts = () => {
       ))}
       {/* MODALE COMMENTI */}
 
-      <Modal
-        size="sm"
-        show={smShow}
-        onHide={() => setSmShow(false)}
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">Comment</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Control
-                as="textarea"
-                rows={3}
-                placeholder="Write your comment here"
-              />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-      </Modal>
-    </>
-  );
+   <Modal
+    size="sm"
+    show={smShow}
+    onHide={() => setSmShow(false)}
+    aria-labelledby="contained-modal-title-vcenter"
+    centered
+   >
+    <Modal.Header closeButton>
+     <Modal.Title id="contained-modal-title-vcenter">Comment</Modal.Title>
+    </Modal.Header>
+    <Modal.Body>
+     <Form>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+       <Form.Control
+        as="textarea"
+        rows={3}
+        placeholder="Write your comment here"
+        onChange={(e) => setCommentText(e.target.value)}
+       />
+      </Form.Group>
+      <Button onClick={HandleComment}></Button>
+     </Form>
+    </Modal.Body>
+   </Modal>
+  </>
+ );
 };
 
 export default HomePagePosts;
