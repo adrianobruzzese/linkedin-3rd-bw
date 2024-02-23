@@ -1,6 +1,3 @@
-// import 'bootstrap/dist/css/bootstrap.min.css'
-// import 'bootstrap-icons/font/bootstrap-icons.css';
-// import '../../style/style.css';
 import { useSelector } from 'react-redux';
 import { Row, Col, Container, Card, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
