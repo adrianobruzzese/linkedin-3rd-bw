@@ -17,7 +17,7 @@ const LeftSidebar = ({
 
   return (
     <div>
-      <div className="card profile-card mx-auto" style={{ maxWidth: '280px' }}>
+      <div className="card profile-card mx-auto">
         {!isLoading && (
           <img
             src={profileIcon}
