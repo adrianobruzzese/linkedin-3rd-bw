@@ -175,17 +175,17 @@ const HomePagePosts = () => {
         //  </div>
         // </div>
        )} */}
-              <Button className="button-homepage">
-                <i className="bi bi-repeat me-2"></i>Repost
-              </Button>
-              <Button className="button-homepage">
-                <i className="bi bi-send me-2"></i>Send
-              </Button>
-            </div>
-          </Card>
-        </Col>
-      ))}
-      {/* MODALE COMMENTI */}
+       <Button className="button-homepage">
+        <i className="bi bi-repeat me-2"></i>Repost
+       </Button>
+       <Button className="button-homepage">
+        <i className="bi bi-send me-2"></i>Send
+       </Button>
+      </div>
+     </Card>
+    </Col>
+   ))}
+   {/* MODALE COMMENTI */}
 
    <Modal
     size="sm"
@@ -207,7 +207,7 @@ const HomePagePosts = () => {
         onChange={(e) => setCommentText(e.target.value)}
        />
       </Form.Group>
-      <Button onClick={HandleComment}></Button>
+      <Button onClick={HandleComment}>Post Comment</Button>
      </Form>
     </Modal.Body>
    </Modal>
