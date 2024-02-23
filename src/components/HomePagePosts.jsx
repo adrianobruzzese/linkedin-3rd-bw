@@ -127,7 +127,6 @@ const HomePagePosts = () => {
                   </div>
                   </div>
               </div>
-              <span>{post.user.title}</span>
               <Card.Text id="comment">{post.text}</Card.Text>
               {!post.image && ``}
               {post.image && (
