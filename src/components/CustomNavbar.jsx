@@ -392,6 +392,10 @@ function NavbarComponent() {
                 <i className="bi bi-chat-dots-fill"></i>{' '}
                 <div className="nav-label">Messaging</div>
               </Nav.Link>
+              <Nav.Link href="#network" className="nav-icon d-none d-lg-block">
+                <i className="bi bi-bell-fill"></i>
+                <div className="nav-label">Messaging</div>
+              </Nav.Link>
               <NavDropdown
                 title={
                   <div className="nav-icon-dropdown mt-2">
