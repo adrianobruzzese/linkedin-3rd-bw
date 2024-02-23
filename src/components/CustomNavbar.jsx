@@ -393,22 +393,14 @@ function NavbarComponent() {
                 }
                 id="navbarScrollingDropdown"
                 align="end"
-              ></NavDropdown>
-              <NavDropdown
-                title="Me"
-                align={{ lg: 'end', md: 'end', sm: 'end', xs: 'end' }}
-                style={{ fontSize: '1rem', marginBottom: '3px' }}
-                className="p-0"
-              >
-                <NavDropdown.Item href="#gestioni-profili">
-                  Profile management
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#account">Account</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item onClick={handleShow}>
-                  Switch User
-                </NavDropdown.Item>
-              </NavDropdown>
+              > <NavDropdown.Item href="#gestioni-profili">
+              Profile management
+            </NavDropdown.Item>
+            <NavDropdown.Item href="#account">Account</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item onClick={handleShow}>
+              Switch User
+            </NavDropdown.Item></NavDropdown>
             </div>
           </Nav>
         </Navbar.Collapse>
