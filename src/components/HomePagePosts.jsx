@@ -5,17 +5,17 @@ import { Button, Card, Col } from 'react-bootstrap';
 import defaultUserImg from '../assets/img/default-profile-picture1.jpg';
 import { Modal } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
-import { getCommentsAction } from '../redux/actions';
+import { getCommentsAction } from "../redux/actions";
 
 const HomePagePosts = () => {
-  const dispatch = useDispatch();
-  const arrayPosts = useSelector((state) => state.posts.posts); // slice per ottenere solo i primi 20 post
-  const [arrayPostsSliced, setArrayPostsSliced] = useState([]);
-  // LIKE
-  const [liked, setLiked] = useState(false);
+ const dispatch = useDispatch();
+ const arrayPosts = useSelector((state) => state.posts.posts); // slice per ottenere solo i primi 20 post
+ const [arrayPostsSliced, setArrayPostsSliced] = useState([]);
+ // LIKE
+ const [liked, setLiked] = useState(false);
 
-  //stato modale
-  const [smShow, setSmShow] = useState(false);
+ //stato modale
+ const [smShow, setSmShow] = useState(false);
 
   const handleClick = () => {
     setLiked(!liked);
@@ -72,9 +72,9 @@ const HomePagePosts = () => {
       setCommentingStates(arrayPosts.slice(-10).map(() => false));
       setCommentId(arrayPosts.slice(-10).map((post) => post._id));
 
-      console.log('post array slice', arrayPostsSliced);
-    }
-  }, [arrayPosts]);
+   console.log("post array slice", arrayPostsSliced);
+  }
+ }, [arrayPosts]);
 
   const toggleCommentSection = (i) => {
     const newCommentingStates = [...commentingStates];
@@ -82,13 +82,15 @@ const HomePagePosts = () => {
     setCommentingStates(newCommentingStates);
   };
 
-  const getCommentsCount = (postId) => {
-    return comments.filter((comment) => comment.elementId === postId).length;
-  };
+ const getCommentsCount = (postId) => {
+  return comments.filter((comment) => comment.elementId === postId).length;
+ };
 
-  const generateRandomFollowers = () =>
-    Math.floor(Math.random() * (99999 - 1000 + 1)) + 1000;
-  const generateRandomDay = () => Math.floor(Math.random() * 4) + 1;
+
+
+ const generateRandomFollowers = () =>
+  Math.floor(Math.random() * (99999 - 1000 + 1)) + 1000;
+ const generateRandomDay = () => Math.floor(Math.random() * 4) + 1;
 
   return (
     <>
@@ -110,22 +112,22 @@ const HomePagePosts = () => {
                     className="rounded-circle me-2"
                     src={defaultUserImg}
                     width={55}
+                    height={55}
                     alt="Default profile"
                   />
                 )}
-                <div className="ms-1">
-                  <Card.Title className="fs-6 mb-0">{post.username}</Card.Title>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 'bold' }}>
-                    {post.user.title}
-                  </span>
-                  <div className="text-muted" style={{ fontSize: '0.7rem' }}>
+                <div className='ms-1'>
+                <Card.Title className="fs-6 mb-0">{post.username}</Card.Title>
+                <span style={{fontSize: '0.75rem', fontWeight: 'bold'}}>{post.user.title}</span>
+                <div className="text-muted" style={{fontSize: '0.7rem'}}>
                     Followers: {generateRandomFollowers()}
                   </div>
-                  <div className="text-muted" style={{ fontSize: '0.7rem' }}>
-                    {generateRandomDay()}d ago
+                  <div className="text-muted" style={{fontSize: '0.7rem'}}>
+                  {generateRandomDay()}d ago
                   </div>
-                </div>
+                  </div>
               </div>
+              <span>{post.user.title}</span>
               <Card.Text id="comment">{post.text}</Card.Text>
               {!post.image && ``}
               {post.image && (
@@ -136,23 +138,24 @@ const HomePagePosts = () => {
                   src={post.image}
                 />
               )}
-              <button className="commentsButton">
-                <span className="comments-number-style">
-                  {getCommentsCount(post._id)} Comments{' '}
-                </span>
-              </button>
-              <ul>
-                {comments
-                  .filter((comment) => comment.elementId === post._id)
-                  .map((comment, i) => (
-                    <div className="commentsDiv rounded" key={i}>
-                      <li>
-                        {comment.author} : {comment.comment}
-                      </li>
-                    </div>
-                  ))}
-              </ul>{' '}
-            </Card.Body>
+<button className="commentsButton d-block">
+        <span className="comments-number-style">
+         {getCommentsCount(post._id)} Comments{" "}
+        </span>
+       </button>
+       <ul>
+        {comments
+         .filter((comment) => comment.elementId === post._id)
+         .map((comment, i) => (
+          <div className="commentsDiv rounded" key={i}>
+           <li>
+           <span className="fw-bold">{comment.author}</span> :{" "} 
+            {comment.comment}
+           </li>
+          </div>
+         ))}
+       </ul>{' '}
+                   </Card.Body>
             <div className="d-flex justify-content-evenly">
               <Button
                 className={`d-flex align-items-center button-homepage${
@@ -173,6 +176,7 @@ const HomePagePosts = () => {
                   toggleCommentSection(i);
                   setSmShow(true);
                   setCommentId(post._id);
+
                 }}
               >
                 <i className="bi bi-chat-left-dots me-2"></i>
@@ -188,47 +192,44 @@ const HomePagePosts = () => {
         //  </div>
         // </div>
        )} */}
-              <Button className="button-homepage">
-                <i className="bi bi-repeat me-2"></i>Repost
-              </Button>
-              <Button className="button-homepage">
-                <i className="bi bi-send me-2"></i>Send
-              </Button>
-            </div>
-          </Card>
-        </Col>
-      ))}
-      {/* MODALE COMMENTI */}
+       <Button className="button-homepage">
+        <i className="bi bi-repeat me-2"></i>Repost
+       </Button>
+       <Button className="button-homepage">
+        <i className="bi bi-send me-2"></i>Send
+       </Button>
+      </div>
+     </Card>
+    </Col>
+   ))}
+   {/* MODALE COMMENTI */}
 
-      <Modal
-        size="sm"
-        show={smShow}
-        onHide={() => setSmShow(false)}
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">Comment</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Control
-                as="textarea"
-                rows={3}
-                placeholder="Write your comment here"
-                onChange={(e) => setCommentText(e.target.value)}
-              />
-            </Form.Group>
-            <Button onClick={HandleComment}></Button>
-          </Form>
-        </Modal.Body>
-      </Modal>
-    </>
-  );
+   <Modal
+    size="sm"
+    show={smShow}
+    onHide={() => setSmShow(false)}
+    aria-labelledby="contained-modal-title-vcenter"
+    centered
+   >
+    <Modal.Header closeButton>
+     <Modal.Title id="contained-modal-title-vcenter">Comment</Modal.Title>
+    </Modal.Header>
+    <Modal.Body>
+     <Form>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+       <Form.Control
+        as="textarea"
+        rows={3}
+        placeholder="Write your comment here"
+        onChange={(e) => setCommentText(e.target.value)}
+       />
+      </Form.Group>
+      <Button onClick={HandleComment}></Button>
+     </Form>
+    </Modal.Body>
+   </Modal>
+  </>
+ );
 };
 
 export default HomePagePosts;
