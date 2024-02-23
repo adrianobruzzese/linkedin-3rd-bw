@@ -393,14 +393,22 @@ function NavbarComponent() {
                 }
                 id="navbarScrollingDropdown"
                 align="end"
-              > <NavDropdown.Item href="#gestioni-profili">
-              Profile management
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#account">Account</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item onClick={handleShow}>
-              Switch User
-            </NavDropdown.Item></NavDropdown>
+              >
+                {' '}
+                <NavDropdown.Item href="#gestioni-profili">
+                  Profile Settings
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  {' '}
+                  <Link to={'/profile'} className="nav-link p-0">
+                    Account
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item onClick={handleShow}>
+                  Switch User
+                </NavDropdown.Item>
+              </NavDropdown>
             </div>
           </Nav>
         </Navbar.Collapse>
