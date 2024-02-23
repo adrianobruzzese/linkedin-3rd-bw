@@ -3,7 +3,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const JobsRightBar = () => (
   <>
-    <div className=" text-center mt-4 ">
+    <div className=" text-center mt-4  ">
       <div className="d-flex justify-content-center ">
         <Nav.Link className="text-secondary fs-6 me-3 " href="#home">
           Information
@@ -59,7 +59,7 @@ const JobsRightBar = () => (
           more
         </Nav.Link>
       </div>
-      <div className="mt-3">
+      <div className="mt-3 d-flex justify-content-center  align-items-center">
         <div>
           <img
             alt=""

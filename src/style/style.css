@@ -1,6 +1,6 @@
 @charset "UTF-8";
 #navbar {
-  height: 55px;
+  max-height: 55px;
 }
 
 #search-input-group {
@@ -103,6 +103,10 @@
 
 #start-post {
   font-size: 1rem;
+}
+
+#comment {
+  margin-top: 20px;
 }
 
 .scrollable-modal {
