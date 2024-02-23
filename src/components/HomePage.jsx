@@ -16,7 +16,7 @@ const HomePage = () => {
  const [showModalImg, setShowModalImg] = useState(false);
  const [postText, setPostText] = useState("");
  const dispatch = useDispatch();
- const [postId, setPostId] = useState();
+ //  const [postId, setPostId] = useState();
  const [fileImg, setFileImg] = useState();
 
  const post = useSelector((state) => state.posts.posts);
@@ -71,7 +71,7 @@ const HomePage = () => {
    .then(async (response) => {
     if (response.ok) {
      const { _id } = await response.json();
-     setPostId(_id);
+     //  setPostId(_id);
      dispatch(postImageAction(fileImg, _id, token));
      handleCloseModalPost();
      setTimeout(() => {
