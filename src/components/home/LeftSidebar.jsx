@@ -13,7 +13,6 @@ const LeftSidebar = ({
  profileTitle,
 }) => {
  const isLoading = useSelector((state) => state.meFetch.isLoading);
- const me = useSelector((state) => state.meFetch.content);
 
  return (
   <div>
