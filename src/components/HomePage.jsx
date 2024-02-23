@@ -16,7 +16,7 @@ const HomePage = () => {
  const [showModalImg, setShowModalImg] = useState(false);
  const [postText, setPostText] = useState("");
  const dispatch = useDispatch();
- //  const [postId, setPostId] = useState();
+
  const [fileImg, setFileImg] = useState();
 
  const post = useSelector((state) => state.posts.posts);
