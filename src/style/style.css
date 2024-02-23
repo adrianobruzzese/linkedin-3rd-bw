@@ -22,6 +22,11 @@
   font-size: 0.8rem;
 }
 
+@media (max-width: 726px) {
+  .nav-label {
+    display: none;
+  }
+}
 .nav-icon i {
   margin-bottom: 4px;
   font-size: 1.5rem;
